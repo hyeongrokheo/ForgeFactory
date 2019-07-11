@@ -1,0 +1,8734 @@
+[
+  {
+    "data": {},
+    "id": "ingot_100",
+    "properties": {
+      "current_weight": 25.145,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 25.145,
+      "product_id_list": [
+        "product_304"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_101",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RIHDS14519270B",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_305",
+        "product_306"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2546",
+    "properties": {
+      "current_weight": 9.133333333333333,
+      "ingot_code": "RISAB01518700A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6232",
+        "product_6233",
+        "product_6234"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2547",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6235",
+        "product_6236",
+        "product_6237",
+        "product_6238",
+        "product_6239",
+        "product_6240"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2548",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6241",
+        "product_6242",
+        "product_6243",
+        "product_6244",
+        "product_6245",
+        "product_6246"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2549",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6247",
+        "product_6248",
+        "product_6249",
+        "product_6250",
+        "product_6251",
+        "product_6252"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2550",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6253",
+        "product_6254",
+        "product_6255",
+        "product_6256",
+        "product_6257",
+        "product_6258"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2551",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6259",
+        "product_6260",
+        "product_6261",
+        "product_6262",
+        "product_6263",
+        "product_6264"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2552",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6265",
+        "product_6266",
+        "product_6267",
+        "product_6268",
+        "product_6269",
+        "product_6270"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2553",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6271",
+        "product_6272",
+        "product_6273",
+        "product_6274",
+        "product_6275",
+        "product_6276"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2554",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6277",
+        "product_6278",
+        "product_6279",
+        "product_6280",
+        "product_6281",
+        "product_6282"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2555",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6283",
+        "product_6284",
+        "product_6285",
+        "product_6286",
+        "product_6287",
+        "product_6288"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2556",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6289",
+        "product_6290",
+        "product_6291",
+        "product_6292",
+        "product_6293",
+        "product_6294"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2557",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6295",
+        "product_6296",
+        "product_6297",
+        "product_6298",
+        "product_6299",
+        "product_6300"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2558",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6301",
+        "product_6302",
+        "product_6303",
+        "product_6304",
+        "product_6305",
+        "product_6306"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2559",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6307",
+        "product_6308",
+        "product_6309",
+        "product_6310",
+        "product_6311",
+        "product_6312"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2560",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6313",
+        "product_6314",
+        "product_6315",
+        "product_6316",
+        "product_6317",
+        "product_6318"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2561",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6319",
+        "product_6320",
+        "product_6321",
+        "product_6322",
+        "product_6323",
+        "product_6324"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2562",
+    "properties": {
+      "current_weight": 9.066666666666666,
+      "ingot_code": "RIHDS01521970A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6325",
+        "product_6326",
+        "product_6327"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2563",
+    "properties": {
+      "current_weight": 9.566666666666666,
+      "ingot_code": "RIHDS01521970A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6328",
+        "product_6329",
+        "product_6330"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2564",
+    "properties": {
+      "current_weight": 7.54,
+      "ingot_code": "RIHDS01530160A",
+      "initial_weight": 30.16,
+      "product_id_list": [
+        "product_6331",
+        "product_6332",
+        "product_6333",
+        "product_6334"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2565",
+    "properties": {
+      "current_weight": 5.5,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_6335",
+        "product_6336",
+        "product_6337"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2566",
+    "properties": {
+      "current_weight": 5.5,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_6338",
+        "product_6339",
+        "product_6340"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2567",
+    "properties": {
+      "current_weight": 6.55,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26.2,
+      "product_id_list": [
+        "product_6341",
+        "product_6342",
+        "product_6343",
+        "product_6344"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2568",
+    "properties": {
+      "current_weight": 6.55,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 26.2,
+      "product_id_list": [
+        "product_6345",
+        "product_6346",
+        "product_6347",
+        "product_6348"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2569",
+    "properties": {
+      "current_weight": 16.5,
+      "ingot_code": "RISAB57115200B",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_6349"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2570",
+    "properties": {
+      "current_weight": 16.5,
+      "ingot_code": "RISAB57115200B",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_6350"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2571",
+    "properties": {
+      "current_weight": 13.705,
+      "ingot_code": "RIHDS00513120A",
+      "initial_weight": 27.41,
+      "product_id_list": [
+        "product_6351",
+        "product_6352"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2572",
+    "properties": {
+      "current_weight": 41.45,
+      "ingot_code": "RIHDS54941450B",
+      "initial_weight": 41.45,
+      "product_id_list": [
+        "product_6353"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2573",
+    "properties": {
+      "current_weight": 4.533333333333333,
+      "ingot_code": "RIHDS00513120A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6354",
+        "product_6355",
+        "product_6356",
+        "product_6357",
+        "product_6358",
+        "product_6359"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2574",
+    "properties": {
+      "current_weight": 4.533333333333333,
+      "ingot_code": "RIHDS01507720A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6360",
+        "product_6361",
+        "product_6362",
+        "product_6363",
+        "product_6364",
+        "product_6365"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2575",
+    "properties": {
+      "current_weight": 18.589,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 18.589,
+      "product_id_list": [
+        "product_6366"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2576",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_6367"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2577",
+    "properties": {
+      "current_weight": 8.666666666666666,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6368",
+        "product_6369",
+        "product_6370"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2578",
+    "properties": {
+      "current_weight": 21.935,
+      "ingot_code": "RIHDS07820030A",
+      "initial_weight": 43.87,
+      "product_id_list": [
+        "product_6371",
+        "product_6372"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2579",
+    "properties": {
+      "current_weight": 8.666666666666666,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6373",
+        "product_6374",
+        "product_6375"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2580",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS01512580A",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6376",
+        "product_6377",
+        "product_6378",
+        "product_6379",
+        "product_6380",
+        "product_6381"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2581",
+    "properties": {
+      "current_weight": 3.563333333333333,
+      "ingot_code": "RIHDS01521380A",
+      "initial_weight": 21.38,
+      "product_id_list": [
+        "product_6382",
+        "product_6383",
+        "product_6384",
+        "product_6385",
+        "product_6386",
+        "product_6387"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2582",
+    "properties": {
+      "current_weight": 5.2,
+      "ingot_code": "RIHDS01528700A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6388",
+        "product_6389",
+        "product_6390",
+        "product_6391",
+        "product_6392"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2583",
+    "properties": {
+      "current_weight": 7.54,
+      "ingot_code": "RIHDS01530160A",
+      "initial_weight": 30.16,
+      "product_id_list": [
+        "product_6393",
+        "product_6394",
+        "product_6395",
+        "product_6396"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2584",
+    "properties": {
+      "current_weight": 4.783333333333333,
+      "ingot_code": "RIHDS01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6397",
+        "product_6398",
+        "product_6399",
+        "product_6400",
+        "product_6401",
+        "product_6402"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2585",
+    "properties": {
+      "current_weight": 9.566666666666666,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6403",
+        "product_6404",
+        "product_6405"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2586",
+    "properties": {
+      "current_weight": 9.566666666666666,
+      "ingot_code": "RISAB01545100A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6406",
+        "product_6407",
+        "product_6408"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2587",
+    "properties": {
+      "current_weight": 37.95,
+      "ingot_code": "RIHDS54937950B",
+      "initial_weight": 37.95,
+      "product_id_list": [
+        "product_6409"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2588",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS16526210A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6410"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2589",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS16526210A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6411"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2590",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB16525400A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6412"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2591",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB16525400A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6413"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2592",
+    "properties": {
+      "current_weight": 47.36,
+      "ingot_code": "RIHDS16547360A",
+      "initial_weight": 47.36,
+      "product_id_list": [
+        "product_6414"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2593",
+    "properties": {
+      "current_weight": 25.6,
+      "ingot_code": "RIHDS11012580A",
+      "initial_weight": 25.6,
+      "product_id_list": [
+        "product_6415",
+        "product_6416"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2594",
+    "properties": {
+      "current_weight": 25.6,
+      "ingot_code": "RIHDS11012580A",
+      "initial_weight": 25.6,
+      "product_id_list": [
+        "product_6417",
+        "product_6418"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2595",
+    "properties": {
+      "current_weight": 36.836,
+      "ingot_code": "RIHDS07836620A",
+      "initial_weight": 36.836,
+      "product_id_list": [
+        "product_6419"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2596",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6420",
+        "product_6421",
+        "product_6422"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2597",
+    "properties": {
+      "current_weight": 30.16,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 30.16,
+      "product_id_list": [
+        "product_6423",
+        "product_6424",
+        "product_6425",
+        "product_6426",
+        "product_6427",
+        "product_6428"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2598",
+    "properties": {
+      "current_weight": 40.52,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 40.52,
+      "product_id_list": [
+        "product_6429",
+        "product_6430",
+        "product_6431",
+        "product_6432"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2599",
+    "properties": {
+      "current_weight": 22.69,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 22.69,
+      "product_id_list": [
+        "product_6433",
+        "product_6434",
+        "product_6435",
+        "product_6436",
+        "product_6437"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2600",
+    "properties": {
+      "current_weight": 22.69,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 22.69,
+      "product_id_list": [
+        "product_6438",
+        "product_6439",
+        "product_6440",
+        "product_6441",
+        "product_6442"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2601",
+    "properties": {
+      "current_weight": 40.52,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 40.52,
+      "product_id_list": [
+        "product_6443",
+        "product_6444",
+        "product_6445",
+        "product_6446"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2602",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6447",
+        "product_6448"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2603",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6449",
+        "product_6450"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2604",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6451",
+        "product_6452"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2605",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6453",
+        "product_6454"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2606",
+    "properties": {
+      "current_weight": 11.64,
+      "ingot_code": "RIHDS47111020A",
+      "initial_weight": 11.64,
+      "product_id_list": [
+        "product_6455"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2607",
+    "properties": {
+      "current_weight": 11.64,
+      "ingot_code": "RIHDS47111020A",
+      "initial_weight": 11.64,
+      "product_id_list": [
+        "product_6456"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2608",
+    "properties": {
+      "current_weight": 21.4,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 21.4,
+      "product_id_list": [
+        "product_6457",
+        "product_6458"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2609",
+    "properties": {
+      "current_weight": 12.58,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 12.58,
+      "product_id_list": [
+        "product_6459"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2610",
+    "properties": {
+      "current_weight": 12.58,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 12.58,
+      "product_id_list": [
+        "product_6460"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2611",
+    "properties": {
+      "current_weight": 40.52,
+      "ingot_code": "RIHDS07834920A",
+      "initial_weight": 40.52,
+      "product_id_list": [
+        "product_6461"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2612",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6462",
+        "product_6463",
+        "product_6464",
+        "product_6465",
+        "product_6466",
+        "product_6467"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2613",
+    "properties": {
+      "current_weight": 27.41,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.41,
+      "product_id_list": [
+        "product_6468",
+        "product_6469",
+        "product_6470"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2614",
+    "properties": {
+      "current_weight": 27.41,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.41,
+      "product_id_list": [
+        "product_6471",
+        "product_6472",
+        "product_6473"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2615",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6474",
+        "product_6475",
+        "product_6476"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2616",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6477",
+        "product_6478",
+        "product_6479",
+        "product_6480",
+        "product_6481",
+        "product_6482"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2617",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6483",
+        "product_6484",
+        "product_6485",
+        "product_6486",
+        "product_6487",
+        "product_6488"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2618",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6489",
+        "product_6490",
+        "product_6491"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2619",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_6492",
+        "product_6493",
+        "product_6494"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2620",
+    "properties": {
+      "current_weight": 23.64,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.64,
+      "product_id_list": [
+        "product_6495"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2621",
+    "properties": {
+      "current_weight": 23.64,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.64,
+      "product_id_list": [
+        "product_6496"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2622",
+    "properties": {
+      "current_weight": 39.12,
+      "ingot_code": "RIHDS66039120A",
+      "initial_weight": 39.12,
+      "product_id_list": [
+        "product_6497"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2623",
+    "properties": {
+      "current_weight": 43.87,
+      "ingot_code": "RIHDS01523640A",
+      "initial_weight": 43.87,
+      "product_id_list": [
+        "product_6498",
+        "product_6499",
+        "product_6500",
+        "product_6501"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2624",
+    "properties": {
+      "current_weight": 26.2,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 26.2,
+      "product_id_list": [
+        "product_6502",
+        "product_6503",
+        "product_6504",
+        "product_6505"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2625",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RIHDS01506900A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6506",
+        "product_6507",
+        "product_6508"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2626",
+    "properties": {
+      "current_weight": 17.16,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 17.16,
+      "product_id_list": [
+        "product_6509",
+        "product_6510",
+        "product_6511"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2627",
+    "properties": {
+      "current_weight": 32,
+      "ingot_code": "S5IS165SIN0-001",
+      "initial_weight": 32,
+      "product_id_list": [
+        "product_6512"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2628",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RIHDS14528700B",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6513"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2629",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RIHDS14528700B",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6514"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2630",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RIHDS14528700B",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6515"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2631",
+    "properties": {
+      "current_weight": 20.8,
+      "ingot_code": "RIHDS01511020A",
+      "initial_weight": 20.8,
+      "product_id_list": [
+        "product_6516",
+        "product_6517"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2632",
+    "properties": {
+      "current_weight": 43.87,
+      "ingot_code": "RIHDS01523640A",
+      "initial_weight": 43.87,
+      "product_id_list": [
+        "product_6518",
+        "product_6519",
+        "product_6520",
+        "product_6521"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2633",
+    "properties": {
+      "current_weight": 45.13,
+      "ingot_code": "RIHDS01523640A",
+      "initial_weight": 45.13,
+      "product_id_list": [
+        "product_6522",
+        "product_6523",
+        "product_6524",
+        "product_6525"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2634",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6526",
+        "product_6527"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2635",
+    "properties": {
+      "current_weight": 35.86,
+      "ingot_code": "RIHDS07835860A",
+      "initial_weight": 35.86,
+      "product_id_list": [
+        "product_6528"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2636",
+    "properties": {
+      "current_weight": 30.2,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 30.2,
+      "product_id_list": [
+        "product_6529",
+        "product_6530",
+        "product_6531",
+        "product_6532",
+        "product_6533",
+        "product_6534"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2637",
+    "properties": {
+      "current_weight": 30.2,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 30.2,
+      "product_id_list": [
+        "product_6535",
+        "product_6536",
+        "product_6537",
+        "product_6538",
+        "product_6539",
+        "product_6540"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2638",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6541",
+        "product_6542",
+        "product_6543",
+        "product_6544",
+        "product_6545",
+        "product_6546"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2639",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6547",
+        "product_6548",
+        "product_6549",
+        "product_6550",
+        "product_6551",
+        "product_6552"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2640",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6553",
+        "product_6554",
+        "product_6555",
+        "product_6556",
+        "product_6557",
+        "product_6558"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2641",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6559",
+        "product_6560",
+        "product_6561",
+        "product_6562",
+        "product_6563",
+        "product_6564"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2642",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6565",
+        "product_6566",
+        "product_6567",
+        "product_6568",
+        "product_6569",
+        "product_6570"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2643",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6571",
+        "product_6572",
+        "product_6573",
+        "product_6574",
+        "product_6575",
+        "product_6576"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2644",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6577",
+        "product_6578",
+        "product_6579",
+        "product_6580",
+        "product_6581",
+        "product_6582"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2645",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6583",
+        "product_6584",
+        "product_6585",
+        "product_6586",
+        "product_6587",
+        "product_6588"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2646",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6589",
+        "product_6590",
+        "product_6591",
+        "product_6592",
+        "product_6593",
+        "product_6594"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2647",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6595",
+        "product_6596",
+        "product_6597",
+        "product_6598",
+        "product_6599",
+        "product_6600"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2648",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6601",
+        "product_6602",
+        "product_6603",
+        "product_6604",
+        "product_6605",
+        "product_6606"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2649",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6607",
+        "product_6608",
+        "product_6609",
+        "product_6610",
+        "product_6611",
+        "product_6612"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2650",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6613",
+        "product_6614",
+        "product_6615",
+        "product_6616",
+        "product_6617",
+        "product_6618"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2651",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6619",
+        "product_6620",
+        "product_6621",
+        "product_6622",
+        "product_6623",
+        "product_6624"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2652",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6625",
+        "product_6626",
+        "product_6627",
+        "product_6628",
+        "product_6629",
+        "product_6630"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2653",
+    "properties": {
+      "current_weight": 40.52,
+      "ingot_code": "RIHDS54941450B",
+      "initial_weight": 40.52,
+      "product_id_list": [
+        "product_6631"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2654",
+    "properties": {
+      "current_weight": 32,
+      "ingot_code": "S5IS165SIN0-001",
+      "initial_weight": 32,
+      "product_id_list": [
+        "product_6632"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2655",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6633",
+        "product_6634",
+        "product_6635"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2656",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6636",
+        "product_6637",
+        "product_6638"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2657",
+    "properties": {
+      "current_weight": 20.8,
+      "ingot_code": "RIHDS01521970A",
+      "initial_weight": 20.8,
+      "product_id_list": [
+        "product_6639",
+        "product_6640"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2658",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_6641"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2659",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_6642"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2660",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6643",
+        "product_6644",
+        "product_6645"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2661",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6646",
+        "product_6647",
+        "product_6648"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2662",
+    "properties": {
+      "current_weight": 22.69,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 22.69,
+      "product_id_list": [
+        "product_6649",
+        "product_6650",
+        "product_6651",
+        "product_6652",
+        "product_6653"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2663",
+    "properties": {
+      "current_weight": 30.56,
+      "ingot_code": "RIHDS07830560A",
+      "initial_weight": 30.56,
+      "product_id_list": [
+        "product_6654"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2664",
+    "properties": {
+      "current_weight": 45.13,
+      "ingot_code": "RISAB01545100A",
+      "initial_weight": 45.13,
+      "product_id_list": [
+        "product_6655",
+        "product_6656",
+        "product_6657",
+        "product_6658"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2665",
+    "properties": {
+      "current_weight": 45.13,
+      "ingot_code": "RISAB01545100A",
+      "initial_weight": 45.13,
+      "product_id_list": [
+        "product_6659",
+        "product_6660",
+        "product_6661",
+        "product_6662"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2666",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6663",
+        "product_6664",
+        "product_6665"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2667",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6666",
+        "product_6667",
+        "product_6668"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2668",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6669",
+        "product_6670",
+        "product_6671"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2669",
+    "properties": {
+      "current_weight": 22.69,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 22.69,
+      "product_id_list": [
+        "product_6672",
+        "product_6673",
+        "product_6674",
+        "product_6675",
+        "product_6676"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2670",
+    "properties": {
+      "current_weight": 22.69,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 22.69,
+      "product_id_list": [
+        "product_6677",
+        "product_6678",
+        "product_6679",
+        "product_6680",
+        "product_6681"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2671",
+    "properties": {
+      "current_weight": 40.52,
+      "ingot_code": "RIHDS54941450B",
+      "initial_weight": 40.52,
+      "product_id_list": [
+        "product_6682"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2672",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6683",
+        "product_6684",
+        "product_6685"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2673",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01513560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6686",
+        "product_6687",
+        "product_6688"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2674",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6689",
+        "product_6690"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2675",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_6691",
+        "product_6692"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2676",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6693",
+        "product_6694",
+        "product_6695"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2677",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6696",
+        "product_6697",
+        "product_6698",
+        "product_6699"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2678",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6700",
+        "product_6701",
+        "product_6702",
+        "product_6703"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2679",
+    "properties": {
+      "current_weight": 37.95,
+      "ingot_code": "RIHDS16437950A",
+      "initial_weight": 37.95,
+      "product_id_list": [
+        "product_6704"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2680",
+    "properties": {
+      "current_weight": 32,
+      "ingot_code": "S5IS165SIN0-001",
+      "initial_weight": 32,
+      "product_id_list": [
+        "product_6705"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2681",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RIHDS00513120A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_6706",
+        "product_6707",
+        "product_6708",
+        "product_6709",
+        "product_6710",
+        "product_6711"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2682",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RIHDS01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_6712",
+        "product_6713",
+        "product_6714",
+        "product_6715",
+        "product_6716",
+        "product_6717"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2683",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01511020A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_6718",
+        "product_6719"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2684",
+    "properties": {
+      "current_weight": 24.9,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 24.9,
+      "product_id_list": [
+        "product_6720",
+        "product_6721"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2685",
+    "properties": {
+      "current_weight": 24.9,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 24.9,
+      "product_id_list": [
+        "product_6722",
+        "product_6723"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2686",
+    "properties": {
+      "current_weight": 16.32,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 16.32,
+      "product_id_list": [
+        "product_6724"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2687",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_6725"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2688",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6726",
+        "product_6727",
+        "product_6728",
+        "product_6729",
+        "product_6730",
+        "product_6731"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2689",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6732",
+        "product_6733",
+        "product_6734",
+        "product_6735",
+        "product_6736",
+        "product_6737"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2690",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6738",
+        "product_6739",
+        "product_6740",
+        "product_6741",
+        "product_6742",
+        "product_6743"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2691",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6744",
+        "product_6745",
+        "product_6746",
+        "product_6747",
+        "product_6748",
+        "product_6749"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2692",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6750",
+        "product_6751",
+        "product_6752",
+        "product_6753",
+        "product_6754",
+        "product_6755"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2693",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6756",
+        "product_6757",
+        "product_6758",
+        "product_6759",
+        "product_6760",
+        "product_6761"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2694",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6762",
+        "product_6763",
+        "product_6764",
+        "product_6765",
+        "product_6766",
+        "product_6767"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2695",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6768",
+        "product_6769",
+        "product_6770",
+        "product_6771",
+        "product_6772",
+        "product_6773"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2696",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6774",
+        "product_6775",
+        "product_6776"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2697",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6777",
+        "product_6778",
+        "product_6779"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2698",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01521970A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_6780",
+        "product_6781"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2699",
+    "properties": {
+      "current_weight": 27.4,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 27.4,
+      "product_id_list": [
+        "product_6782",
+        "product_6783",
+        "product_6784"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2700",
+    "properties": {
+      "current_weight": 13.56,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 13.56,
+      "product_id_list": [
+        "product_6785",
+        "product_6786",
+        "product_6787"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2701",
+    "properties": {
+      "current_weight": 34.9,
+      "ingot_code": "RIHDS07834920A",
+      "initial_weight": 34.9,
+      "product_id_list": [
+        "product_6788"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2702",
+    "properties": {
+      "current_weight": 33.98,
+      "ingot_code": "RIHDS07833980A",
+      "initial_weight": 33.98,
+      "product_id_list": [
+        "product_6789"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2703",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01521970A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_6790",
+        "product_6791"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2753",
+    "properties": {
+      "current_weight": 47.36,
+      "ingot_code": "RIHDS07847360A",
+      "initial_weight": 47.36,
+      "product_id_list": [
+        "product_6884"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2754",
+    "properties": {
+      "current_weight": 3.1133333333333333,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6885",
+        "product_6886",
+        "product_6887",
+        "product_6888",
+        "product_6889",
+        "product_6890"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2755",
+    "properties": {
+      "current_weight": 41.45,
+      "ingot_code": "RIHDS54941450B",
+      "initial_weight": 41.45,
+      "product_id_list": [
+        "product_6891"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2756",
+    "properties": {
+      "current_weight": 47.36,
+      "ingot_code": "RIHDS16547360A",
+      "initial_weight": 47.36,
+      "product_id_list": [
+        "product_6892"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2757",
+    "properties": {
+      "current_weight": 4.5200000000000005,
+      "ingot_code": "RIHDS01522690A",
+      "initial_weight": 13.56,
+      "product_id_list": [
+        "product_6893",
+        "product_6894",
+        "product_6895"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2758",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6896",
+        "product_6897",
+        "product_6898",
+        "product_6899",
+        "product_6900",
+        "product_6901"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2759",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6902",
+        "product_6903",
+        "product_6904",
+        "product_6905",
+        "product_6906",
+        "product_6907"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2760",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6908",
+        "product_6909",
+        "product_6910",
+        "product_6911",
+        "product_6912",
+        "product_6913"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2761",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS47306250B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_6914",
+        "product_6915",
+        "product_6916",
+        "product_6917",
+        "product_6918",
+        "product_6919"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2790",
+    "properties": {
+      "current_weight": 36.62,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 36.62,
+      "product_id_list": [
+        "product_6980"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2803",
+    "properties": {
+      "current_weight": 18.7,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.7,
+      "product_id_list": [
+        "product_7009",
+        "product_7010"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2804",
+    "properties": {
+      "current_weight": 18.7,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.7,
+      "product_id_list": [
+        "product_7011",
+        "product_7012"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2805",
+    "properties": {
+      "current_weight": 18.7,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.7,
+      "product_id_list": [
+        "product_7013",
+        "product_7014"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2806",
+    "properties": {
+      "current_weight": 18.7,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.7,
+      "product_id_list": [
+        "product_7015",
+        "product_7016"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2807",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_7017",
+        "product_7018"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2808",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_7019",
+        "product_7020"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_2818",
+    "properties": {
+      "current_weight": 16.32,
+      "ingot_code": "RISAB00515800A",
+      "initial_weight": 16.32,
+      "product_id_list": [
+        "product_7045"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3145",
+    "properties": {
+      "current_weight": 17.16,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 17.16,
+      "product_id_list": [
+        "product_7448"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3146",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7449"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3147",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7450"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3148",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7451"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3149",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7452"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3150",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7453"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3151",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7454"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3152",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_7455",
+        "product_7456"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3153",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7457"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3154",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7458"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3155",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7459"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3156",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7460"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3157",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7461"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3158",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_7462"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3159",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7463"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3160",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7464"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3161",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7465"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3162",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7466"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3163",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7467"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3164",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7468"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3165",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7469"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3166",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7470"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3167",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7471",
+        "product_7472",
+        "product_7473"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3168",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01518680A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7474",
+        "product_7475",
+        "product_7476"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3169",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7477"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3170",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7478"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3171",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7479"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3172",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7480"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3173",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7481"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3174",
+    "properties": {
+      "current_weight": 42.72,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 42.72,
+      "product_id_list": [
+        "product_7482"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3175",
+    "properties": {
+      "current_weight": 15.22,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 15.22,
+      "product_id_list": [
+        "product_7483",
+        "product_7484"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3176",
+    "properties": {
+      "current_weight": 13.12,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 13.12,
+      "product_id_list": [
+        "product_7485",
+        "product_7486"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3177",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7487"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3178",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7488"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3179",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7489"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3180",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7490"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3181",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7491"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3182",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7492"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3183",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7493"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3184",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7494"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3185",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7495"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3186",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7496"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3187",
+    "properties": {
+      "current_weight": 26.21,
+      "ingot_code": "RISAB16525400A",
+      "initial_weight": 26.21,
+      "product_id_list": [
+        "product_7497"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3188",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7498"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3189",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7499"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3190",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7500"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3191",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7501"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3192",
+    "properties": {
+      "current_weight": 20.03,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20.03,
+      "product_id_list": [
+        "product_7502"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3193",
+    "properties": {
+      "current_weight": 57.79,
+      "ingot_code": "RIHDS16457790A",
+      "initial_weight": 57.79,
+      "product_id_list": [
+        "product_7503"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3194",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7504"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3195",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7505"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3196",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7506"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3197",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7507"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3198",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_7508"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3199",
+    "properties": {
+      "current_weight": 17.16,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 17.16,
+      "product_id_list": [
+        "product_7509"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3200",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7510"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3201",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7511"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3202",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7512"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3203",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7513"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3204",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7514"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3205",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7515"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3206",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "RIHDS01517980A",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_7516"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3207",
+    "properties": {
+      "current_weight": 22,
+      "ingot_code": "RIHDS65121380A",
+      "initial_weight": 22,
+      "product_id_list": [
+        "product_7517"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3208",
+    "properties": {
+      "current_weight": 64.05,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 64.05,
+      "product_id_list": [
+        "product_7518"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3209",
+    "properties": {
+      "current_weight": 21.38,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 21.38,
+      "product_id_list": [
+        "product_7519"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3210",
+    "properties": {
+      "current_weight": 20.63,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 20.63,
+      "product_id_list": [
+        "product_7520"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_351",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RISAB01204800B",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_697",
+        "product_698",
+        "product_699",
+        "product_700"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_352",
+    "properties": {
+      "current_weight": 17.5,
+      "ingot_code": "RISAB01204800B",
+      "initial_weight": 17.5,
+      "product_id_list": [
+        "product_701",
+        "product_702",
+        "product_703",
+        "product_704"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_353",
+    "properties": {
+      "current_weight": 32,
+      "ingot_code": "RISAB16332000A",
+      "initial_weight": 32,
+      "product_id_list": [
+        "product_705"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_354",
+    "properties": {
+      "current_weight": 47.36,
+      "ingot_code": "RIHDS07842720A",
+      "initial_weight": 47.36,
+      "product_id_list": [
+        "product_706"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3549",
+    "properties": {
+      "current_weight": 41.45,
+      "ingot_code": "RISAB00540500A",
+      "initial_weight": 41.45,
+      "product_id_list": [
+        "product_8231"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_355",
+    "properties": {
+      "current_weight": 11.02,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 11.02,
+      "product_id_list": [
+        "product_707"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3550",
+    "properties": {
+      "current_weight": 32.0,
+      "ingot_code": "RIHDS14528700B",
+      "initial_weight": 32,
+      "product_id_list": [
+        "product_8232"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3551",
+    "properties": {
+      "current_weight": 43.9,
+      "ingot_code": "RIHDS07842720A",
+      "initial_weight": 43.9,
+      "product_id_list": [
+        "product_8233"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3552",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS16318680A",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_8234"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3553",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS16318680A",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_8235"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3554",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RIHDS16318680A",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_8236"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3555",
+    "properties": {
+      "current_weight": 57.8,
+      "ingot_code": "RISAB16557800A",
+      "initial_weight": 57.8,
+      "product_id_list": [
+        "product_8237"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3556",
+    "properties": {
+      "current_weight": 62.1,
+      "ingot_code": "RIHDS16562050A",
+      "initial_weight": 62.1,
+      "product_id_list": [
+        "product_8238"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3557",
+    "properties": {
+      "current_weight": 64.1,
+      "ingot_code": "RIHDS16564050A",
+      "initial_weight": 64.1,
+      "product_id_list": [
+        "product_8239"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3558",
+    "properties": {
+      "current_weight": 40.52,
+      "ingot_code": "RIHDS54941450B",
+      "initial_weight": 40.52,
+      "product_id_list": [
+        "product_8240"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3559",
+    "properties": {
+      "current_weight": 22,
+      "ingot_code": "RIHDS07821970A",
+      "initial_weight": 22,
+      "product_id_list": [
+        "product_8241"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_356",
+    "properties": {
+      "current_weight": 11.02,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 11.02,
+      "product_id_list": [
+        "product_708"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3560",
+    "properties": {
+      "current_weight": 45,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 45,
+      "product_id_list": [
+        "product_8242",
+        "product_8243",
+        "product_8244"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3561",
+    "properties": {
+      "current_weight": 34.92,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 34.92,
+      "product_id_list": [
+        "product_8245"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3562",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8246"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3563",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8247"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3564",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8248"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3565",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8249"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3566",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8250"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3567",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8251"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3568",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8252"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3569",
+    "properties": {
+      "current_weight": 23.3,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 23.3,
+      "product_id_list": [
+        "product_8253"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_357",
+    "properties": {
+      "current_weight": 27.41,
+      "ingot_code": "RIHDS01530560A",
+      "initial_weight": 27.41,
+      "product_id_list": [
+        "product_709",
+        "product_710",
+        "product_711"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3570",
+    "properties": {
+      "current_weight": 22,
+      "ingot_code": "RIHDS07821970A",
+      "initial_weight": 22,
+      "product_id_list": [
+        "product_8254"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3571",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_8255"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3572",
+    "properties": {
+      "current_weight": 20,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 20,
+      "product_id_list": [
+        "product_8256"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3573",
+    "properties": {
+      "current_weight": 22,
+      "ingot_code": "RIHDS07821970A",
+      "initial_weight": 22,
+      "product_id_list": [
+        "product_8257"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_3574",
+    "properties": {
+      "current_weight": 17.98,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 17.98,
+      "product_id_list": [
+        "product_8258",
+        "product_8259"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_358",
+    "properties": {
+      "current_weight": 42.72,
+      "ingot_code": "RIHDS07842720A",
+      "initial_weight": 42.72,
+      "product_id_list": [
+        "product_712"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_359",
+    "properties": {
+      "current_weight": 18.7,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.7,
+      "product_id_list": [
+        "product_713",
+        "product_714"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_360",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_715",
+        "product_716"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_361",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_717",
+        "product_718"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_362",
+    "properties": {
+      "current_weight": 18.68,
+      "ingot_code": "RISAB01209400B",
+      "initial_weight": 18.68,
+      "product_id_list": [
+        "product_719",
+        "product_720"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6888",
+    "properties": {
+      "current_weight": 10.985,
+      "ingot_code": "RIHDS01511020A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_13940",
+        "product_13941"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6889",
+    "properties": {
+      "current_weight": 9.974,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 19.948,
+      "product_id_list": [
+        "product_13942",
+        "product_13943"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6890",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13944"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6891",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13945"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6892",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13946"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6893",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13947"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6894",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13948"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6895",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13949"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6896",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13950"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6897",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13951"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6898",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13952"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6899",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13953"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6900",
+    "properties": {
+      "current_weight": 11.0,
+      "ingot_code": "RISAB06111400B",
+      "initial_weight": 11,
+      "product_id_list": [
+        "product_13954"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6901",
+    "properties": {
+      "current_weight": 13.0,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_13955",
+        "product_13956"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6902",
+    "properties": {
+      "current_weight": 13.0,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_13957",
+        "product_13958"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6903",
+    "properties": {
+      "current_weight": 13.0,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_13959",
+        "product_13960"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6904",
+    "properties": {
+      "current_weight": 13.0,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_13961",
+        "product_13962"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6905",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_13963"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6906",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_13964"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6907",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01511020A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_13965",
+        "product_13966"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6908",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13967"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6909",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13968"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6910",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13969"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6911",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13970"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6912",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13971"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6913",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13972"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6914",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13973"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6915",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13974"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6916",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13975"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6917",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13976"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6918",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13977"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6919",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13978"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6920",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13979"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6921",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13980"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6922",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13981"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6923",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13982"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6924",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13983"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6925",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13984"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6926",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13985"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6927",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13986"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6928",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13987"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6929",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13988"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6930",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13989"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6931",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13990"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6932",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13991"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6933",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_13992"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6934",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01511020A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_13993",
+        "product_13994"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6935",
+    "properties": {
+      "current_weight": 16.5,
+      "ingot_code": "RIHDS01516730A",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_13995",
+        "product_13996"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6936",
+    "properties": {
+      "current_weight": 16.5,
+      "ingot_code": "RIHDS01516730A",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_13997",
+        "product_13998"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6937",
+    "properties": {
+      "current_weight": 16.5,
+      "ingot_code": "RIHDS01516730A",
+      "initial_weight": 16.5,
+      "product_id_list": [
+        "product_13999",
+        "product_14000"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6938",
+    "properties": {
+      "current_weight": 19.27,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 19.27,
+      "product_id_list": [
+        "product_14001",
+        "product_14002"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6939",
+    "properties": {
+      "current_weight": 19.2,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 19.2,
+      "product_id_list": [
+        "product_14003",
+        "product_14004"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6940",
+    "properties": {
+      "current_weight": 19.2,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 19.2,
+      "product_id_list": [
+        "product_14005",
+        "product_14006"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6941",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_14007",
+        "product_14008"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6942",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_14009",
+        "product_14010"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6943",
+    "properties": {
+      "current_weight": 26,
+      "ingot_code": "RIHDS01527410A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_14011",
+        "product_14012"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6944",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01511020A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_14013",
+        "product_14014"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6945",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14015"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6946",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14016"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6947",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14017"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6948",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14018"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6949",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14019"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6950",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14020"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6951",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14021"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6952",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14022"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6953",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14023"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6954",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14024"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6955",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14025"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6956",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14026"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6957",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14027"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6958",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14028"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6959",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14029"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6960",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14030"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6961",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14031"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6962",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14032"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6963",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14033"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6964",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14034"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6965",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14035"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6966",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14036"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6967",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14037"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6968",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14038"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6969",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14039"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6970",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14040"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6971",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14041"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6972",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14042"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6973",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14043"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6974",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14044"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6975",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14045"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6976",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14046"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6977",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14047"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6978",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14048"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6979",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14049"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6980",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14050"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6981",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14051"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6982",
+    "properties": {
+      "current_weight": 21.97,
+      "ingot_code": "RIHDS01521970A",
+      "initial_weight": 21.97,
+      "product_id_list": [
+        "product_14052",
+        "product_14053"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6983",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14054"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6984",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14055"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6985",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14056"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6986",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14057"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6987",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14058"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6988",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14059"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6989",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14060"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6990",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14061"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6991",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14062"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6992",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14063"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6993",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14064"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6994",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14065"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6995",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14066"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6996",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14067"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6997",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14068"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6998",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14069"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_6999",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14070"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7000",
+    "properties": {
+      "current_weight": 15.2,
+      "ingot_code": "RISAB06115200B",
+      "initial_weight": 15.2,
+      "product_id_list": [
+        "product_14071"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7001",
+    "properties": {
+      "current_weight": 19.2,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 19.2,
+      "product_id_list": [
+        "product_14072",
+        "product_14073"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7002",
+    "properties": {
+      "current_weight": 19.2,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 19.2,
+      "product_id_list": [
+        "product_14074",
+        "product_14075"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7003",
+    "properties": {
+      "current_weight": 19.2,
+      "ingot_code": "RIHDS01519270A",
+      "initial_weight": 19.2,
+      "product_id_list": [
+        "product_14076",
+        "product_14077"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7004",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14078"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7005",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14079"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7006",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14080"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7007",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14081"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7008",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14082"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7009",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14083"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7010",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14084"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7011",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14085"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7012",
+    "properties": {
+      "current_weight": 12.7,
+      "ingot_code": "RIHDS06113120B",
+      "initial_weight": 12.7,
+      "product_id_list": [
+        "product_14086"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7094",
+    "properties": {
+      "current_weight": 9.974,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 19.948,
+      "product_id_list": [
+        "product_14251",
+        "product_14252"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7095",
+    "properties": {
+      "current_weight": 9.974,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 19.948,
+      "product_id_list": [
+        "product_14253",
+        "product_14254"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7320",
+    "properties": {
+      "current_weight": 13.0,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 26,
+      "product_id_list": [
+        "product_14656",
+        "product_14657"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7491",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14874"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7492",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14875"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7493",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14876"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7494",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14877"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7495",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14878"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7496",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14879"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7497",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14880"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7498",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14881"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7499",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14882"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7500",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14883"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7501",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14884"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7502",
+    "properties": {
+      "current_weight": 33.98,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 33.98,
+      "product_id_list": [
+        "product_14885"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7503",
+    "properties": {
+      "current_weight": 33.98,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 33.98,
+      "product_id_list": [
+        "product_14886"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7504",
+    "properties": {
+      "current_weight": 70,
+      "ingot_code": "RIHDS06165540B",
+      "initial_weight": 70,
+      "product_id_list": [
+        "product_14887"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7505",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14888"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7506",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14889"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7507",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14890"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7508",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14891"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7509",
+    "properties": {
+      "current_weight": 28.7,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 28.7,
+      "product_id_list": [
+        "product_14892"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7510",
+    "properties": {
+      "current_weight": 36.62,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 36.62,
+      "product_id_list": [
+        "product_14893"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7511",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14894"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7512",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14895"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7513",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14896"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7514",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14897"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7515",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14898"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7516",
+    "properties": {
+      "current_weight": 27.2,
+      "ingot_code": "RISAB01528700A",
+      "initial_weight": 27.2,
+      "product_id_list": [
+        "product_14899"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7517",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14900"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7518",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14901"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7519",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14902"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7520",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14903"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7521",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14904"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7522",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14905"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7523",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14906"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7524",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14907"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7525",
+    "properties": {
+      "current_weight": 18.8,
+      "ingot_code": "RIHDS01520030A",
+      "initial_weight": 18.8,
+      "product_id_list": [
+        "product_14908"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7625",
+    "properties": {
+      "current_weight": 42.72,
+      "ingot_code": "RIHDS07842720A",
+      "initial_weight": 42.72,
+      "product_id_list": [
+        "product_15083"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7626",
+    "properties": {
+      "current_weight": 34.92,
+      "ingot_code": "RISAB07834000A",
+      "initial_weight": 34.92,
+      "product_id_list": [
+        "product_15084"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7627",
+    "properties": {
+      "current_weight": 16.933333333333334,
+      "ingot_code": "RIHDS01528700A",
+      "initial_weight": 50.8,
+      "product_id_list": [
+        "product_15085",
+        "product_15086",
+        "product_15087"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7628",
+    "properties": {
+      "current_weight": 16.933333333333334,
+      "ingot_code": "RIHDS01514560A",
+      "initial_weight": 50.8,
+      "product_id_list": [
+        "product_15088",
+        "product_15089",
+        "product_15090"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7629",
+    "properties": {
+      "current_weight": 59.96,
+      "ingot_code": "RIHDS00559960A",
+      "initial_weight": 59.96,
+      "product_id_list": [
+        "product_15091"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7630",
+    "properties": {
+      "current_weight": 37.95,
+      "ingot_code": "RIHDS66037950A",
+      "initial_weight": 37.95,
+      "product_id_list": [
+        "product_15092"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7631",
+    "properties": {
+      "current_weight": 37.95,
+      "ingot_code": "RIHDS66037950A",
+      "initial_weight": 37.95,
+      "product_id_list": [
+        "product_15093"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_7632",
+    "properties": {
+      "current_weight": 41.763,
+      "ingot_code": "SR0000SC",
+      "initial_weight": 41.763,
+      "product_id_list": [
+        "product_15094",
+        "product_15095"
+      ],
+      "temperature": null,
+      "type": "SC\uacc4\uc5f4"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_8259",
+    "properties": {
+      "current_weight": 39.12,
+      "ingot_code": "RIHDS12839120B",
+      "initial_weight": 39.12,
+      "product_id_list": [
+        "product_15766"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_8260",
+    "properties": {
+      "current_weight": 39.12,
+      "ingot_code": "RIHDS12839120B",
+      "initial_weight": 39.12,
+      "product_id_list": [
+        "product_15767"
+      ],
+      "temperature": null,
+      "type": "\ud569\uae08\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_8460",
+    "properties": {
+      "current_weight": 59.96,
+      "ingot_code": "RIHDS07859960A",
+      "initial_weight": 59.96,
+      "product_id_list": [
+        "product_16004"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_8461",
+    "properties": {
+      "current_weight": 59.96,
+      "ingot_code": "RIHDS07859960A",
+      "initial_weight": 59.96,
+      "product_id_list": [
+        "product_16005"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_8487",
+    "properties": {
+      "current_weight": 59.96,
+      "ingot_code": "RIHDS07859960A",
+      "initial_weight": 59.96,
+      "product_id_list": [
+        "product_16049"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  },
+  {
+    "data": {},
+    "id": "ingot_8488",
+    "properties": {
+      "current_weight": 59.96,
+      "ingot_code": "RIHDS07859960A",
+      "initial_weight": 59.96,
+      "product_id_list": [
+        "product_16050"
+      ],
+      "temperature": null,
+      "type": "\ud0c4\uc18c\uac15"
+    },
+    "reference": null,
+    "types": [
+      "ingot"
+    ]
+  }
+]
