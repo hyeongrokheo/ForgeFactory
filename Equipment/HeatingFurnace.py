@@ -86,7 +86,8 @@ class HeatingFurnace:
             new_job = self.alloc.heating_allocate(self.name, self.capacity)
             while new_job == None:
                 if self.num != 0:
-                    print(self.env.now, self.name, ' :: job list empty')
+                    if Debug_mode:
+                        print(self.env.now, self.name, ' :: job list empty')
                     self.write_log('off', None)
                     self.env.exit()
                 yield self.env.timeout(10)
