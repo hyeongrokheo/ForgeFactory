@@ -211,7 +211,8 @@ class Predictor:
         treat_time = int((self.heat_treating_time_model.predict(data) + 7) * 60)
 
         if Debug_mode:
-            print('treat time :', treat_time)
+            None
+            #print('treat time :', treat_time)
         return treat_time
         #---
 

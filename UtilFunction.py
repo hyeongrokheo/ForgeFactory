@@ -1,3 +1,4 @@
+#Debug_mode = True
 Debug_mode = False
 
 def nPrint(obj, pList = []):

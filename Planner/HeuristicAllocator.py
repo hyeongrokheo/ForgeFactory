@@ -164,7 +164,7 @@ class HeuristicAllocator:
                 self.hf_count = 0
 
     # 세영수정
-    def get_next_press_job(self):
+    def get_next_press_job(self, name):
         candidate_job_list = self.next_job_list('forging')
         if len(candidate_job_list) == 0:
             return None
@@ -174,14 +174,14 @@ class HeuristicAllocator:
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
         #print(self.env.now, 'press target job :', target_job)
-        self.job_update(job=target_job, equip_name='', process_name='press')
+        self.job_update(job=target_job, equip_name=name, process_name='press')
         if Debug_mode:
             print(self.env.now, 'press target job :')
             nPrint(target_job)
         return target_job
 
     # 세영수정
-    def get_next_cut_job(self):
+    def get_next_cut_job(self, name):
         candidate_job_list = self.next_job_list('cutting')
         if len(candidate_job_list) == 0:
             return None
@@ -190,7 +190,7 @@ class HeuristicAllocator:
         if target_job['properties']['last_process'] == 'holding':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
-        self.job_update(job=target_job, equip_name='', process_name='cut')
+        self.job_update(job=target_job, equip_name=name, process_name='cut')
         if Debug_mode:
             print(self.env.now, 'cutter target job :')
             nPrint(target_job)
@@ -232,26 +232,33 @@ class HeuristicAllocator:
         standard_deadline = candidate_job_list[0]['properties']['deadline']
         target_job_list = []
         total_weight = 0
+        if Debug_mode:
+            print('cjl')
+            nPrint(candidate_job_list)
         for j in candidate_job_list:
             cur_job_weight = j['properties']['ingot']['current_weight']
             if total_weight + cur_job_weight < capacity:
                 target_job_list.append(j)
                 treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
-                """
+
                 if Debug_mode:
                     print('current time :', self.env.now)
                     print('treatment time :', treatment_time)
                     print('deadline :', standard_deadline)
-                """
+
                 if self.env.now + treatment_time + 30 < standard_deadline:
                     total_weight += cur_job_weight
                 else:
-                    target_job_list.remove(j)
-                    for j in target_job_list:
-                        j['properties']['current_equip'] = name
-                        j['properties']['last_process'] = 'treatment'
-                        j['properties']['next_instruction'] += 1
-                    return target_job_list
+                    if self.env.now + treatment_time <= standard_deadline:
+                        total_weight += cur_job_weight
+                        return target_job_list
+                    else:
+                        target_job_list.remove(j)
+                        for j in target_job_list:
+                            j['properties']['current_equip'] = name
+                            j['properties']['last_process'] = 'treatment'
+                            j['properties']['next_instruction'] += 1
+                        return target_job_list
 
                 total_weight += cur_job_weight
             else:

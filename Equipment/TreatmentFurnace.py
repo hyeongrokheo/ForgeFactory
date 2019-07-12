@@ -13,11 +13,16 @@ class TreatmentFurnace:
         if Debug_mode:
             print(self.name + ' :: created')
 
+        self.log = []
+
+    def write_log(self, process, target=None):
+        self.log.append([self.env.now, process, target])
+
     def calc_treatment_time(self):
-        treat_time = self.alloc.predictor.treatment_time_prediction(self.name, self.current_job_list)
         if Debug_mode:
             print(self.name, ' :: calculate treatment time')
-        #return random.randint(30, 50)
+
+        treat_time = self.alloc.predictor.treatment_time_prediction(self.name, self.current_job_list)
         return treat_time
 
     def run(self):
@@ -27,30 +32,29 @@ class TreatmentFurnace:
                 yield self.env.timeout(30)
                 continue
             if new_job == []:
-                print('Error : deadlock in treating. 기간 안에 맞출 수 없음')
+                print('Error : treatment job 목록 비었음')
                 exit(1)
-            #new_job['properties']['last_process'] = 'treatment_waiting'
             self.current_job_list.extend(new_job)
 
             if Debug_mode:
                 print(self.env.now, self.name, ':: treatment start')
-            #print('debug : treatment job list :', self.current_job_list)
                 nPrint(self.current_job_list)
+
+            self.write_log('treatment start', self.current_job_list)
             treatment_time = self.calc_treatment_time()
             for j in self.current_job_list:
-                #j['properties']['current_equip'] = self.name
-                #j['properties']['last_process'] = 'treatment'
-                #print(j)
+                j['properties']['current_equip'] = self.name
+                j['properties']['last_process'] = 'treatment'
                 j['properties']['last_process_end_time'] = self.env.now + treatment_time
+
             yield self.env.timeout(treatment_time)
-            for j in self.current_job_list:
-                self.alloc.end_job(j)
-                #j['properties']['next_instruction'] += 1
-                #if len(j['properties']['instruction_list'][0]) == j['properties']['next_instruction']:
-                #    j['properties']['state'] = 'done'
-                    #j['properties']['instruction_log'].append(self.name)
+
+            self.write_log('treatment end')
             if Debug_mode:
                 print(self.env.now, self.name, ':: treatment end')
                 nPrint(self.current_job_list)
 
+            for j in self.current_job_list:
+                self.alloc.end_job(j)
+            self.write_log('idle')
             self.current_job_list = []

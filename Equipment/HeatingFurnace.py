@@ -19,7 +19,7 @@ class HeatingFurnace:
         if Debug_mode:
             print(self.name + ' :: created')
 
-    def write_log(self, process, target):
+    def write_log(self, process, target=None):
         self.log.append([self.env.now, process, target])
 
     def calc_heating_time(self):
@@ -82,13 +82,13 @@ class HeatingFurnace:
         while True:
             # 작업 할당 받기
             self.state = 'idle'
-            self.write_log('idle', None)
+            self.write_log('idle')
             new_job = self.alloc.heating_allocate(self.name, self.capacity)
             while new_job == None:
                 if self.num != 0:
                     if Debug_mode:
                         print(self.env.now, self.name, ' :: job list empty')
-                    self.write_log('off', None)
+                    self.write_log('off')
                     self.env.exit()
                 yield self.env.timeout(10)
                 new_job = self.alloc.heating_allocate(self.name, self.capacity)
@@ -112,7 +112,7 @@ class HeatingFurnace:
                 # j['properties']['instruction_log'].append(self.name)
                 j['properties']['last_heating_furnace'] = self.name
                 # j['properties']['next_instruction'] += 1
-            self.write_log('heating', None)
+            self.write_log('heating')
             if Debug_mode:
                 print(self.env.now, self.name, ' :: heating start')
             self.state = 'heating'
@@ -132,7 +132,7 @@ class HeatingFurnace:
                 j['properties']['last_process_end_time'] = self.env.now + self.calc_holding_time(j)
                 # j['properties']['next_instruction'] += 1
             # 키핑 시작
-            self.write_log('keeping', None)
+            self.write_log('keeping')
             if Debug_mode:
                 print(self.env.now, self.name, ' :: keeping')
             self.state = 'keeping'
@@ -144,7 +144,7 @@ class HeatingFurnace:
                 print(self.env.now, self.name, ' :: cycle complete')
 
             # 냉각 시작
-            self.write_log('cooling', None)
+            self.write_log('cooling')
             cooling_time = self.calc_cooling_time()
             if Debug_mode:
                 print(self.env.now, self.name, ' :: cooling')

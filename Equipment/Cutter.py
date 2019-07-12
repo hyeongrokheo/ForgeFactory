@@ -12,32 +12,38 @@ class Cutter:
         if Debug_mode:
             print(self.name + ' :: created')
 
+        self.log = []
+
+    def write_log(self, process, target=None):
+        self.log.append([self.env.now, process, target])
+
     def calc_cut_time(self):
         if Debug_mode:
             print(self.name, ' :: calculate cut time')
         cut_time = int(self.alloc.predictor.cutting_time_prediction(self.current_job) / 60)
-        #print('cut time :', cut_time)
         return cut_time
 
     def run(self):
         while True:
-            self.current_job = self.alloc.get_next_cut_job()
+            self.write_log('idle')
+            self.current_job = self.alloc.get_next_cut_job(self.name)
             if self.current_job == None:
                 yield self.env.timeout(10)
                 continue
             if Debug_mode:
                 print(self.env.now, self.name, ':: cut start')
+
+            self.write_log('cutting start', self.current_job)
             cut_time = self.calc_cut_time()
             self.current_job['properties']['current_equip'] = self.name
             self.current_job['properties']['last_process'] = 'cut'
             self.current_job['properties']['last_process_end_time'] = self.env.now + cut_time
-            # self.current_job['properties']['next_instruction'] += 1
             if Debug_mode:
                 nPrint(self.current_job, ['last_process_end_time'])
 
-            #if len(self.current_job['properties']['instruction_list'][0]) == self.current_job['properties']['next_instruction']:
-            #    self.current_job['properties']['state'] = 'done'
             yield self.env.timeout(cut_time)
+
+            self.write_log('cut end', self.current_job)
             if Debug_mode:
                 print(self.env.now, self.name, ':: cut end')
                 nPrint(self.current_job)
