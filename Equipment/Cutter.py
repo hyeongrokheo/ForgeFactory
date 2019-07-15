@@ -1,4 +1,5 @@
 import random
+from copy import deepcopy
 from UtilFunction import *
 
 class Cutter:
@@ -44,9 +45,19 @@ class Cutter:
             yield self.env.timeout(cut_time)
 
             self.write_log('cut end', self.current_job)
+
+            product_num = len(self.current_job['properties']['product_id_list'])
+
             if Debug_mode:
                 print(self.env.now, self.name, ':: cut end')
                 nPrint(self.current_job)
 
-            #self.current_job['properties']['instruction_log'].append(self.name)
-            self.alloc.end_job(self.current_job)
+            job = deepcopy(self.alloc.end_job(self.current_job))
+
+            if product_num == 1:
+                self.alloc.end_job(self.current_job)
+            else:
+                for i in range(product_num):
+                    job = deepcopy(self.current_job)
+                    job['id'] += ('_' + str(i))
+                    self.alloc.end_job(job)

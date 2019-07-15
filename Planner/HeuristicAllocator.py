@@ -216,13 +216,13 @@ class HeuristicAllocator:
         candidate_job_list = []
         for j in self.job:
             if j['properties']['state'] == 'done':
+                #완료된 작업
                 continue
             if j['properties']['last_process_end_time'] != None and j['properties']['last_process_end_time'] > self.env.now:
+                #다른 작업 진행중
                 continue
             #print('debug :', j['id'], j['properties']['instruction_list'][0], j['properties']['next_instruction'])
             if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
-                # 여기서 가끔 에러가 남.
-                # IndexError: list index out of range
                 candidate_job_list.append(j)
 
         if len(candidate_job_list) == 0:
@@ -254,6 +254,8 @@ class HeuristicAllocator:
                         return target_job_list
                     else:
                         target_job_list.remove(j)
+                        if len(target_job_list) == 0:
+                            return None
                         for j in target_job_list:
                             j['properties']['current_equip'] = name
                             j['properties']['last_process'] = 'treatment'

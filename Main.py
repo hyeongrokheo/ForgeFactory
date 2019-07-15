@@ -13,6 +13,7 @@ job은 order date가 현재 이후인것부터
 -완-
 
 각 설비가 처리한 기록들 써둬야 함
+-완-
 
 커팅하고 제품 개수대로 나뉘게
 """
@@ -123,6 +124,6 @@ job_data = new_job_list
 
 predictor = Predictor()
 
-simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
-
-simulator.run()
+for i in range(10):
+    simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
+    simulator.run()

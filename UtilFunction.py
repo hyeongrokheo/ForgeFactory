@@ -1,5 +1,5 @@
-#Debug_mode = True
-Debug_mode = False
+Debug_mode = True
+#Debug_mode = False
 
 def nPrint(obj, pList = []):
     if isinstance(obj, list):
