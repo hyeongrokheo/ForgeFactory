@@ -49,16 +49,6 @@ class Predictor:
         self.door_count = 0
 
     def heating_time_prediction(self, name, job_list):
-        """
-        if heating process first operate or middle operate
-        :param equipment: heating equipment entity
-        :param total_weight:
-        :param max_weight:
-        :return: completion_time (seconds)
-        """
-        #형록
-        #구현했는데 인자 안맞다고함...
-        #reheating, heating 차이가 무엇??
         if len(job_list) == 0:
             print('calc heating time. but job list is empty')
             exit(1)
@@ -72,12 +62,34 @@ class Predictor:
                 max_weight = w
         if total_weight == 0 and max_weight == 0:
             return 0
-        data = furnace_num.TxtToCode(name[-1])
+
         tmp = [total_weight, max_weight]
+        data = furnace_num.TxtToCode(name[-1])
         data.extend(tmp)
-        heating_time = int(self.first_heating_time_model.predict(data))
+        heating_time = int(self.first_heating_time_model.predict(data)) * 60
         #print('heating time :', heating_time)
         return heating_time
+
+    def reheating_time_prediction(self, name, job_list):
+        if len(job_list) == 0:
+            print('calc heating time. but job list is empty')
+            exit(1)
+
+        total_weight = 0
+        max_weight = 0
+        for job in job_list:
+            w = job['properties']['ingot']['current_weight']
+            total_weight += w
+            if max_weight < w:
+                max_weight = w
+        if total_weight == 0 and max_weight == 0:
+            return 0
+
+        data = [total_weight, max_weight, len(job_list)]
+        reheating_time = self.reheating_time_model.predict(data)
+        #print('reheating time :', reheating_time)
+        return reheating_time
+
 
         """if state:
             # if already process is running
@@ -194,6 +206,7 @@ class Predictor:
             product_id = job['properties']['product_id_list'][0]
             product_count[product_id] = 1
             ingot_type = job['properties']['product']['ingot_type_list'][0]
+
             if ingot_type not in [*ingot_types]:
                 ingot_types[ingot_type] = 0
                 ingot_count += 1

@@ -52,6 +52,12 @@ class Simulator:
         simul_end_time = 60 * 24 * 30 #n일 후
         self.env.run(until=simul_end_time)
         print('- end simulator -')
+        for j in self.job:
+            if j['properties']['state'] != 'done':
+                print('Error : 미완료된 작업 존재')
+                print(j)
+                exit(1)
+
         print(self.job)
 
     """def __init__(self, heating_furnaces_num):

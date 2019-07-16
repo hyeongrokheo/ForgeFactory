@@ -16,6 +16,10 @@ job은 order date가 현재 이후인것부터
 -완-
 
 커팅하고 제품 개수대로 나뉘게
+-완-
+
+simpy 프로세스 별 우선순위 줄 수 있는가
+안된다면 -> 접근 동시에 하나의 프로세스만 할 수 있도록 바꾸기
 """
 
 def dict_to_time(obj):
@@ -52,6 +56,7 @@ def read_data(file):
             d['properties']['next_instruction'] = 0
             d['properties']['product'] = None
             d['properties']['ingot'] = None
+            d['access'] = False
             product_id_list = d['properties']['product_id_list']
             for product_id in product_id_list:
                 for product in product_data:
@@ -124,6 +129,7 @@ job_data = new_job_list
 
 predictor = Predictor()
 
-for i in range(10):
+for i in range(100):
     simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
+
     simulator.run()

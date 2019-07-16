@@ -15,6 +15,7 @@ class HeatingFurnace:
 
         self.current_job_list = []
         self.state = None
+        self.heating_end_time = None
         self.log = []
         if Debug_mode:
             print(self.name + ' :: created')
@@ -44,13 +45,22 @@ class HeatingFurnace:
             job = yield self.alloc.recharging_wakeup[self.num].get()
             if self.state == 'keeping':
                 self.current_job_list.append(job)
-                self.write_log('recharging', job)
-                #형록
-                #시간 다시계산코드 추가해야됨
                 self.alloc.recharging_queue.remove(job)
+
+                self.write_log('recharging', job)
                 if Debug_mode:
                     print(self.name, ' :: recharging ')
                     nPrint(job)
+
+                reheating_time = self.alloc.predictor.reheating_time_prediction(self.name, self.current_job_list)
+                for j in self.current_job_list:
+                    j['properties']['last_process'] = 'holding'
+                    j['properties']['last_process_end_time'] = self.env.now + reheating_time
+                    j['properties']['last_heating_furnace'] = self.name
+
+
+            #else:
+                #job['properties']['last_heating_furnace'] = None
     def discharging(self):
         while True:
             # name, job = yield self.discharging_wakeup.get()
@@ -63,6 +73,7 @@ class HeatingFurnace:
             job = discharging[1]
             #print('discharging', self.name, name)
             # print('debug : name : ', name)
+            yield self.env.timeout(0.1)
             if self.name == name:
                 # print('debug : cj : ', self.current_job_list)
                 # print('debug : tj : ', job)
@@ -76,6 +87,11 @@ class HeatingFurnace:
                     print(self.name, ':: discharging ')
                     nPrint(job)
                 if len(self.current_job_list) == 0:
+                    count = 0
+                    #for j in self.alloc.job:
+                    #    if j['properties']['last_heating_furnace'] == self.name:
+                    #        count += 1
+                    #if count == 0:
                     self.cycle_complete_wakeup.put(True)
 
     def run(self):
@@ -105,6 +121,7 @@ class HeatingFurnace:
 
             # 가열 시작
             heating_time = self.calc_heating_time()
+            #self.heating_end_time = self.env.now + heating_time
             for j in self.current_job_list:
                 #j['properties']['current_equip'] = self.name
                 #j['properties']['last_process'] = 'heating'

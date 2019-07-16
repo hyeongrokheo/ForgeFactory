@@ -157,13 +157,13 @@ class HeuristicAllocator:
         #
         while True:
             if len(self.recharging_queue) != 0:
+                #self.recharging_queue[0]['properties']['last_heating_furnace'] = 'heating_furnace_' + str(self.hf_count + 1).zfill(2)
                 self.recharging_wakeup[self.hf_count].put(self.recharging_queue[0])
             yield self.env.timeout(1)
             self.hf_count += 1
             if self.hf_count == self.heating_furnace_num:
                 self.hf_count = 0
 
-    # 세영수정
     def get_next_press_job(self, name):
         candidate_job_list = self.next_job_list('forging')
         if len(candidate_job_list) == 0:
@@ -178,9 +178,9 @@ class HeuristicAllocator:
         if Debug_mode:
             print(self.env.now, 'press target job :')
             nPrint(target_job)
+        #target_job['properties']['last_heating_furnace'] = None
         return target_job
 
-    # 세영수정
     def get_next_cut_job(self, name):
         candidate_job_list = self.next_job_list('cutting')
         if len(candidate_job_list) == 0:
@@ -194,9 +194,9 @@ class HeuristicAllocator:
         if Debug_mode:
             print(self.env.now, 'cutter target job :')
             nPrint(target_job)
+        #target_job['properties']['last_heating_furnace'] = None
         return target_job
 
-    # 세영수정
     def end_job(self, job):
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
@@ -235,48 +235,74 @@ class HeuristicAllocator:
         if Debug_mode:
             print('cjl')
             nPrint(candidate_job_list)
+
         for j in candidate_job_list:
             cur_job_weight = j['properties']['ingot']['current_weight']
-            if total_weight + cur_job_weight < capacity:
-                target_job_list.append(j)
-                treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
+            total_weight += cur_job_weight
+            target_job_list.append(j)
+            treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
 
-                if Debug_mode:
-                    print('current time :', self.env.now)
-                    print('treatment time :', treatment_time)
-                    print('deadline :', standard_deadline)
-
-                if self.env.now + treatment_time + 30 < standard_deadline:
-                    total_weight += cur_job_weight
+            if self.env.now + treatment_time < standard_deadline and total_weight < capacity:
+                if self.env.now + treatment_time + 30 >= standard_deadline:
+                    break
+                elif total_weight >= capacity * 0.85:
+                    break
                 else:
-                    if self.env.now + treatment_time <= standard_deadline:
-                        total_weight += cur_job_weight
-                        return target_job_list
-                    else:
-                        target_job_list.remove(j)
-                        if len(target_job_list) == 0:
-                            return None
-                        for j in target_job_list:
-                            j['properties']['current_equip'] = name
-                            j['properties']['last_process'] = 'treatment'
-                            j['properties']['next_instruction'] += 1
-                        return target_job_list
-
-                total_weight += cur_job_weight
+                    continue
             else:
-                for j in target_job_list:
-                    j['properties']['current_equip'] = name
-                    j['properties']['last_process'] = 'treatment'
-                    j['properties']['next_instruction'] += 1
-                return target_job_list
-        #print('debug : cjl :', candidate_job_list)
-        if total_weight > capacity * 0.7:
-            for j in target_job_list:
-                j['properties']['current_equip'] = name
-                j['properties']['last_process'] = 'treatment'
-                j['properties']['next_instruction'] += 1
-            return target_job_list
-        return None
+                total_weight -= cur_job_weight
+                target_job_list.remove(j)
+                break
+        for j in target_job_list:
+            j['properties']['current_equip'] = name
+            j['properties']['last_process'] = 'treatment'
+            j['properties']['next_instruction'] += 1
+        return target_job_list
+
+
+
+            #추가여부 결정
+        #     if total_weight < capacity:
+        #
+        #         treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
+        #         if Debug_mode:
+        #             print('-')
+        #             nPrint(target_job_list)
+        #             print('current time :', self.env.now)
+        #             print('treatment time :', treatment_time)
+        #             print('deadline :', standard_deadline)
+        #
+        #         if self.env.now + treatment_time + 30 < standard_deadline:
+        #
+        #         else:
+        #             if self.env.now + treatment_time <= standard_deadline:
+        #                 total_weight += cur_job_weight
+        #                 return target_job_list
+        #             else:
+        #                 target_job_list.remove(j)
+        #                 if len(target_job_list) == 0:
+        #                     return None
+        #                 for j in target_job_list:
+        #                     j['properties']['current_equip'] = name
+        #                     j['properties']['last_process'] = 'treatment'
+        #                     j['properties']['next_instruction'] += 1
+        #                 return target_job_list
+        #
+        #         total_weight += cur_job_weight
+        #     else:
+        #         for j in target_job_list:
+        #             j['properties']['current_equip'] = name
+        #             j['properties']['last_process'] = 'treatment'
+        #             j['properties']['next_instruction'] += 1
+        #         return target_job_list
+        # #print('debug : cjl :', candidate_job_list)
+        # if total_weight > capacity * 0.7:
+        #     for j in target_job_list:
+        #         j['properties']['current_equip'] = name
+        #         j['properties']['last_process'] = 'treatment'
+        #         j['properties']['next_instruction'] += 1
+        #     return target_job_list
+        # return None
 
         #
         # for j in target_job_list:
