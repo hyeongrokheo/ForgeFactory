@@ -48,6 +48,7 @@ class HeatingFurnace:
                 self.alloc.recharging_queue.remove(job)
 
                 self.write_log('recharging', job)
+                self.alloc.job_update(job, self.name, 'heating', self.name)
                 if Debug_mode:
                     print(self.name, ' :: recharging ')
                     nPrint(job)
@@ -81,7 +82,7 @@ class HeatingFurnace:
                     self.current_job_list.remove(job)
                     self.write_log('discharging', job)
                 except:
-                    print('Error : discharging. but isnt exist')
+                    #print('Error : discharging. but isnt exist')
                     None
                 if Debug_mode:
                     print(self.name, ':: discharging ')
@@ -128,7 +129,7 @@ class HeatingFurnace:
                 j['properties']['last_process_end_time'] = self.env.now + heating_time
                 # j['properties']['instruction_log'].append(self.name)
                 j['properties']['last_heating_furnace'] = self.name
-                # j['properties']['next_instruction'] += 1
+                #j['properties']['next_instruction'] += 1
             self.write_log('heating')
             if Debug_mode:
                 print(self.env.now, self.name, ' :: heating start')

@@ -130,6 +130,7 @@ job_data = new_job_list
 predictor = Predictor()
 
 for i in range(100):
+    print(str(i+1) + ' times simulated')
     simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
-
     simulator.run()
+    print()

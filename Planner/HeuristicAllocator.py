@@ -41,7 +41,7 @@ class HeuristicAllocator:
                 continue
             if wj['properties']['instruction_list'][0][wj['properties']['next_instruction']] == process:
                 next_job.append(wj)
-                self.waiting_job.remove(wj)
+                #self.waiting_job.remove(wj)
 
         #print('debug : nj :', next_job)
         return next_job
@@ -53,6 +53,8 @@ class HeuristicAllocator:
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
         job['properties']['next_instruction'] += 1
+        if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
+            job['properties']['state'] = 'done'
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
         # 세영수정
@@ -168,6 +170,9 @@ class HeuristicAllocator:
         candidate_job_list = self.next_job_list('forging')
         if len(candidate_job_list) == 0:
             return None
+        if Debug_mode:
+            print('후보 작업들은')
+            nPrint(candidate_job_list)
         candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
         target_job = candidate_job_list[0]
         if target_job['properties']['last_process'] == 'holding':
@@ -178,7 +183,15 @@ class HeuristicAllocator:
         if Debug_mode:
             print(self.env.now, 'press target job :')
             nPrint(target_job)
-        #target_job['properties']['last_heating_furnace'] = None
+
+        index = None
+        try:
+            index = self.waiting_job.index(target_job)
+        except:
+            None
+        if index != None:
+            self.waiting_job.remove(target_job)
+
         return target_job
 
     def get_next_cut_job(self, name):
@@ -194,7 +207,15 @@ class HeuristicAllocator:
         if Debug_mode:
             print(self.env.now, 'cutter target job :')
             nPrint(target_job)
-        #target_job['properties']['last_heating_furnace'] = None
+
+        index = None
+        try:
+            index = self.waiting_job.index(target_job)
+        except:
+            None
+        if index != None:
+            self.waiting_job.remove(target_job)
+
         return target_job
 
     def end_job(self, job):

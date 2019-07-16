@@ -86,7 +86,7 @@ class Predictor:
             return 0
 
         data = [total_weight, max_weight, len(job_list)]
-        reheating_time = self.reheating_time_model.predict(data)
+        reheating_time = int(self.reheating_time_model.predict(data))
         #print('reheating time :', reheating_time)
         return reheating_time
 
