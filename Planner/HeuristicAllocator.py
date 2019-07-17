@@ -18,8 +18,16 @@ class HeuristicAllocator:
         self.complete_job = []
         self.recharging_queue = []
 
+        self.simulate_end_time = 0
+
         self.hf_count = 0
         self.job = None
+
+    def end_simulator(self):
+        for j in self.job:
+            if j['properties']['state'] != 'done':
+                return False
+        return True
 
     def next_job_list(self, process):
         next_job = []
@@ -55,6 +63,7 @@ class HeuristicAllocator:
         job['properties']['next_instruction'] += 1
         if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
+            self.simulate_end_time = self.env.now
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
         # 세영수정
@@ -134,23 +143,7 @@ class HeuristicAllocator:
         return allocate_job_list
 
     def recharging(self, job):
-        # ----------------------------------------------------------------------------------------------------
-        # 가열로 재장입 작업 할당 휴리스틱
-        # 1. 현재 문이 열려있거나 온도 유지 중인 가열로를 찾음
-        # 2. 평균 중량이 해당 작업의 중량과 가장 유사한 가열로를 선택
-        # 3. 문이 열려있거나 온도 유지 중인 가열로가 없는 경우 생길 때까지 대기
-        # ----------------------------------------------------------------------------------------------------
         self.recharging_queue.append(job)
-        """
-        모든 가열로에 job 건네주며 요청.
-
-        가열로가 열려있거나 온도유지중이라면
-            job을 받고 추가 후 reheating 시간 다시 예측.
-            allocator의 reheating queue에서 지워줌.
-
-        아니라면
-            반복
-        """
 
     def _recharging(self):
         # 형록 구현해야됨
@@ -221,6 +214,7 @@ class HeuristicAllocator:
     def end_job(self, job):
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
+            self.simulate_end_time = self.env.now
             self.complete_job.append(job)
         elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
             self.recharging(job)

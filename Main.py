@@ -4,22 +4,16 @@ from datetime import datetime
 import json
 from Predictor.Predictor import *
 import sys
+from RTS import *
 #sys.stdout = open('output.txt','w')
 
 """
-job은 order date가 현재 이후인것부터
-마감기한 빠른 순서대로 3000톤에 맞춰서 들고오기
--> 그걸 job으로.
--완-
 
-각 설비가 처리한 기록들 써둬야 함
--완-
+학습에 필요한 정보 추가로 리포트
 
 커팅하고 제품 개수대로 나뉘게
--완-
+버그 수정해야함
 
-simpy 프로세스 별 우선순위 줄 수 있는가
-안된다면 -> 접근 동시에 하나의 프로세스만 할 수 있도록 바꾸기
 """
 
 def dict_to_time(obj):
@@ -129,8 +123,13 @@ job_data = new_job_list
 
 predictor = Predictor()
 
-for i in range(100):
+for i in range(3):
     print(str(i+1) + ' times simulated')
     simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
-    simulator.run()
+    ga = RTS(simulator, deepcopy(job_data), 10, 10, 10.0, 1.0)
+    ga.run()
+    #E, T = simulator.run()
+    #print('E :', E)
+    #print('T :', T)
+
     print()

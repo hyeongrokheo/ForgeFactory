@@ -57,8 +57,14 @@ class Simulator:
                 print('Error : 미완료된 작업 존재')
                 print(j)
                 exit(1)
+        E = random.randint(1000, 2000)
+        #T = random.randint(1000, 2000)
+        T = self.alloc.simulate_end_time
+        total_weight = random.randint(1000, 2000)
+        total_heating_weight = random.randint(1000, 2000)
+        total_e = random.randint(1000, 2000)
 
-        print(self.job)
+        return E, T, total_weight, total_heating_weight, total_e
 
     """def __init__(self, heating_furnaces_num):
         self.heating_furnaces_num = heating_furnaces_num
