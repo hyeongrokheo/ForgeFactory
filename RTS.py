@@ -2,14 +2,14 @@
 
 import array
 import random
-#from numpy import *
+import time
 import copy
 
 from deap import base
 from deap import creator
 from deap import tools
 
-import time
+
 
 class RTS:
     # popsize=100, ngen=500
@@ -19,8 +19,8 @@ class RTS:
         #self.entity_mgr = copy.deepcopy(simulator.entity_mgr)
         self.job_list = job_list
         self.total_weight = self.get_total_weight()
-        self.furnace_id_list = []
-        self.total_weight_chk = {}
+        self.furnace_id_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        #self.total_weight_chk = {}
         # for furnace in self.entity_mgr.get('heating_furnace'):
         #     self.total_weight_chk[furnace.id] = furnace.properties['capacity']
         #     self.furnace_id_list.append(furnace.id)
@@ -51,21 +51,28 @@ class RTS:
 
     def evaluate(self, individual):
         start_t = time.time()
-        self.simulator.init_entity_manager()
-        furnace_schedule = self.decoder(individual, self.simulator.entity_mgr)
-        E, T, total_weight, total_heating_weight, total_e = self.simulator.run()
-        #T = self.simulator.total_time()
-        T = (T - self.simulator.start_time).total_seconds()
-        W = self.total_weight - self.simulator.total_weight()
+        print('ind :', individual)
+
+        #self.simulator.init_entity_manager()
+        #furnace_schedule = self.decoder(individual, self.simulator.entity_mgr)
+        self.simulator.init_simulator(individual)
+        #시뮬레이터에 인자로 individual 넣어주고 하면 됨
+
+        energy, simulation_time, total_weight, total_heating_weight = self.simulator.run()
+        W = random.randint(2900, 3100)
+        #W = self.total_weight - self.simulator.total_weight()
         if total_weight == 0:
             total_weight = self.total_weight
-        E_modify = E * (self.total_weight / W)
-        T_modify = T * (self.total_weight / W)
+        #E_modify = E * (self.total_weight / W)
+        #T_modify = T * (self.total_weight / W)
 
-        energy_per_ton = E/total_weight
-        E_modify = E / W
-        time_per_ton = T / W
-        heating_ton_per_time = total_heating_weight/T * 3600
+        energy_per_ton = energy/total_weight
+        E_modify = energy / W
+        time_per_ton = simulation_time / W
+        if simulation_time == 0:
+            print('Error : T is',simulation_time)
+            simulation_time = 1
+        heating_ton_per_time = total_heating_weight/simulation_time * 3600
         if heating_ton_per_time == 0:
             score = energy_per_ton * 2 + 100 * 50
         else:
@@ -73,16 +80,15 @@ class RTS:
 
         score = (E_modify * self.w1) + (time_per_ton * self.w2)
         self.cnt += 1
-        print(self.cnt, ' times ', end='\t')
-        print('door count ', self.simulator.entity_mgr.data['cost_predictor'].door_count, end='\t')
+        print('simulation', self.cnt)
         print('score : ', '{0:.3f}'.format(score), end='\t')
-        print('time (sec) ', '{0:.3f}'.format(T), end='\t')
-        print('energy : ', '{0:.3f}'.format(E), end='\t')
+        print('time (minute) ', '{0:.3f}'.format(simulation_time), end='\t')
+        print('energy : ', '{0:.3f}'.format(energy), end='\t')
         print('weight :', '{0:.3f}'.format(total_weight), end='\t')
         print('energy per ton: ', '{0:.3f}'.format(energy_per_ton), end='\t')
         print('time per ton: ', '{0:.3f}'.format(time_per_ton), end='\t')
         print('heating per time: ', '{0:.3f}'.format(heating_ton_per_time), end='\t')
-        print('total_heating_weight : ', '{0:.3f}'.format((total_weight - heating_ton_per_time)/T*3600), end='\t')
+        print('total_heating_weight : ', '{0:.3f}'.format((total_weight - heating_ton_per_time)/simulation_time*3600), end='\t')
         print('total_heating_weight : ', '{0:.3f}'.format(total_heating_weight), end='\t')
         # print('Total heating energy ', self.simulator.heating_energy())
         # print('total ', total_e)
@@ -100,20 +106,20 @@ class RTS:
 
         name_list = ['heat_treating_furnace', 'heating_furnace', 'cutter', 'press']
 
-        for key, value in total_e.items():
-            if name_list[0] in key:
-                total_dict[name_list[0]] += float('{0:.3f}'.format(value['operate']))
-            if name_list[2] in key:
-                total_dict[name_list[2]] += float('{0:.3f}'.format(value['operate']))
-            if name_list[3] in key:
-                total_dict[name_list[3]] += float('{0:.3f}'.format(value['operate']))
-            if name_list[1] in key:
-                dictt = total_dict[name_list[1]]
-                for k, e in value.items():
-                    if k in dictt:
-                        total_dict[name_list[1]][k] += float('{0:.3f}'.format(e))
-            # print(key, value)
-        print(total_dict)
+        # for key, value in total_e.items():
+        #     if name_list[0] in key:
+        #         total_dict[name_list[0]] += float('{0:.3f}'.format(value['operate']))
+        #     if name_list[2] in key:
+        #         total_dict[name_list[2]] += float('{0:.3f}'.format(value['operate']))
+        #     if name_list[3] in key:
+        #         total_dict[name_list[3]] += float('{0:.3f}'.format(value['operate']))
+        #     if name_list[1] in key:
+        #         dictt = total_dict[name_list[1]]
+        #         for k, e in value.items():
+        #             if k in dictt:
+        #                 total_dict[name_list[1]][k] += float('{0:.3f}'.format(e))
+        #     # print(key, value)
+        # print(total_dict)
         print('time is', time.time() - start_t)
         return score,
 

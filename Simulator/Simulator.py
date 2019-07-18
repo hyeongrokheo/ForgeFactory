@@ -2,41 +2,64 @@ from Equipment.Cutter import *
 from Equipment.Press import *
 from Equipment.TreatmentFurnace import *
 from Planner.HeuristicAllocator import *
+from Planner.GAAllocator import *
 
 class Simulator:
     def __init__(self, predictor, product, ingot, job, heating_furnace_num, press_num, cutter_num, treatment_furnace_num):
         print('- create simulator -')
-        self.env = simpy.Environment()
+        #original data
+        self.original_product = product
+        self.original_ingot = ingot
+        self.original_job = job
+
+        self.product = None
+        self.ingot = None
+        self.job = None
+
+        self.heating_furnace_num = heating_furnace_num
+        self.press_num = press_num
+        self.cutter_num = cutter_num
+        self.treatment_furnace_num = treatment_furnace_num
+
+        self.env = None
         self.predictor = predictor
-        self.alloc = HeuristicAllocator(self.env, self.predictor, heating_furnace_num)
+        self.alloc = None
 
+        self.heating_furnace_list = None
+        self.press_list = None
+        self.cutter_list = None
+        self.treatment_furnace_list = None
 
-        self.product = product
-        self.ingot = ingot
-        self.job = job
+        #self.init_simulator()
+
+    def init_simulator(self, individual):
+        if Debug_mode:
+            print('- simulator initialize -')
+        self.product = deepcopy(self.original_product)
+        self.ingot = deepcopy(self.original_ingot)
+        self.job = deepcopy(self.original_job)
+
+        self.env = simpy.Environment()
+        #self.alloc = HeuristicAllocator(self.env, self.predictor, self.heating_furnace_num, self.job)
+        self.alloc = GAAllocator(self.env, self.predictor, self.heating_furnace_num, self.job, individual)
 
         self.heating_furnace_list = []
         self.press_list = []
         self.cutter_list = []
         self.treatment_furnace_list = []
 
-        for i in range(heating_furnace_num):
+        for i in range(self.heating_furnace_num):
             self.heating_furnace_list.append(HeatingFurnace(self.env, self.alloc, i))
-        for i in range(press_num):
+        for i in range(self.press_num):
             self.press_list.append(Press(self.env, self.alloc, i))
-        for i in range(cutter_num):
+        for i in range(self.cutter_num):
             self.cutter_list.append(Cutter(self.env, self.alloc, i))
-        for i in range(treatment_furnace_num):
+        for i in range(self.treatment_furnace_num):
             self.treatment_furnace_list.append(TreatmentFurnace(self.env, self.alloc, i))
 
-        self.init_simulator()
-
-    def init_simulator(self):
-        print('- simulator initialize -')
-        self.alloc.job = self.job
-
     def run(self):
-        print('- running simulator -')
+        if Debug_mode:
+            print('- running simulator -')
         for hf in self.heating_furnace_list:
             self.env.process(hf.run())
             self.env.process(hf.recharging())
@@ -51,20 +74,21 @@ class Simulator:
 
         simul_end_time = 60 * 24 * 30 #n일 후
         self.env.run(until=simul_end_time)
-        print('- end simulator -')
+        if Debug_mode:
+            print('- end simulator -')
         for j in self.job:
             if j['properties']['state'] != 'done':
                 print('Error : 미완료된 작업 존재')
                 print(j)
                 exit(1)
-        E = random.randint(1000, 2000)
+        energy = random.randint(1000, 2000)
         #T = random.randint(1000, 2000)
-        T = self.alloc.simulate_end_time
+        simulation_time = self.alloc.simulate_end_time
         total_weight = random.randint(1000, 2000)
         total_heating_weight = random.randint(1000, 2000)
         total_e = random.randint(1000, 2000)
 
-        return E, T, total_weight, total_heating_weight, total_e
+        return energy, simulation_time, total_weight, total_heating_weight
 
     """def __init__(self, heating_furnaces_num):
         self.heating_furnaces_num = heating_furnaces_num

@@ -2,12 +2,14 @@ from Equipment.HeatingFurnace import *
 from queue import Queue
 import time
 class HeuristicAllocator:
-    def __init__(self, env, predictor, heating_furnace_num):
+    def __init__(self, env, predictor, heating_furnace_num, job):
         self.env = env
         self.predictor = predictor
         self.heating_furnace_num = heating_furnace_num
         self.insertion = self.env.event()
         self.request = self.env.event()
+
+        self.job = job
 
         self.discharging_wakeup = []
         self.recharging_wakeup = []
@@ -21,7 +23,6 @@ class HeuristicAllocator:
         self.simulate_end_time = 0
 
         self.hf_count = 0
-        self.job = None
 
     def end_simulator(self):
         for j in self.job:
@@ -140,6 +141,15 @@ class HeuristicAllocator:
                 allocate_job_list.append(candidate_job)
                 total_weight += candidate_job_weight
                 self.job_update(candidate_job, name, 'heating', name)
+
+        for j in allocate_job_list:
+            index = None
+            try:
+                index = self.waiting_job.index(j)
+            except:
+                None
+            if index != None:
+                self.waiting_job.remove(j)
         return allocate_job_list
 
     def recharging(self, job):

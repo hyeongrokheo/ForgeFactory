@@ -14,6 +14,12 @@ from RTS import *
 커팅하고 제품 개수대로 나뉘게
 버그 수정해야함
 
+-노가다-
+완) 시뮬레이션 내에서 걸린 시간 뽑아내기
+리포트에서 장비별 에너지 -> 총 에너지로 바꿔서 시뮬레이터 끝에 보내주기
+총 무게도 전달해야됨 -> 방법 생각해놓기
+스코어 관련 공식들 더러운 코드 정리
+
 """
 
 def dict_to_time(obj):
@@ -123,13 +129,12 @@ job_data = new_job_list
 
 predictor = Predictor()
 
-for i in range(3):
-    print(str(i+1) + ' times simulated')
-    simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
-    ga = RTS(simulator, deepcopy(job_data), 10, 10, 10.0, 1.0)
-    ga.run()
-    #E, T = simulator.run()
-    #print('E :', E)
-    #print('T :', T)
-
-    print()
+#for i in range(3):
+#print(str(i+1) + ' times simulated')
+simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
+ga = RTS(simulator, deepcopy(job_data), 10, 10, 10.0, 1.0)
+ga.run()
+#E, T = simulator.run()
+#print('E :', E)
+#print('T :', T)
+#print()

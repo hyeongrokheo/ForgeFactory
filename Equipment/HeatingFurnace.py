@@ -100,19 +100,19 @@ class HeatingFurnace:
             # 작업 할당 받기
             self.state = 'idle'
             self.write_log('idle')
-            new_job = self.alloc.heating_allocate(self.name, self.capacity)
+            new_job = self.alloc.heating_allocate(self.name, self.num, self.capacity)
             while new_job == None:
                 if self.num != 0:
                     if Debug_mode:
                         print(self.env.now, self.name, ' :: job list empty')
                     self.write_log('off')
                     self.env.exit()
-                else:
-                    if self.alloc.simulator_end():
-                        self.alloc.simulate_end_time = self.env.now
-                        self.env.exit()
-                    else:
-                        self.env.timeout(30)
+                # else:
+                #     if self.alloc.simulator_end():
+                #         self.alloc.simulate_end_time = self.env.now
+                #         self.env.exit()
+                #     else:
+                #         self.env.timeout(30)
                 yield self.env.timeout(10)
                 new_job = self.alloc.heating_allocate(self.name, self.capacity)
             if Debug_mode:
