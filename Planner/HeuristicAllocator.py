@@ -33,23 +33,26 @@ class HeuristicAllocator:
     def next_job_list(self, process):
         next_job = []
         for job in self.job:
-            if job['properties']['last_process'] != 'holding':
-                continue
+            #print(job)
             if job['properties']['state'] == 'done':
+                continue
+            if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
+                job['properties']['state'] = 'done'
+                continue
+            if job['properties']['last_process'] != 'holding':
                 continue
             if (job['properties']['last_process_end_time'] < self.env.now) and (job['properties']['instruction_list'][0][job['properties']['next_instruction']] == process):
                 #print('debug2 : ', self.env.now, job)
                 next_job.append(job)
         #print('debug : wj :', self.waiting_job)
-        for wj in self.waiting_job:
-            #구문 remove 필요
-            if wj['properties']['state'] == 'done':
+        for job in self.waiting_job:
+            if job['properties']['state'] == 'done':
                 continue
-            if wj['properties']['last_process_end_time'] > self.env.now:
-                self.waiting_job.remove(wj)
+            if job['properties']['last_process_end_time'] > self.env.now:
+                self.waiting_job.remove(job)
                 continue
-            if wj['properties']['instruction_list'][0][wj['properties']['next_instruction']] == process:
-                next_job.append(wj)
+            if job['properties']['instruction_list'][0][job['properties']['next_instruction']] == process:
+                next_job.append(job)
                 #self.waiting_job.remove(wj)
 
         #print('debug : nj :', next_job)
@@ -89,7 +92,7 @@ class HeuristicAllocator:
                 selected_job_list.append(j)
         return selected_job_list
 
-    def heating_allocate(self, name, capacity):
+    def heating_allocate(self, name, num, capacity):
         # -----------------------------------------------------------------------
         # 가열로 작업 할당 휴리스틱
         # 1. 마감기한이 가장 이른 작업 하나 선택

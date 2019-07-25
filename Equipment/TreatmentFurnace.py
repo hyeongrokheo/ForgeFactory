@@ -15,6 +15,12 @@ class TreatmentFurnace:
 
         self.log = []
 
+        self.start_time = None
+
+    def set_env(self, start_time, log):
+        self.start_time = start_time
+        self.log = log
+
     def write_log(self, process, target=None):
         self.log.append([self.env.now, process, target])
 

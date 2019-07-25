@@ -3,7 +3,8 @@
 import array
 import random
 import time
-import copy
+from copy import deepcopy
+from UtilFunction import *
 
 from deap import base
 from deap import creator
@@ -13,11 +14,12 @@ from deap import tools
 
 class RTS:
     # popsize=100, ngen=500
-    def __init__(self, simulator, job_list, popsize=100, ngen=3000, w1=10.0, w2=1.0):
+    def __init__(self, simulator, envs, popsize=100, ngen=9000, w1=10.0, w2=1.0):
         # job_id_list : 작업 계획 대상 작업 전체 (3000톤)
         self.simulator = simulator
         #self.entity_mgr = copy.deepcopy(simulator.entity_mgr)
-        self.job_list = job_list
+        self.envs = envs
+        self.job_list = self.envs['jobs']
         self.total_weight = self.get_total_weight()
         self.furnace_id_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
         #self.total_weight_chk = {}
@@ -30,6 +32,10 @@ class RTS:
         self.w1 = w1
         self.w2 = w2
         self.cnt = 0
+
+    # def set_env(self, envs):
+    #     self.envs = envs
+
 
     def getDistance(self, ind1, ind2):
         sum = 0
@@ -51,11 +57,14 @@ class RTS:
 
     def evaluate(self, individual):
         start_t = time.time()
-        print('ind :', individual)
+        if Debug_mode:
+            print('individual :', individual)
 
         #self.simulator.init_entity_manager()
         #furnace_schedule = self.decoder(individual, self.simulator.entity_mgr)
-        self.simulator.init_simulator(individual)
+        self.simulator.init_simulator()
+        self.simulator.set_envs(self.envs)
+        self.simulator.set_job_queue(deepcopy(individual))
         #시뮬레이터에 인자로 individual 넣어주고 하면 됨
 
         energy, simulation_time, total_weight, total_heating_weight = self.simulator.run()
@@ -73,10 +82,10 @@ class RTS:
             print('Error : T is',simulation_time)
             simulation_time = 1
         heating_ton_per_time = total_heating_weight/simulation_time * 3600
-        if heating_ton_per_time == 0:
-            score = energy_per_ton * 2 + 100 * 50
-        else:
-            score = energy_per_ton * 2 + (1/heating_ton_per_time) * 50
+        # if heating_ton_per_time == 0:
+        #     score = energy_per_ton * 2 + 100 * 50
+        # else:
+        #     score = energy_per_ton * 2 + (1/heating_ton_per_time) * 50
 
         score = (E_modify * self.w1) + (time_per_ton * self.w2)
         self.cnt += 1
@@ -177,7 +186,7 @@ class RTS:
                 if pop.fitness.values[0] < best_so_far.fitness.values[0]:
                     best_so_far = pop
         self.best_list.append(best_so_far.fitness.values[0])
-        print('best so far', best_so_far.fitness.values[0], best_so_far)
+        #print('best so far', best_so_far.fitness.values[0], best_so_far)
 
         for g in range(0, self.ngen, 2):
             # Select the next generation individuals
@@ -219,7 +228,7 @@ class RTS:
                     if pop.fitness.values[0] < best_so_far.fitness.values[0]:
                         best_so_far = pop
             self.best_list.append(best_so_far.fitness.values[0])
-            print('best so far', best_so_far.fitness.values[0], best_so_far)
+            #print('best so far', best_so_far.fitness.values[0], best_so_far)
         best = None
         for pop in population:
             if best is None:
@@ -227,7 +236,7 @@ class RTS:
             else:
                 if pop.fitness.values[0] < best.fitness.values[0]:
                     best = pop
-        print('best_so_far_list ', self.best_list)
+        #print('best_so_far_list ', self.best_list)
         return best
 
     def decoder(self, individual, entity_mgr):

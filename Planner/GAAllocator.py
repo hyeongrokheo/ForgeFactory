@@ -2,7 +2,7 @@ from Equipment.HeatingFurnace import *
 from queue import Queue
 import time
 class GAAllocator:
-    def __init__(self, env, predictor, heating_furnace_num, job, individual):
+    def __init__(self, env, predictor, heating_furnace_num, job):
         self.env = env
         self.predictor = predictor
         self.heating_furnace_num = heating_furnace_num
@@ -10,7 +10,7 @@ class GAAllocator:
         self.request = self.env.event()
 
         self.job = sorted(job, key=lambda j: j['properties']['deadline'])
-        self.hf_list = individual
+        self.hf_list = None
 
         self.discharging_wakeup = []
         self.recharging_wakeup = []
@@ -24,6 +24,35 @@ class GAAllocator:
         self.simulate_end_time = 0
 
         self.hf_count = 0
+
+        self.start_time = None
+
+    def set_env(self, start_time, data):
+        self.start_time = start_time
+
+        waiting_job_id_list = data['waiting_job']
+        for job_id in waiting_job_id_list:
+            for j in self.job:
+                if j['id'] == job_id:
+                    self.waiting_job.append(j)
+                    break
+
+        complete_job_id_list = data['complete_job']
+        for job_id in complete_job_id_list:
+            for j in self.job:
+                if j['id'] == job_id:
+                    self.complete_job.append(j)
+                    break
+
+        recharging_queue_id_list = data['recharging_queue']
+        for job_id in recharging_queue_id_list:
+            for j in self.job:
+                if j['id'] == job_id:
+                    self.recharging_queue.append(j)
+                    break
+
+    def set_job_queue(self, individual):
+        self.hf_list = individual
 
     def end_simulator(self):
         for j in self.job:
@@ -92,20 +121,31 @@ class GAAllocator:
 
     def heating_allocate(self, name, num, capacity):
         allocate_job_list = []
-        print('name :', name)
-        print('num :', num)
-        print('capacity :', capacity)
-        exit(1)
+        #print('name :', name)
+        #print('num :', num)
+        #print('capacity :', capacity)
+        #exit(1)
         total_weight = 0
+
+        for job in self.waiting_job:
+            if job['properties']['state'] == 'done':
+                continue
+            if job['properties']['last_process_end_time'] > self.env.now:
+                self.waiting_job.remove(job)
+                continue
+            if job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
+                allocate_job_list.append(job)
+
         while True:
             candidate_job_num = None
             try:
-                candidate_job_num = self.individual.index(num)
-                self.individual[candidate_job_num] = -1
+                candidate_job_num = self.hf_list.index(num)
+                self.hf_list[candidate_job_num] = -1
             except:
                 None
 
             if candidate_job_num != None:
+                #print('cjn :', candidate_job_num)
                 job = self.job[candidate_job_num]
                 weight = job['properties']['ingot']['current_weight']
 
@@ -117,10 +157,22 @@ class GAAllocator:
             else:
                 break
 
+        for job in allocate_job_list:
+            index = None
+            try:
+                index = self.waiting_job.index(job)
+            except:
+                None
+            if index != None:
+                self.waiting_job.remove(job)
+
+        if len(allocate_job_list) == 0:
+            return None
+
         for j in allocate_job_list:
             self.job_update(j, name, 'heating', name)
-        print('alloc job list :', allocate_job_list)
-        exit(1)
+        #print('alloc job list :', allocate_job_list)
+        #exit(1)
         return allocate_job_list
         # -----------------------------------------------------------------------
         # 가열로 작업 할당 휴리스틱
@@ -240,7 +292,9 @@ class GAAllocator:
 
         return target_job
 
-    def end_job(self, job):
+    def end_job(self, job, new=False):
+        if new:
+            self.job.append(job)
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
             self.simulate_end_time = self.env.now
@@ -259,6 +313,8 @@ class GAAllocator:
         # ----------------------------------------------------------------------------------------------------
         candidate_job_list = []
         for j in self.job:
+            if len(j['properties']['instruction_list'][0]) == j['properties']['next_instruction']:
+                j['properties']['state'] = 'done'
             if j['properties']['state'] == 'done':
                 #완료된 작업
                 continue
@@ -266,8 +322,13 @@ class GAAllocator:
                 #다른 작업 진행중
                 continue
             #print('debug :', j['id'], j['properties']['instruction_list'][0], j['properties']['next_instruction'])
-            if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
-                candidate_job_list.append(j)
+            try:
+                if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
+                    candidate_job_list.append(j)
+            except:
+                print('Error : 작업 정보 안맞음')
+                print(j)
+                exit(1)
 
         if len(candidate_job_list) == 0:
             return None

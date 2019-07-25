@@ -17,11 +17,22 @@ class HeatingFurnace:
         self.state = None
         self.heating_end_time = None
         self.log = []
+
+        self.start_time = None
+
         if Debug_mode:
             print(self.name + ' :: created')
 
-    def write_log(self, process, target=None):
-        self.log.append([self.env.now, process, target])
+    def set_env(self, start_time, log):
+        #print(self.name, log)
+        self.start_time = start_time
+        self.log = log
+
+    def get_data(self):
+        return []
+
+    def write_log(self, process, target=None, state=None):
+        self.log.append([self.env.now, process, target, state])
 
     def calc_heating_time(self):
         self.alloc.predictor.heating_time_prediction(self.name, self.current_job_list)
@@ -47,7 +58,11 @@ class HeatingFurnace:
                 self.current_job_list.append(job)
                 self.alloc.recharging_queue.remove(job)
 
-                self.write_log('recharging', job)
+                current_job_id_list = []
+                for j in self.current_job_list:
+                    current_job_id_list.append(j['id'])
+
+                self.write_log('recharging', job['id'], current_job_id_list)
                 self.alloc.job_update(job, self.name, 'heating', self.name)
                 if Debug_mode:
                     print(self.name, ' :: recharging ')
@@ -80,7 +95,11 @@ class HeatingFurnace:
                 # print('debug : tj : ', job)
                 try:
                     self.current_job_list.remove(job)
-                    self.write_log('discharging', job)
+
+                    current_job_id_list = []
+                    for j in self.current_job_list:
+                        current_job_id_list.append(j['id'])
+                    self.write_log('discharging', job['id'], current_job_id_list)
                 except:
                     #print('Error : discharging. but isnt exist')
                     None
@@ -96,130 +115,109 @@ class HeatingFurnace:
                     self.cycle_complete_wakeup.put(True)
 
     def run(self):
+        first_state = None
+        last_log = None
+        if len(self.log) != 0:
+            i = 1
+            last_log = self.log[len(self.log) - i]
+            while last_log[1] not in ['idle', 'heating', 'keeping', 'cooling']:
+                #print(self.log)
+                #print(i)
+                i += 1
+                last_log = self.log[len(self.log) - i]
+            #self.state = last_log[1]
+            first_state = last_log[1]
+            if last_log[3] != None and len(last_log[3]) != 0:
+                current_job_id_list = last_log[3]
+                for job_id in current_job_id_list:
+                    for j in self.alloc.job:
+                        if j['id'] == job_id:
+                            self.current_job_list.append(j)
+                            break
+
+        if self.start_time != None:
+            yield self.env.timeout(self.start_time)
+
         while True:
             # 작업 할당 받기
-            self.state = 'idle'
-            self.write_log('idle')
-            new_job = self.alloc.heating_allocate(self.name, self.num, self.capacity)
-            while new_job == None:
-                if self.num != 0:
-                    if Debug_mode:
-                        print(self.env.now, self.name, ' :: job list empty')
-                    self.write_log('off')
-                    self.env.exit()
-                # else:
-                #     if self.alloc.simulator_end():
-                #         self.alloc.simulate_end_time = self.env.now
-                #         self.env.exit()
-                #     else:
-                #         self.env.timeout(30)
-                yield self.env.timeout(10)
-                new_job = self.alloc.heating_allocate(self.name, self.capacity)
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: insertion')
-            # print('debug : alloc : ', all)
-            self.current_job_list.extend(new_job)
-            # if len(self.current_job_list) == 0:
-            #print('job list :', self.current_job_list)
-            self.write_log('insertion', self.current_job_list)
-            if Debug_mode:
-                nPrint(self.current_job_list)
-                print(self.env.now, self.name, ' :: insertion complete')
+            if first_state == 'idle' or first_state == None:
+                self.state = 'idle'
+                if first_state != 'idle':
+                    self.write_log('idle')
+                new_job = self.alloc.heating_allocate(self.name, self.num, self.capacity)
+                while new_job == None:
+                    if self.num != 0:
+                        if Debug_mode:
+                            print(self.env.now, self.name, ' :: job list empty')
+                        self.write_log('off')
+                        self.env.exit()
+                    yield self.env.timeout(10)
+                    new_job = self.alloc.heating_allocate(self.name, self.num, self.capacity)
+                if Debug_mode:
+                    print(self.env.now, self.name, ' :: insertion')
+                self.current_job_list.extend(new_job)
+                current_job_id_list = []
+                for j in self.current_job_list:
+                    current_job_id_list.append(j['id'])
+                self.write_log('insertion', current_job_id_list, current_job_id_list)
+                if Debug_mode:
+                    nPrint(self.current_job_list)
+                    print(self.env.now, self.name, ' :: insertion complete')
+                if first_state == 'idle':
+                    first_state = 'heating'
 
             # 가열 시작
-            heating_time = self.calc_heating_time()
-            #self.heating_end_time = self.env.now + heating_time
-            for j in self.current_job_list:
-                #j['properties']['current_equip'] = self.name
-                #j['properties']['last_process'] = 'heating'
-                j['properties']['last_process_end_time'] = self.env.now + heating_time
-                # j['properties']['instruction_log'].append(self.name)
-                j['properties']['last_heating_furnace'] = self.name
-                #j['properties']['next_instruction'] += 1
-            self.write_log('heating')
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: heating start')
-            self.state = 'heating'
-            yield self.env.timeout(heating_time)
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: heating complete')
+            if first_state == 'heating' or first_state == None:
+                if first_state == 'heating' and last_log != None and last_log[1] == 'heating': # 원래 가열중이었다면
+                    heating_end_time = last_log[2]
+                    yield self.env.timeout(heating_end_time - self.env.now)
+                else:
+                    heating_time = self.calc_heating_time()
+                    for j in self.current_job_list:
+                        j['properties']['last_process'] = 'holding'
+                        j['properties']['last_process_end_time'] = self.env.now + heating_time
+                        j['properties']['last_heating_furnace'] = self.name
+                    self.write_log('heating', self.env.now + heating_time, current_job_id_list)
+                    if Debug_mode:
+                        print(self.env.now, self.name, ' :: heating start')
+                    self.state = 'heating'
+                    yield self.env.timeout(heating_time)
+                if Debug_mode:
+                    print(self.env.now, self.name, ' :: heating complete')
+                if first_state == 'heating':
+                    first_state = 'keeping'
 
-            """
-            job별로 holding time 예측해서 완료시각 기록
-            #형록. 이거 안하기로 하지않았나???
-            heating time이 홀딩까지 다 포함하고 모든 잡은 다같이 홀딩 끝나고 키핑 넘어가는거로 기억.
-            확인 후 코드 수정
-            """
-            for j in self.current_job_list:
-                # print(j['properties'])
-                j['properties']['last_process'] = 'holding'
-                j['properties']['last_process_end_time'] = self.env.now + self.calc_holding_time(j)
-                # j['properties']['next_instruction'] += 1
             # 키핑 시작
-            self.write_log('keeping')
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: keeping')
-            self.state = 'keeping'
-            # for j in self.current_job_list:
-            # if len(self.current_job['properties']['instruction_list'][0]) == self.current_job['properties']['next_instruction']:
-            # self.current_job['properties']['state'] = 'done'
-            yield self.cycle_complete_wakeup.get()
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: cycle complete')
+            if first_state == 'keeping' or first_state == None:
+                self.write_log('keeping', None, current_job_id_list)
+                if Debug_mode:
+                    print(self.env.now, self.name, ' :: keeping')
+                self.state = 'keeping'
+                yield self.cycle_complete_wakeup.get()
+                if Debug_mode:
+                    print(self.env.now, self.name, ' :: cycle complete')
+                first_state = 'cooling'
 
             # 냉각 시작
-            self.write_log('cooling')
-            cooling_time = self.calc_cooling_time()
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: cooling')
-            self.state = 'cooling'
-            yield self.env.timeout(cooling_time)
-            if Debug_mode:
-                print(self.env.now, self.name, ' :: cooling complete')
+            if first_state == 'cooling' or first_state == None:
+                if first_state == 'cooling' and last_log != None and last_log[1] == 'heating': # 원래 냉각중이었다면
+                    cooling_end_time = last_log[2]
+                    yield self.env.timeout(cooling_end_time - self.env.now)
+                else:
+                    cooling_time = self.calc_cooling_time()
+                    self.write_log('cooling', self.env.now + cooling_time)
+                    if Debug_mode:
+                        print(self.env.now, self.name, ' :: cooling')
+                    self.state = 'cooling'
+                    yield self.env.timeout(cooling_time)
+                if Debug_mode:
+                    print(self.env.now, self.name, ' :: cooling complete')
+                first_state = 'None'
 
+            # 사이클 종료
             if len(self.current_job_list) != 0:
                 print('cycle end. but job is exist!')
+                print('name :', self.name)
+                print('log :', self.log)
                 exit(1)
             self.current_job_list = []
-
-    """def __init__(self, env, allocator, num):
-        self.env = env
-        self.name = 'heating_furnace_' + str(num + 1)
-        self.state = 'idle'
-        self.allocator = allocator
-        self.capacity = simpy.Store(env, 120) # container
-
-        self.current_job_list = []
-        #self.success_job_list = [['job1', ~~, ~~], []]
-        #self
-        #self.current_capacity = 100
-        print(self.name + ' :: created')
-
-    def clear(self):
-        self.current_job_list = []
-        self.success_job_list = []
-
-    def heating(self):
-        print('HeatingFurnace :: heating')
-        self.state = 'heating'
-        yield self.env.timeout(60)
-        print('HeatingFurnace :: heating complete')
-        self.state = 'idle'
-
-    '''def request(self):
-        #while True:
-        yield self.env.timeout(555)
-        print('HeatingFurnace :: request')
-        yield self.allocator.request.succeed()
-        print('HeatingFurnace :: allocated')'''
-
-    def run(self):
-        None
-        #while True:
-            #print('run' + self.name)
-            #self.clear()
-            #self.env.run(self.env.process(self.insertion()))
-            #self.calc_heating_time()
-            #print(self.env.run(self.env.process(self.calc_heating_time())))
-            #self.env.run(self.env.process(self.heating()))
-            #time.sleep(3)"""

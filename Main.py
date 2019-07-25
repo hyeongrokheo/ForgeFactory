@@ -8,17 +8,20 @@ from RTS import *
 #sys.stdout = open('output.txt','w')
 
 """
+todo :
 
-학습에 필요한 정보 추가로 리포트
+- log 깔끔하게 쓰도록 불필요한것 지우기
 
-커팅하고 제품 개수대로 나뉘게
-버그 수정해야함
+- 장비들이 자기 로그 보고 시작상황 세팅하기
 
--노가다-
-완) 시뮬레이션 내에서 걸린 시간 뽑아내기
-리포트에서 장비별 에너지 -> 총 에너지로 바꿔서 시뮬레이터 끝에 보내주기
+- 예측모델 적용 완전히 끝내기
+
+- 커팅하고 제품 개수대로 나뉘게 버그 수정해야함
+
+- 리포트에서 장비별 에너지 -> 총 에너지로 바꿔서 시뮬레이터 끝에 보내주기
 총 무게도 전달해야됨 -> 방법 생각해놓기
-스코어 관련 공식들 더러운 코드 정리
+
+- 스코어 관련 공식들 더러운 코드 정리
 
 """
 
@@ -99,12 +102,6 @@ def read_data(file):
 simul_start_time = datetime(2013, 2, 10, 10)
 #simul_start_time = datetime(2014, 5, 10, 10)
 
-"""
-json 입력받을 때 time이 dictionary형식으로 저장되어있는데,
-여기에 기준 simul_start_time을 뺀 minute 값으로 바꿔줘야함.
-이후의 모든 time표현값들이 simul_start_time 기준 분 값으로 계산될 것임
--완-
-"""
 product_data = read_data('product')
 ingot_data = read_data('ingot')
 job_data = read_data('job')
@@ -123,17 +120,21 @@ for j in job_data:
         break
 print('total weight :', total_weight)
 job_data = new_job_list
-
-#print(product_data), print(ingot_data), print(job_data)
-#time.sleep(2)
-
 predictor = Predictor()
 
-#for i in range(3):
-#print(str(i+1) + ' times simulated')
-simulator = Simulator(predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
-ga = RTS(simulator, deepcopy(job_data), 10, 10, 10.0, 1.0)
-ga.run()
+heuristic_simulator = Simulator('Heuristic', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
+heuristic_simulator.init_simulator()
+heuristic_simulator.run()
+simulator_envs = heuristic_simulator.envs
+
+#print(simulator_envs['press'][0])
+
+ga_simulator = Simulator('GA', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_envs['jobs']), 13, 2, 3, 5)
+ga = RTS(ga_simulator, simulator_envs, 1, 0, 10.0, 1.0)
+ga_result = ga.run()
+print('result :', ga_result)
+
+
 #E, T = simulator.run()
 #print('E :', E)
 #print('T :', T)
