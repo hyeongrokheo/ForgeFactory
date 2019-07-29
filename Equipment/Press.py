@@ -15,6 +15,7 @@ class Press:
         self.log = []
 
         self.start_time = None
+        self.total_energy_usage = 0
 
     def set_env(self, start_time, log):
         self.start_time = start_time
@@ -29,6 +30,10 @@ class Press:
 
         press_time = self.alloc.predictor.forging_time_prediction(self.current_job)
         return press_time
+
+    def calc_press_energy(self, press_time):
+        press_energy = self.alloc.predictor.forging_energy_prediction(press_time)
+        return press_energy
 
     def run(self):
         first_state = None
@@ -56,15 +61,22 @@ class Press:
 
             if first_state == 'press start' or first_state == None:
                 if first_state == 'press start' and last_log != None and last_log[1] == 'press start':
+                    job_id = last_log[2]
+                    for j in self.alloc.job:
+                        if j['id'] == job_id:
+                            self.current_job = j
+                            break
                     press_time = self.calc_press_time()
                     if last_log[0] + press_time <= self.env.now: # 예상완료시간이 현재 이전이라면 현재 시점으로
                         self.current_job['properties']['last_process_end_time'] = self.env.now
                     else:
                         self.current_job['properties']['last_process_end_time'] = last_log[0] + press_time
-                        yield self.env.timeout(self.current_job['properties']['last_process_end_time'] - self.env.now)
+                        yield self.env.timeout(last_log[0] + press_time - self.env.now)
                 else:
                     self.write_log('press start', self.current_job['id'])
                     press_time = self.calc_press_time()
+                    press_energy = self.calc_press_energy(press_time)
+                    self.total_energy_usage += press_energy
                     self.current_job['properties']['current_equip'] = self.name
                     self.current_job['properties']['last_process'] = 'press'
                     self.current_job['properties']['last_process_end_time'] = self.env.now + press_time

@@ -16,6 +16,7 @@ class Cutter:
         self.log = []
 
         self.start_time = None
+        self.total_energy_usage = 0
 
     def set_env(self, start_time, log):
         self.start_time = start_time
@@ -31,6 +32,10 @@ class Cutter:
         cut_time = int(self.alloc.predictor.cutting_time_prediction(self.current_job) / 60)
         return cut_time
 
+    def calc_cut_energy(self, cut_time):
+        cut_energy = self.alloc.predictor.cutting_energy_prediction(cut_time)
+        return cut_energy
+
     def run(self):
         first_state = None
         last_log = None
@@ -44,8 +49,6 @@ class Cutter:
 
         while True:
             if first_state == 'idle' or first_state == None:
-                if first_state == None:
-                    self.write_log('idle')
                 self.current_job = self.alloc.get_next_cut_job(self.name)
                 if self.current_job == None:
                     yield self.env.timeout(10)
@@ -57,6 +60,11 @@ class Cutter:
 
             if first_state == 'cutting start' or first_state == None:
                 if first_state ==  'cutting start' and last_log != None and last_log[1] == 'cutting start':
+                    job_id = last_log[2]
+                    for j in self.alloc.job:
+                        if j['id'] == job_id:
+                            self.current_job = j
+                            break
                     cut_time = self.calc_cut_time()
                     if last_log[0] + cut_time <= self.env.now: # 예상완료시간이 현재 이전이라면 현재 시점으로
                         self.current_job['properties']['last_process_end_time'] = self.env.now
@@ -66,6 +74,8 @@ class Cutter:
                 else:
                     self.write_log('cutting start', self.current_job['id'])
                     cut_time = self.calc_cut_time()
+                    cut_energy = self.calc_cut_energy(cut_time)
+                    self.total_energy_usage += cut_energy
                     self.current_job['properties']['current_equip'] = self.name
                     self.current_job['properties']['last_process'] = 'cut'
                     self.current_job['properties']['last_process_end_time'] = self.env.now + cut_time
@@ -73,7 +83,7 @@ class Cutter:
                         nPrint(self.current_job, ['last_process_end_time'])
                     yield self.env.timeout(cut_time)
 
-            self.write_log('cut end', self.current_job)
+            self.write_log('cut end', self.current_job['id'])
             if Debug_mode:
                 print(self.env.now, self.name, ':: cut end')
                 nPrint(self.current_job)
@@ -88,3 +98,4 @@ class Cutter:
                     self.alloc.end_job(job)
 
             first_state = None
+            self.write_log('idle')

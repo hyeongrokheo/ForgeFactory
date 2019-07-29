@@ -35,6 +35,8 @@ class Simulator:
         self.treatment_furnace_list = None
 
         # self.init_envs = None
+        self.envs = None
+        self.envs2 = None
         self.start_time = None
         # self.heating_furnace_logs = None
         # self.press = None
@@ -55,6 +57,9 @@ class Simulator:
         self.cutter_list = []
         self.treatment_furnace_list = []
 
+        self.envs = None
+        self.envs2 = None
+        self.start_time = None
         # if equips != None:
         #     self.env = equips['env']
         #     self.alloc = equips['alloc']
@@ -84,14 +89,24 @@ class Simulator:
             self.cutter_list.append(Cutter(self.env, self.alloc, i))
         for i in range(self.treatment_furnace_num):
             self.treatment_furnace_list.append(TreatmentFurnace(self.env, self.alloc, i))
-        # if self.envs != None:
-        #     None
-            #형록 미구현
+
+    def get_logs(self):
+        logs = {'heating_furnace': [], 'press': [], 'cutter': [], 'treatment_furnace': []}
+        for hf in self.heating_furnace_list:
+            logs['heating_furnace'].append(deepcopy(hf.log))
+        for p in self.press_list:
+            logs['press'].append(deepcopy(p.log))
+        for c in self.cutter_list:
+            logs['cutter'].append(deepcopy(c.log))
+        for tf in self.treatment_furnace_list:
+            logs['treatment_furnace'].append(deepcopy(tf.log))
+        return logs
 
     def set_job_queue(self, individual):
         self.alloc.set_job_queue(individual)
 
     def set_envs(self, envs):
+        #print('Log :', envs['heating_furnace'][0])
         self.start_time = envs['time']
         allocator_data = envs['allocator']
         self.alloc.set_env(self.start_time, allocator_data)
@@ -108,7 +123,7 @@ class Simulator:
         for i in range(len(self.treatment_furnace_list)):
             self.treatment_furnace_list[i].set_env(self.start_time, treatment_furnace_logs[i])
 
-    def run(self):
+    def run(self, simulate_time, save_env = False):
         if Debug_mode:
             print('- running simulator -')
         #print(self.equips)
@@ -124,32 +139,38 @@ class Simulator:
             self.env.process(tf.run())
         self.env.process(self.alloc._recharging())
 
-        simul_end_time = 60 * 22 #22시간 후
+        if save_env:
+            simul_end_time = 60 * 22 #22시간 후
+            self.env.run(until=simul_end_time)
+            self.envs = {'time': self.env.now, 'jobs': deepcopy(self.job), 'allocator': {}, 'heating_furnace': [], 'press': [], 'cutter': [], 'treatment_furnace': []}
+            self.envs['allocator']['waiting_job'] = deepcopy(self.alloc.waiting_job)
+            self.envs['allocator']['complete_job'] = deepcopy(self.alloc.complete_job)
+            self.envs['allocator']['recharging_queue'] = deepcopy(self.alloc.recharging_queue)
+            for hf in self.heating_furnace_list:
+                self.envs['heating_furnace'].append(deepcopy(hf.log))
+            for p in self.press_list:
+                self.envs['press'].append(deepcopy(p.log))
+            for c in self.cutter_list:
+                self.envs['cutter'].append(deepcopy(c.log))
+            for tf in self.treatment_furnace_list:
+                self.envs['treatment_furnace'].append(deepcopy(tf.log))
+
+        simul_end_time = 60 * 24 * simulate_time # N일 후
         self.env.run(until=simul_end_time)
-        #self.env.exit(0)
-
-        #self.envs = deepcopy(self.heating_furnace_list[0])
-        #self.envs = [deepcopy(self.env), deepcopy(self.heating_furnace_list), deepcopy(self.press_list), deepcopy(self.cutter_list), deepcopy(self.treatment_furnace_list)]
-        self.envs = {'time': self.env.now, 'jobs': deepcopy(self.job), 'allocator': {}, 'heating_furnace': [], 'press': [], 'cutter': [], 'treatment_furnace': []}
-
-        self.envs['allocator']['waiting_job'] = deepcopy(self.alloc.waiting_job)
-        self.envs['allocator']['complete_job'] = deepcopy(self.alloc.complete_job)
-        self.envs['allocator']['recharging_queue'] = deepcopy(self.alloc.recharging_queue)
+        #self.env.run(until=60*24*14)
+        self.envs2 = {'time': self.env.now, 'jobs': deepcopy(self.job), 'allocator': {}, 'heating_furnace': [],
+                     'press': [], 'cutter': [], 'treatment_furnace': []}
+        self.envs2['allocator']['waiting_job'] = deepcopy(self.alloc.waiting_job)
+        self.envs2['allocator']['complete_job'] = deepcopy(self.alloc.complete_job)
+        self.envs2['allocator']['recharging_queue'] = deepcopy(self.alloc.recharging_queue)
         for hf in self.heating_furnace_list:
-            self.envs['heating_furnace'].append(deepcopy(hf.log))
+            self.envs2['heating_furnace'].append(deepcopy(hf.log))
         for p in self.press_list:
-            self.envs['press'].append(deepcopy(p.log))
+            self.envs2['press'].append(deepcopy(p.log))
         for c in self.cutter_list:
-            self.envs['cutter'].append(deepcopy(c.log))
+            self.envs2['cutter'].append(deepcopy(c.log))
         for tf in self.treatment_furnace_list:
-            self.envs['treatment_furnace'].append(deepcopy(tf.log))
-        #self.envs['time'] = self.env.now
-        #self.envs['hf'] = []
-        #for i in range(len(self.heating_furnace_list)):
-        #    self.envs['hf'].append(self.heating_furnace_list[i].get_data())
-
-        simul_end_time = 60 * 24 #24시간 후
-        self.env.run(until=simul_end_time)
+            self.envs2['treatment_furnace'].append(deepcopy(tf.log))
 
         if Debug_mode:
             print('- end simulator -')
@@ -158,12 +179,20 @@ class Simulator:
                 #print('Error : 미완료된 작업 존재')
                 #print(j)
                 #exit(1)
-        energy = random.randint(1000, 2000)
-        #T = random.randint(1000, 2000)
-        simulation_time = self.alloc.simulate_end_time
-        total_weight = random.randint(1000, 2000)
-        total_heating_weight = random.randint(1000, 2000)
-        total_e = random.randint(1000, 2000)
+        energy = 0
+        for hf in self.heating_furnace_list:
+            energy += hf.total_energy_usage
+        for p in self.press_list:
+            energy += p.total_energy_usage
+        for c in self.cutter_list:
+            energy += c.total_energy_usage
+        for tf in self.treatment_furnace_list:
+            energy += tf.total_energy_usage
+        simulation_time = simul_end_time
+        total_weight = 3000
+        total_heating_weight = 0
+        for hf in self.heating_furnace_list:
+            total_heating_weight += hf.total_heating_weight
 
         return energy, simulation_time, total_weight, total_heating_weight
 

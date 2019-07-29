@@ -10,8 +10,15 @@ import random
 import os
 
 class Predictor:
-    def __init__(self):
-        self.model_path = '/ForgeFactory/Predictor/Models/'
+    def __init__(self, type):
+        self.type = type
+        if self.type == 'Planning':
+            self.model_path = '/ForgeFactory/Predictor/Models/'
+        elif self.type == 'Real':
+            self.model_path = '/ForgeFactory/Predictor/Models_VF/'
+        else:
+            print('Error : predictor type error')
+            exit(1)
         self.project_path = os.path.dirname(os.getcwd())
 
         self.first_heating_time_path = self.model_path + 'first_heating_time'
@@ -47,29 +54,33 @@ class Predictor:
         self._init_heat_treating_energy()
 
         self.door_count = 0
-
+    
+    # 구현완료
     def heating_time_prediction(self, name, job_list):
-        if len(job_list) == 0:
-            print('calc heating time. but job list is empty')
-            exit(1)
+        if self.type == 'Planning':
+            if len(job_list) == 0:
+                print('calc heating time. but job list is empty')
+                exit(1)
 
-        total_weight = 0
-        max_weight = 0
-        for job in job_list:
-            w = job['properties']['ingot']['current_weight']
-            total_weight += w
-            if max_weight < w:
-                max_weight = w
-        if total_weight == 0 and max_weight == 0:
-            return 0
+            total_weight = 0
+            max_weight = 0
+            for job in job_list:
+                w = job['properties']['ingot']['current_weight']
+                total_weight += w
+                if max_weight < w:
+                    max_weight = w
+            if total_weight == 0 and max_weight == 0:
+                return 0
 
-        tmp = [total_weight, max_weight]
-        data = furnace_num.TxtToCode(name[-1])
-        data.extend(tmp)
-        heating_time = int(self.first_heating_time_model.predict(data)) * 60
-        #print('heating time :', heating_time)
-        return heating_time
+            tmp = [total_weight, max_weight]
+            data = furnace_num.TxtToCode(name[-1])
+            data.extend(tmp)
+            heating_time = int(self.first_heating_time_model.predict(data)) * 60
+            return heating_time
+        elif self.type == 'Real':
+            return 300
 
+    # 구현완료
     def reheating_time_prediction(self, name, job_list):
         if len(job_list) == 0:
             print('calc heating time. but job list is empty')
@@ -87,36 +98,7 @@ class Predictor:
 
         data = [total_weight, max_weight, len(job_list)]
         reheating_time = int(self.reheating_time_model.predict(data))
-        #print('reheating time :', reheating_time)
         return reheating_time
-
-
-        """if state:
-            # if already process is running
-            # completion_time = 60  # 재가열 30분
-            # completion_time += random.gauss(0, 1)
-            # completion_time *= 60
-            data = [total_weight, max_weight, len(equipment.job_id_list())]
-            # print(data)
-            completion_time = self.reheating_time_model.predict(data)
-            if completion_time < 60:
-                completion_time += 60
-            completion_time *= 60
-
-        else:
-            # completion_time = 48.281 - (0.085 * total_weight) + (0.655 * max_weight)  # hour
-            # completion_time *= 3600  # hour
-
-            data = furnace_num.TxtToCode(equipment.id[-1])
-            tmp = [total_weight, max_weight]
-            # print(equipment.id, 'total weight ', total_weight, ' /max weight ', max_weight)
-            data.extend(tmp)
-            completion_time = self.first_heating_time_model.predict(data)
-            # completion_time += 10
-            # exit(0)
-            completion_time *= 3600
-        # print('heating_time_prediction takes ', time.time() - s)
-        return float(completion_time)"""
 
     def door_manipulate_time(self, equipment, opened=False):
         """
@@ -136,45 +118,34 @@ class Predictor:
             # print("it's open ", self.door_count,end='')
         return door_time
 
+    # 구현완료
     def forging_time_prediction(self, job):
+        weight = job['properties']['ingot']['current_weight']
+        if weight <= 15 or weight == None:
+            product_size = 'small'
+        elif weight <= 25:
+            product_size = 'medium'
+        else:
+            product_size = 'big'
 
-        #self.forging_time_model.predict(data)
-        """
-        weight, current_round, product_name, total_round
-        outer - 15분(+N(0.1))CASE_OUTER_PIECE
-        piece - 30분(+N(0.1))CASE_SUCTION_PIECE
-        shaft - 50분(+N(0.1))SHAFT
-        :param equipment: forging equipment entity
-        :param forge_type:
-        :return: completion_time (seconds)
-        """
-        forging_time = 1800
-        forging_time += random.gauss(0, 1) * 60
-        return 60
-    """
-        size = ['small', 'medium', 'big']
+        product_type = job['properties']['product']['product_type']
+        total_round = job['properties']['product']['total_round']
+        current_round = job['properties']['product']['current_round']
 
         data = []
-
-        weight = weight #job의 weight
-        if weight <= 15 or None:
-            product_size = size[0]
-        elif weight <= 25:
-            product_size = size[1]
-        else:
-            product_size = size[2]
-
-        tmp = press_product_type.TxtToCode(job['properties']['product']['product_type'])
+        tmp = press_product_type.TxtToCode(product_type)
         data.extend(tmp)
         tmp = press_product_type.TxtToCode(product_size)
         data.extend(tmp)
         data.append(weight)
-        data.append(product.properties['total_round'])
-        data.append(product.properties['current_round'])
-        forging_time = self.forging_time_model.predict(data)
+        data.append(total_round)
+        data.append(current_round)
 
-        #return float(forging_time)
-    """
+        forging_time = int(self.forging_time_model.predict(data) / 60)
+        #print('forging_time :', forging_time)
+        return forging_time
+
+    # 구현완료
     def cutting_time_prediction(self, job):
         weight = job['properties']['ingot']['current_weight']
         tmp = cutter_ingot_type.TxtToCode(job['properties']['ingot']['type'])
@@ -184,9 +155,11 @@ class Predictor:
         data.extend(tmp)
         data.append(prod_count)
 
-        cutting_time = self.cutting_time_model.predict(data)
-        return float(cutting_time)
+        cutting_time = int(self.cutting_time_model.predict(data) / 60)
+        #print('cutting time :', cutting_time)
+        return cutting_time
 
+    # 구현완료
     def treatment_time_prediction(self, name, job_list):
 
         total_weight = 0
@@ -227,116 +200,58 @@ class Predictor:
             None
             #print('treat time :', treat_time)
         return treat_time
-        #---
 
-        """
-        :param equipment: treatment equipment entity
-        :param parameter:
-        :return: completion_time (seconds)
-        """
-        """
-        # 15시간으로 테스트
-        # treat cooling time 까지 포함
-        # 12 + 6 + 2
+    # def treatment_cooling_time_prediction(self, equipment, parameter=None):
+    #     """
+    #
+    #     :param equipment: treatment equipment entity
+    #     :param parameter:
+    #     :return: completion_time (seconds)
+    #     """
+    #     # 6시간
+    #     treat_time = 64800
+    #     treat_time += random.gauss(0, 1) * 3600
+    #     return treat_time  # random.randint(10, 15)
+    #
+    # def convey_time_prediction(self, job):
+    #     """
+    #     이동시간 현재 3분,,,
+    #     :param current: current equipment
+    #     :param next: next equipment
+    #     :return: complete time (seconds)
+    #     """
+    #
+    #     return 180  # random.randint(60, 90)
+
+    # 구현완료
+    def heating_energy_prediction(self, name, job_list, heating_time):
         total_weight = 0
         max_weight = 0
-        ingot_count = 0
-        total_count = len(job_id_list)
-        ingot_types = {}
-        max_ingot_type = None
-        produce_count = {}
-        treatment_NO = equipment.id[-1]
-        for job_id in job_id_list:
-            job = entity_mgr.get(job_id)
-            weight = job.get_weight(entity_mgr)
+        for j in job_list:
+            weight = j['properties']['ingot']['current_weight']
             total_weight += weight
             if max_weight < weight:
                 max_weight = weight
-            product = entity_mgr.get(job.product_id_list()[0])
-            produce_count[product.name()] = 1
-            ingot_type = product.properties['ingot_type_list'][0]
-            if ingot_type not in [*ingot_types]:
-                ingot_types[ingot_type] = 0
-                ingot_count += 1
-            ingot_types[ingot_type] += 1
+        data = furnace_num.TxtToCode(name[-1])
+        tmp = [heating_time, total_weight, max_weight]
+        data.extend(tmp)
+        heating_energy = self.first_heating_energy_model.predict(data)
 
-        cnt = 0
-        for key, value in ingot_types.items():
-            if value > cnt:
-                cnt = value
-                max_ingot_type = key
+        #print('heating energy :', energy_usage)
+        return heating_energy
 
-        tmp = heat_treatmnet_ingot_type.TxtToCode(max_ingot_type)
-        tmp2 = furnace_num.TxtToCode(treatment_NO)
-        data = [total_weight, max_weight, total_count, ingot_count] + tmp + [len([*produce_count])] + tmp2
-
-        treat_time = self.heat_treating_time_model.predict(data)
-        treat_time += 7
-        treat_time *= 3600
-
-        return float(treat_time)
-        """
-
-    def treatment_cooling_time_prediction(self, equipment, parameter=None):
-        """
-
-        :param equipment: treatment equipment entity
-        :param parameter:
-        :return: completion_time (seconds)
-        """
-        # 6시간
-        treat_time = 64800
-        treat_time += random.gauss(0, 1) * 3600
-        return treat_time  # random.randint(10, 15)
-
-    def convey_time_prediction(self, job):
-        """
-        이동시간 현재 3분,,,
-        :param current: current equipment
-        :param next: next equipment
-        :return: complete time (seconds)
-        """
-
-        return 180  # random.randint(60, 90)
-
-    def cal_heating_energy_usage(self, equipment, total_weight=None, max_weight=None, time=None):
-        """
-
-        :param equipment: heating equipment
-        :param time: how long use the equipment (hour !!!!!)
-        :return: energy_usage
-        """
-
-        if total_weight == 0 and max_weight == 0:
-            return 0
-
-        time /= 3600
-        if equipment is None:
-            return 150  # 최솟값 반환
-
-        state = equipment.state()
-        completion_usage = False
-        if state:
-            # if already process is running
-            # re-heating
-            # 재 가열시 현재 내부에 있는 모든 ingot과 문 열림 시간으로 계산
-            # completion_usage = 150
-
-            data = [time, total_weight, max_weight, len(equipment.job_id_list())]
-            completion_usage = self.reheating_energy_model.predict(data)
-        else:
-            # if it is not running
-            if time is None:
-                print("need to time")
-                exit(1)
-
-            data = furnace_num.TxtToCode(equipment.id[-1])
-            tmp = [time, total_weight, max_weight]
-            data.extend(tmp)
-            completion_usage = self.first_heating_energy_model.predict(data)
-        # print(completion_usage)
-        # exit(0)
-        return completion_usage
+    # 구현완료
+    def reheating_energy_prediction(self, job_list, heating_time):
+        total_weight = 0
+        max_weight = 0
+        for j in job_list:
+            weight = j['properties']['ingot']['current_weight']
+            total_weight += weight
+            if max_weight < weight:
+                max_weight = weight
+        data = [heating_time, total_weight, max_weight, len(job_list)]
+        reheating_energy = self.reheating_energy_model.predict(data)
+        return reheating_energy
 
     def cal_door_manipulate_energy_usage(self, manipulate_time=None):
         """
@@ -373,7 +288,8 @@ class Predictor:
 
         return maintain_energy_usage
 
-    def cal_forging_energy_usage(self, equipment, time=None):
+    # 구현완료
+    def forging_energy_prediction(self, time=None):
         """
 
         :param equipment: heating equipment
@@ -382,81 +298,68 @@ class Predictor:
         """
 
         if time is None:
-            print('need to forge type')
+            print('Error : cutting time is not exist')
             exit(0)
 
-        forging_time = (time / 60) * 200
-        return 0  # forging_time
+        forging_energy = time * 200
+        return forging_energy
 
-    def cal_cutting_energy_usage(self, equipment, time=None):
+    # 구현완료
+    def cutting_energy_prediction(self, time=None):
         """
 
         :param equipment: heating equipment
         :param time: how long use the equipment
         :return: energy_usage (KW)
         """
-        cutting_time = (time / 60) * 200
-        return 0  # cutting_time
+        cutting_energy = time * 200
+        return cutting_energy
 
-    def cal_treatment_energy_usage(self, entity_mgr, equipment, job_id_list, time=None):
-        """
-
-        :param equipment: heating equipment
-        :param time: how long use the equipment
-        :return: energy_usage
-        """
-
-        if time is None:
-            print('time is need')
-            exit(1)
+    def treatment_energy_prediction(self, name, job_list, treatment_time):
         total_weight = 0
         max_weight = 0
         ingot_count = 0
-        total_count = len(job_id_list)
+        total_count = len(job_list)
         if total_count == 0:
             return 0
         ingot_types = {}
         max_ingot_type = None
-        produce_count = {}
-        max_ingot_prod = None
-        treatment_NO = equipment.id[-1]
-        for job_id in job_id_list:
-            job = entity_mgr.get(job_id)
-            weight = job.get_weight(entity_mgr)
+        product_count = {}
+        treatment_NO = name[-1]
+        for job in job_list:
+            weight = job['properties']['ingot']['current_weight']
             total_weight += weight
             if max_weight < weight:
                 max_weight = weight
-            product = entity_mgr.get(job.product_id_list()[0])
-            if product.name() not in [*produce_count]:
-                produce_count[product.name()] = 0
-            produce_count[product.name()] += 1
-            ingot_type = product.properties['ingot_type_list'][0]
+            #product = entity_mgr.get(job.product_id_list()[0])
+            for product_id in job['properties']['product_id_list']:
+                if product_id not in [*product_count]:
+                    product_count[product_id] = 0
+                product_count[product_id] += 1
+            ingot_type = job['properties']['product']['ingot_type_list'][0]
             if ingot_type not in [*ingot_types]:
                 ingot_types[ingot_type] = 0
                 ingot_count += 1
             ingot_types[ingot_type] += 1
 
-        usage = 2500 + total_weight
-
         cnt = 0
         for key, value in ingot_types.items():
-            if value > cnt:
+            if cnt < value:
                 cnt = value
                 max_ingot_type = key
 
         cnt = 0
-        for key, value in produce_count.items():
-            if value > cnt:
+        for key, value in product_count.items():
+            if cnt < value:
                 cnt = value
 
         tmp = heat_treatmnet_ingot_type.TxtToCode(max_ingot_type)
         tmp2 = furnace_num.TxtToCode(treatment_NO)
-        data = [total_weight, max_weight, total_count, ingot_count] + tmp + [len([*produce_count])] + tmp2 + [
-            time / 3600]
+        data = [total_weight, max_weight, total_count, ingot_count] + tmp + [len([*product_count])] + tmp2 + [treatment_time / 3600]
 
-        usage = self.heat_treating_energy_model.predict(data)
+        treatment_energy = self.heat_treating_energy_model.predict(data)
 
-        return usage
+        return treatment_energy
 
     def _heating_time_prediction(self, dataset):
         # dataset = Data.dict_to_dataset(feature, 0)

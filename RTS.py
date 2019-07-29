@@ -32,6 +32,8 @@ class RTS:
         self.w1 = w1
         self.w2 = w2
         self.cnt = 0
+        self.best_log = None
+        self.best_score = 0
 
     # def set_env(self, envs):
     #     self.envs = envs
@@ -63,12 +65,14 @@ class RTS:
         #self.simulator.init_entity_manager()
         #furnace_schedule = self.decoder(individual, self.simulator.entity_mgr)
         self.simulator.init_simulator()
-        self.simulator.set_envs(self.envs)
+        #print('Log2 :', self.envs)
+        self.simulator.set_envs(deepcopy(self.envs))
+        #print('ind :', individual)
         self.simulator.set_job_queue(deepcopy(individual))
         #시뮬레이터에 인자로 individual 넣어주고 하면 됨
 
-        energy, simulation_time, total_weight, total_heating_weight = self.simulator.run()
-        W = random.randint(2900, 3100)
+        energy, simulation_time, total_weight, total_heating_weight = self.simulator.run(7)
+
         #W = self.total_weight - self.simulator.total_weight()
         if total_weight == 0:
             total_weight = self.total_weight
@@ -76,29 +80,30 @@ class RTS:
         #T_modify = T * (self.total_weight / W)
 
         energy_per_ton = energy/total_weight
-        E_modify = energy / W
-        time_per_ton = simulation_time / W
+        E_modify = energy / total_weight
+        time_per_ton = simulation_time / total_weight
         if simulation_time == 0:
             print('Error : T is',simulation_time)
             simulation_time = 1
-        heating_ton_per_time = total_heating_weight/simulation_time * 3600
+        heating_ton_per_hour = total_heating_weight/simulation_time
         # if heating_ton_per_time == 0:
         #     score = energy_per_ton * 2 + 100 * 50
         # else:
         #     score = energy_per_ton * 2 + (1/heating_ton_per_time) * 50
 
-        score = (E_modify * self.w1) + (time_per_ton * self.w2)
+        score = (E_modify * self.w1) + (heating_ton_per_hour * self.w2)
+
+        if self.best_score < score:
+            self.best_score = score
+            self.best_log = self.simulator.get_logs()
+
         self.cnt += 1
         print('simulation', self.cnt)
         print('score : ', '{0:.3f}'.format(score), end='\t')
-        print('time (minute) ', '{0:.3f}'.format(simulation_time), end='\t')
         print('energy : ', '{0:.3f}'.format(energy), end='\t')
-        print('weight :', '{0:.3f}'.format(total_weight), end='\t')
         print('energy per ton: ', '{0:.3f}'.format(energy_per_ton), end='\t')
         print('time per ton: ', '{0:.3f}'.format(time_per_ton), end='\t')
-        print('heating per time: ', '{0:.3f}'.format(heating_ton_per_time), end='\t')
-        print('total_heating_weight : ', '{0:.3f}'.format((total_weight - heating_ton_per_time)/simulation_time*3600), end='\t')
-        print('total_heating_weight : ', '{0:.3f}'.format(total_heating_weight), end='\t')
+        print('heating ton per hour: ', '{0:.3f}'.format(heating_ton_per_hour))
         # print('Total heating energy ', self.simulator.heating_energy())
         # print('total ', total_e)
         total_dict = {}
@@ -129,7 +134,7 @@ class RTS:
         #                 total_dict[name_list[1]][k] += float('{0:.3f}'.format(e))
         #     # print(key, value)
         # print(total_dict)
-        print('time is', time.time() - start_t)
+        #print('time is', time.time() - start_t)
         return score,
 
     def run(self):

@@ -20,6 +20,9 @@ class HeatingFurnace:
 
         self.start_time = None
 
+        self.total_energy_usage = 0
+        self.total_heating_weight = 0
+
         if Debug_mode:
             print(self.name + ' :: created')
 
@@ -35,10 +38,15 @@ class HeatingFurnace:
         self.log.append([self.env.now, process, target, state])
 
     def calc_heating_time(self):
-        self.alloc.predictor.heating_time_prediction(self.name, self.current_job_list)
+        heating_time = self.alloc.predictor.heating_time_prediction(self.name, self.current_job_list)
         if Debug_mode:
             print(self.name, ' :: calculate heating time')
-        return random.randint(180, 300)
+        return heating_time
+
+    def calc_heating_energy(self, heating_time):
+        heating_energy = self.alloc.predictor.heating_energy_prediction(self.name, self.current_job_list, heating_time)
+
+        return heating_energy
 
     def calc_holding_time(self, job):
         return random.randint(60, 180)
@@ -69,6 +77,10 @@ class HeatingFurnace:
                     nPrint(job)
 
                 reheating_time = self.alloc.predictor.reheating_time_prediction(self.name, self.current_job_list)
+                reheating_energy = self.alloc.predictor.reheating_energy_prediction(self.current_job_list, reheating_time)
+                self.total_energy_usage += reheating_energy
+                self.total_heating_weight += job['properties']['ingot']['current_weight']
+
                 for j in self.current_job_list:
                     j['properties']['last_process'] = 'holding'
                     j['properties']['last_process_end_time'] = self.env.now + reheating_time
@@ -138,6 +150,7 @@ class HeatingFurnace:
         if self.start_time != None:
             yield self.env.timeout(self.start_time)
 
+        #print(self.name, first_state)
         while True:
             # 작업 할당 받기
             if first_state == 'idle' or first_state == None:
@@ -173,10 +186,14 @@ class HeatingFurnace:
                     yield self.env.timeout(heating_end_time - self.env.now)
                 else:
                     heating_time = self.calc_heating_time()
+                    heating_energy = self.calc_heating_energy(heating_time)
+                    self.total_energy_usage += heating_energy
                     for j in self.current_job_list:
                         j['properties']['last_process'] = 'holding'
                         j['properties']['last_process_end_time'] = self.env.now + heating_time
                         j['properties']['last_heating_furnace'] = self.name
+                        self.total_heating_weight += j['properties']['ingot']['current_weight']
+
                     self.write_log('heating', self.env.now + heating_time, current_job_id_list)
                     if Debug_mode:
                         print(self.env.now, self.name, ' :: heating start')
@@ -202,7 +219,10 @@ class HeatingFurnace:
             if first_state == 'cooling' or first_state == None:
                 if first_state == 'cooling' and last_log != None and last_log[1] == 'heating': # 원래 냉각중이었다면
                     cooling_end_time = last_log[2]
-                    yield self.env.timeout(cooling_end_time - self.env.now)
+                    if cooling_end_time < self.env.now:
+                        None
+                    else:
+                        yield self.env.timeout(cooling_end_time - self.env.now)
                 else:
                     cooling_time = self.calc_cooling_time()
                     self.write_log('cooling', self.env.now + cooling_time)
@@ -212,7 +232,7 @@ class HeatingFurnace:
                     yield self.env.timeout(cooling_time)
                 if Debug_mode:
                     print(self.env.now, self.name, ' :: cooling complete')
-                first_state = 'None'
+                first_state = None
 
             # 사이클 종료
             if len(self.current_job_list) != 0:
@@ -221,3 +241,4 @@ class HeatingFurnace:
                 print('log :', self.log)
                 exit(1)
             self.current_job_list = []
+            #print(self.name)

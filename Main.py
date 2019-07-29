@@ -5,6 +5,7 @@ import json
 from Predictor.Predictor import *
 import sys
 from RTS import *
+from VirtualFactory.V_Simulator import *
 #sys.stdout = open('output.txt','w')
 
 """
@@ -40,8 +41,8 @@ def read(file):
         sys.exit(1)
 
 def read_data(file):
-    path='./data/190707_test_data/'
-    #path = './data/140710_10/'
+    #path='./data/190707_test_data/'
+    path = './data/140710_10/'
     data = read(path+file+'.json')
     if file == 'product':
         for d in data:
@@ -99,8 +100,8 @@ def read_data(file):
 #from absl import logging
 #logging._warn_preinit_stderr = 0
 
-simul_start_time = datetime(2013, 2, 10, 10)
-#simul_start_time = datetime(2014, 5, 10, 10)
+#simul_start_time = datetime(2013, 2, 10, 10)
+simul_start_time = datetime(2014, 5, 10, 10)
 
 product_data = read_data('product')
 ingot_data = read_data('ingot')
@@ -120,19 +121,45 @@ for j in job_data:
         break
 print('total weight :', total_weight)
 job_data = new_job_list
-predictor = Predictor()
+predictor = Predictor('Planning')
+v_predictor = Predictor('Real')
 
+# 휴리스틱 버전으로 24시간 가동
 heuristic_simulator = Simulator('Heuristic', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
 heuristic_simulator.init_simulator()
-heuristic_simulator.run()
-simulator_envs = heuristic_simulator.envs
+heuristic_simulator.run(1, save_env=True)
+simulator_22envs = heuristic_simulator.envs
+simulator_24envs = heuristic_simulator.envs2
 
-#print(simulator_envs['press'][0])
+print('end heuristic')
 
-ga_simulator = Simulator('GA', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_envs['jobs']), 13, 2, 3, 5)
-ga = RTS(ga_simulator, simulator_envs, 1, 0, 10.0, 1.0)
+# 환경 이어받아 GA 버전으로 가동
+ga_simulator = Simulator('GA', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_22envs['jobs']), 13, 2, 3, 5)
+ga = RTS(ga_simulator, simulator_22envs, 1, 1, 1.0, 10.0)
 ga_result = ga.run()
-print('result :', ga_result)
+log = ga.best_log
+#print(log)
+
+#sys.stdout = open('output.txt', 'w')
+#print(log['cutter'][0])
+
+Debug_mode = True
+v_simulator = V_Simulator(v_predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_24envs['jobs']), 13, 2, 3, 5)
+v_simulator.set_envs(simulator_24envs)
+
+v_simulator.set_todo(log)
+v_simulator.run(2)
+
+print('hf todo :', log['heating_furnace'][0])
+print('hf log :', v_simulator.heating_furnace_list[0].log)
+
+print('press todo :', log['press'][0])
+print('press log :', v_simulator.press_list[0].log)
+
+#vf_simulator = TestSimulator()
+#print('result :', ga_result)
+
+
 
 
 #E, T = simulator.run()
