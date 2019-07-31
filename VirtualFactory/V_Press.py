@@ -5,6 +5,7 @@ class V_Press:
     def __init__(self, env, allocator, num):
         self.env = env
         self.alloc = allocator
+        self.num = num
 
         self.name = 'press_' + str(num + 1)
 
@@ -42,14 +43,17 @@ class V_Press:
             i = 1
             last_log = self.log[len(self.log) - i]
             first_state = last_log[1]
+            if first_state == 'press start':
+                self.current_job = self.alloc.get_job(last_log[2])
 
         if self.start_time != None:
             yield self.env.timeout(self.start_time)
 
         while True:
+            # idle
+            #if self.num == 0:
+                #print('log :', last_log, first_state, self.current_job)
             if first_state == 'idle' or first_state == None:
-                if first_state == None:
-                    self.write_log('idle')
                 target = self.todo[0]
                 while target[1] != 'press start':
                     self.todo.remove(target)
@@ -57,7 +61,8 @@ class V_Press:
                         self.write_log('off')
                         self.env.exit()
                     target = self.todo[0]
-
+                #if self.num == 0:
+                    #print('t :', target)
                 self.current_job = self.alloc.get_next_press_job(self.name, target[2])
                 if self.current_job == None:
                     yield self.env.timeout(10)
@@ -72,6 +77,7 @@ class V_Press:
                 first_state = None
                 continue
 
+            # press
             if first_state == 'press start' or first_state == None:
                 if first_state == 'press start' and last_log != None and last_log[1] == 'press start':
                     job_id = last_log[2]
@@ -95,10 +101,8 @@ class V_Press:
                         nPrint(self.current_job, ['last_process_end_time'])
                     yield self.env.timeout(press_time)
 
+            # end
             self.write_log('press end', None)
-            if Debug_mode:
-                print(self.env.now, self.name, ':: press end')
-                nPrint(self.current_job)
-
+            self.write_log('idle')
             self.alloc.end_job(self.current_job)
             first_state = None

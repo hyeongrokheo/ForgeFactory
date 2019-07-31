@@ -90,7 +90,7 @@ class V_Cutter:
                     self.write_log('cutting start', self.current_job['id'])
                     cut_time = self.calc_cut_time()
                     self.current_job['properties']['current_equip'] = self.name
-                    self.current_job['properties']['last_process'] = 'cut'
+                    self.current_job['properties']['last_process'] = 'cutting'
                     self.current_job['properties']['last_process_end_time'] = self.env.now + cut_time
                     if Debug_mode:
                         nPrint(self.current_job, ['last_process_end_time'])

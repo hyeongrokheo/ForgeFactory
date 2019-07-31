@@ -128,7 +128,10 @@ class Predictor:
         else:
             product_size = 'big'
 
-        product_type = job['properties']['product']['product_type']
+        try:
+            product_type = job['properties']['product']['product_type']
+        except:
+            product_type = 'Cylinder'
         total_round = job['properties']['product']['total_round']
         current_round = job['properties']['product']['current_round']
 

@@ -70,7 +70,8 @@ class V_Allocator:
         job['properties']['last_process'] = process_name
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
-        job['properties']['next_instruction'] += 1
+        #job['properties']['next_instruction'] += 1
+        #원래있었음
         if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
             self.simulate_end_time = self.env.now
@@ -211,44 +212,24 @@ class V_Allocator:
     #             self.hf_count = 0
 
     def get_next_press_job(self, name, target_id):
-        # candidate_job_list = self.next_job_list('forging')
-        # if len(candidate_job_list) == 0:
-        #     return None
-        # if Debug_mode:
-        #     print('후보 작업들은')
-        #     nPrint(candidate_job_list)
-        # candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
-        # target_job = candidate_job_list[0]
-
-
         target_job = self.get_job(target_id)
+        #print(name)
+        #if name == 'press_1':
+            #print('tj :', target_job)
         if target_job == None:
             print('Error : id not exist.', target_id)
             exit(1)
         if target_job['properties']['state'] == 'done':
             return -1
-        if target_job['properties']['last_process'] == 'holding':
+        if target_job['properties']['last_process_end_time'] == None or target_job['properties']['last_process_end_time'] > self.env.now:
+            return None
+        if target_job['properties']['last_process'] == 'holding' and target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] == 'forging':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
-        #print(self.env.now, 'press target job :', target_job)
-        self.job_update(job=target_job, equip_name=name, process_name='press')
-        if Debug_mode:
-            print(self.env.now, 'press target job :')
-            nPrint(target_job)
-
-        if target_job['properties']['last_process_end_time'] != None and target_job['properties']['last_process_end_time'] < self.env.now and target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] == 'forging':
+            self.job_update(job=target_job, equip_name=name, process_name='press')
             return target_job
         else:
             return None
-        # index = None
-        # try:
-        #     index = self.waiting_job.index(target_job)
-        # except:
-        #     None
-        # if index != None:
-        #     self.waiting_job.remove(target_job)
-        #
-        # return target_job
 
     def get_next_cut_job(self, name, target_id):
 
@@ -265,7 +246,7 @@ class V_Allocator:
         if target_job['properties']['last_process'] == 'holding':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
-        self.job_update(job=target_job, equip_name=name, process_name='cut')
+        self.job_update(job=target_job, equip_name=name, process_name='cutting')
         if Debug_mode:
             print(self.env.now, 'cutter target job :')
             nPrint(target_job)

@@ -70,13 +70,13 @@ class V_Simulator:
     def set_todo(self, log):
         #print(log)
         for i in range(len(self.heating_furnace_list)):
-            self.heating_furnace_list[i].set_todo(log['heating_furnace'][i])
+            self.heating_furnace_list[i].set_todo(deepcopy(log['heating_furnace'][i]))
         for i in range(len(self.press_list)):
-            self.press_list[i].set_todo(log['press'][i])
+            self.press_list[i].set_todo(deepcopy(log['press'][i]))
         for i in range(len(self.cutter_list)):
-            self.cutter_list[i].set_todo(log['cutter'][i])
+            self.cutter_list[i].set_todo(deepcopy(log['cutter'][i]))
         for i in range(len(self.treatment_furnace_list)):
-            self.treatment_furnace_list[i].set_todo(log['treatment_furnace'][i])
+            self.treatment_furnace_list[i].set_todo(deepcopy(log['treatment_furnace'][i]))
 
     def run(self, simulation_time):
         if Debug_mode:

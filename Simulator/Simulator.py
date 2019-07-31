@@ -100,6 +100,7 @@ class Simulator:
             logs['cutter'].append(deepcopy(c.log))
         for tf in self.treatment_furnace_list:
             logs['treatment_furnace'].append(deepcopy(tf.log))
+        #print('p.log :', logs['press'][0])
         return logs
 
     def set_job_queue(self, individual):
@@ -158,19 +159,20 @@ class Simulator:
         simul_end_time = 60 * 24 * simulate_time # N일 후
         self.env.run(until=simul_end_time)
         #self.env.run(until=60*24*14)
-        self.envs2 = {'time': self.env.now, 'jobs': deepcopy(self.job), 'allocator': {}, 'heating_furnace': [],
-                     'press': [], 'cutter': [], 'treatment_furnace': []}
-        self.envs2['allocator']['waiting_job'] = deepcopy(self.alloc.waiting_job)
-        self.envs2['allocator']['complete_job'] = deepcopy(self.alloc.complete_job)
-        self.envs2['allocator']['recharging_queue'] = deepcopy(self.alloc.recharging_queue)
-        for hf in self.heating_furnace_list:
-            self.envs2['heating_furnace'].append(deepcopy(hf.log))
-        for p in self.press_list:
-            self.envs2['press'].append(deepcopy(p.log))
-        for c in self.cutter_list:
-            self.envs2['cutter'].append(deepcopy(c.log))
-        for tf in self.treatment_furnace_list:
-            self.envs2['treatment_furnace'].append(deepcopy(tf.log))
+        if save_env:
+            self.envs2 = {'time': self.env.now, 'jobs': deepcopy(self.job), 'allocator': {}, 'heating_furnace': [],
+                         'press': [], 'cutter': [], 'treatment_furnace': []}
+            self.envs2['allocator']['waiting_job'] = deepcopy(self.alloc.waiting_job)
+            self.envs2['allocator']['complete_job'] = deepcopy(self.alloc.complete_job)
+            self.envs2['allocator']['recharging_queue'] = deepcopy(self.alloc.recharging_queue)
+            for hf in self.heating_furnace_list:
+                self.envs2['heating_furnace'].append(deepcopy(hf.log))
+            for p in self.press_list:
+                self.envs2['press'].append(deepcopy(p.log))
+            for c in self.cutter_list:
+                self.envs2['cutter'].append(deepcopy(c.log))
+            for tf in self.treatment_furnace_list:
+                self.envs2['treatment_furnace'].append(deepcopy(tf.log))
 
         if Debug_mode:
             print('- end simulator -')

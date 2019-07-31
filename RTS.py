@@ -96,6 +96,7 @@ class RTS:
         if self.best_score < score:
             self.best_score = score
             self.best_log = self.simulator.get_logs()
+            #print('best log :', self.best_log['press'][0])
 
         self.cnt += 1
         print('simulation', self.cnt)

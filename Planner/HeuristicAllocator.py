@@ -64,7 +64,7 @@ class HeuristicAllocator:
         job['properties']['last_process'] = process_name
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
-        job['properties']['next_instruction'] += 1
+        #job['properties']['next_instruction'] += 1
         if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
             self.simulate_end_time = self.env.now
@@ -209,7 +209,7 @@ class HeuristicAllocator:
         if target_job['properties']['last_process'] == 'holding':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
-        self.job_update(job=target_job, equip_name=name, process_name='cut')
+        self.job_update(job=target_job, equip_name=name, process_name='cutting')
         if Debug_mode:
             print(self.env.now, 'cutter target job :')
             nPrint(target_job)
@@ -225,9 +225,9 @@ class HeuristicAllocator:
         return target_job
 
     def end_job(self, job):
+        job['properties']['next_instruction'] += 1
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            self.simulate_end_time = self.env.now
             self.complete_job.append(job)
         elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
             self.recharging(job)
@@ -281,10 +281,10 @@ class HeuristicAllocator:
                 total_weight -= cur_job_weight
                 target_job_list.remove(j)
                 break
-        for j in target_job_list:
-            j['properties']['current_equip'] = name
-            j['properties']['last_process'] = 'treatment'
-            j['properties']['next_instruction'] += 1
+        # for j in target_job_list:
+        #     j['properties']['current_equip'] = name
+        #     j['properties']['last_process'] = 'treatment'
+        #     j['properties']['next_instruction'] += 1
         return target_job_list
 
 
