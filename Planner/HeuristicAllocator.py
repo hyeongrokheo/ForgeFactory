@@ -20,15 +20,15 @@ class HeuristicAllocator:
         self.complete_job = []
         self.recharging_queue = []
 
-        self.simulate_end_time = 0
+        #self.simulate_end_time = 0
 
         self.hf_count = 0
-
-    def end_simulator(self):
-        for j in self.job:
-            if j['properties']['state'] != 'done':
-                return False
-        return True
+    #
+    # def end_simulator(self):
+    #     for j in self.job:
+    #         if j['properties']['state'] != 'done':
+    #             return False
+    #     return True
 
     def next_job_list(self, process):
         next_job = []
@@ -65,9 +65,9 @@ class HeuristicAllocator:
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
         #job['properties']['next_instruction'] += 1
-        if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
+        if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            self.simulate_end_time = self.env.now
+            #self.simulate_end_time = self.env.now
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
         # 세영수정
@@ -159,10 +159,6 @@ class HeuristicAllocator:
         self.recharging_queue.append(job)
 
     def _recharging(self):
-        # 형록 구현해야됨
-        # put get 서로 handshake하며 가열로 정보 다 받아오고
-        # 그거 기반으로 판단해서 가열로 선택->재장입
-        #
         while True:
             if len(self.recharging_queue) != 0:
                 #self.recharging_queue[0]['properties']['last_heating_furnace'] = 'heating_furnace_' + str(self.hf_count + 1).zfill(2)
@@ -176,9 +172,6 @@ class HeuristicAllocator:
         candidate_job_list = self.next_job_list('forging')
         if len(candidate_job_list) == 0:
             return None
-        if Debug_mode:
-            print('후보 작업들은')
-            nPrint(candidate_job_list)
         candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
         target_job = candidate_job_list[0]
         if target_job['properties']['last_process'] == 'holding':
@@ -186,9 +179,6 @@ class HeuristicAllocator:
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
         #print(self.env.now, 'press target job :', target_job)
         self.job_update(job=target_job, equip_name=name, process_name='press')
-        if Debug_mode:
-            print(self.env.now, 'press target job :')
-            nPrint(target_job)
 
         index = None
         try:
@@ -210,9 +200,6 @@ class HeuristicAllocator:
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
         self.job_update(job=target_job, equip_name=name, process_name='cutting')
-        if Debug_mode:
-            print(self.env.now, 'cutter target job :')
-            nPrint(target_job)
 
         index = None
         try:
@@ -225,14 +212,18 @@ class HeuristicAllocator:
         return target_job
 
     def end_job(self, job):
-        job['properties']['next_instruction'] += 1
-        if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
-            job['properties']['state'] = 'done'
-            self.complete_job.append(job)
-        elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
-            self.recharging(job)
+        if isinstance(job, list):
+            for j in job:
+                self.end_job(j)
         else:
-            self.waiting_job.append(job)
+            job['properties']['next_instruction'] += 1
+            if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
+                job['properties']['state'] = 'done'
+                self.complete_job.append(job)
+            elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
+                self.recharging(job)
+            else:
+                self.waiting_job.append(job)
 
     def get_next_treatment_job(self, name, capacity):
         # ----------------------------------------------------------------------------------------------------
@@ -260,9 +251,6 @@ class HeuristicAllocator:
         standard_deadline = candidate_job_list[0]['properties']['deadline']
         target_job_list = []
         total_weight = 0
-        if Debug_mode:
-            print('cjl')
-            nPrint(candidate_job_list)
 
         for j in candidate_job_list:
             cur_job_weight = j['properties']['ingot']['current_weight']

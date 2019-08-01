@@ -130,37 +130,35 @@ heuristic_simulator.init_simulator()
 heuristic_simulator.run(1, save_env=True)
 simulator_22envs = deepcopy(heuristic_simulator.envs)
 simulator_24envs = deepcopy(heuristic_simulator.envs2)
+print(heuristic_simulator.job)
+print(heuristic_simulator.get_logs())
+#
+# print('hf 1 log :', simulator_24envs['heating_furnace'][0])
+# print('hf 2 log :', simulator_24envs['heating_furnace'][1])
+# print('hf 3 log :', simulator_24envs['heating_furnace'][2])
+#
+# print('p 1 log :', simulator_24envs['press'][0])
+# print('p 2 log :', simulator_24envs['press'][1])
+# print('end heuristic')
 
-print('hf 1 log :', simulator_24envs['heating_furnace'][0])
-print('hf 2 log :', simulator_24envs['heating_furnace'][1])
-print('hf 3 log :', simulator_24envs['heating_furnace'][2])
-
-print('p 1 log :', simulator_24envs['press'][0])
-print('p 2 log :', simulator_24envs['press'][1])
-print('end heuristic')
-
-# 환경 이어받아 GA 버전으로 가동
+#환경 이어받아 GA 버전으로 가동
 ga_simulator = Simulator('GA', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_22envs['jobs']), 13, 2, 3, 5)
 ga = RTS(ga_simulator, deepcopy(simulator_22envs), 1, 1, 1.0, 10.0)
 ga_result = ga.run()
 log = ga.best_log
 print('best log :', log)
 
-#sys.stdout = open('output.txt', 'w')
-#print(log['press'][0])
-
-#Debug_mode = True
-v_simulator = V_Simulator(v_predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_24envs['jobs']), 13, 2, 3, 5)
-v_simulator.set_envs(deepcopy(simulator_24envs))
-
-v_simulator.set_todo(log)
-v_simulator.run(2)
-
-print('hf todo :', log['heating_furnace'][0])
-print('hf log :', v_simulator.heating_furnace_list[0].log)
-
-print('press todo :', log['press'][0])
-print('press log :', v_simulator.press_list[0].log)
+# v_simulator = V_Simulator(v_predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_24envs['jobs']), 13, 2, 3, 5)
+# v_simulator.set_envs(deepcopy(simulator_24envs))
+#
+# v_simulator.set_todo(log)
+# v_simulator.run(2)
+#
+# print('hf todo :', log['heating_furnace'][0])
+# print('hf log :', v_simulator.heating_furnace_list[0].log)
+#
+# print('press todo :', log['press'][0])
+# print('press log :', v_simulator.press_list[0].log)
 
 #vf_simulator = TestSimulator()
 #print('result :', ga_result)

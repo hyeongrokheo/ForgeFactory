@@ -127,7 +127,8 @@ class V_Simulator:
                 #exit(1)
         energy = random.randint(1000, 2000)
         #T = random.randint(1000, 2000)
-        simulation_time = self.alloc.simulate_end_time
+        #simulation_time = self.alloc.simulate_end_time
+        simulation_time = simul_end_time
         total_weight = random.randint(1000, 2000)
         total_heating_weight = random.randint(1000, 2000)
         total_e = random.randint(1000, 2000)

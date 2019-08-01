@@ -21,7 +21,7 @@ class GAAllocator:
         self.complete_job = []
         self.recharging_queue = []
 
-        self.simulate_end_time = 0
+        #self.simulate_end_time = 0
 
         self.hf_count = 0
 
@@ -54,11 +54,11 @@ class GAAllocator:
     def set_job_queue(self, individual):
         self.hf_list = individual
 
-    def end_simulator(self):
-        for j in self.job:
-            if j['properties']['state'] != 'done':
-                return False
-        return True
+    # def end_simulator(self):
+    #     for j in self.job:
+    #         if j['properties']['state'] != 'done':
+    #             return False
+    #     return True
 
     def next_job_list(self, process):
         next_job = []
@@ -96,9 +96,9 @@ class GAAllocator:
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
         #job['properties']['next_instruction'] += 1
-        if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
+        if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            self.simulate_end_time = self.env.now
+            #self.simulate_end_time = self.env.now
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
         # 세영수정
@@ -247,9 +247,6 @@ class GAAllocator:
         candidate_job_list = self.next_job_list('forging')
         if len(candidate_job_list) == 0:
             return None
-        if Debug_mode:
-            print('후보 작업들은')
-            nPrint(candidate_job_list)
         candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
         target_job = candidate_job_list[0]
         if target_job['properties']['last_process'] == 'holding':
@@ -257,9 +254,6 @@ class GAAllocator:
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
         #print(self.env.now, 'press target job :', target_job)
         self.job_update(job=target_job, equip_name=name, process_name='press')
-        if Debug_mode:
-            print(self.env.now, 'press target job :')
-            nPrint(target_job)
 
         index = None
         try:
@@ -281,9 +275,6 @@ class GAAllocator:
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
         self.job_update(job=target_job, equip_name=name, process_name='cutting')
-        if Debug_mode:
-            print(self.env.now, 'cutter target job :')
-            nPrint(target_job)
 
         index = None
         try:
@@ -320,8 +311,8 @@ class GAAllocator:
         # ----------------------------------------------------------------------------------------------------
         candidate_job_list = []
         for j in self.job:
-            if len(j['properties']['instruction_list'][0]) == j['properties']['next_instruction']:
-                j['properties']['state'] = 'done'
+            # if len(j['properties']['instruction_list'][0]) == j['properties']['next_instruction']:
+            #     j['properties']['state'] = 'done'
             if j['properties']['state'] == 'done':
                 #완료된 작업
                 continue
@@ -329,13 +320,13 @@ class GAAllocator:
                 #다른 작업 진행중
                 continue
             #print('debug :', j['id'], j['properties']['instruction_list'][0], j['properties']['next_instruction'])
-            try:
-                if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
-                    candidate_job_list.append(j)
-            except:
-                print('Error : 작업 정보 안맞음')
-                print(j)
-                exit(1)
+            # try:
+            if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
+                candidate_job_list.append(j)
+            # except:
+            #     print('Error : 작업 정보 안맞음')
+            #     print(j)
+            #     exit(1)
 
         if len(candidate_job_list) == 0:
             return None

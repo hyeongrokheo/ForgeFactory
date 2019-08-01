@@ -39,8 +39,6 @@ class HeatingFurnace:
 
     def calc_heating_time(self):
         heating_time = self.alloc.predictor.heating_time_prediction(self.name, self.current_job_list)
-        if Debug_mode:
-            print(self.name, ' :: calculate heating time')
         return heating_time
 
     def calc_heating_energy(self, heating_time):
@@ -55,8 +53,6 @@ class HeatingFurnace:
         return 10
 
     def calc_cooling_time(self):
-        if Debug_mode:
-            print(self.name, ' :: calculate cooling time')
         return random.randint(60, 120)
 
     def recharging(self):
@@ -71,7 +67,7 @@ class HeatingFurnace:
                     current_job_id_list.append(j['id'])
 
                 self.write_log('recharging', job['id'], current_job_id_list)
-                self.alloc.job_update(job, self.name, 'heating', self.name)
+                self.alloc.job_update(job, self.name, 'holding', self.name)
                 if Debug_mode:
                     print(self.name, ' :: recharging ')
                     nPrint(job)
@@ -81,10 +77,14 @@ class HeatingFurnace:
                 self.total_energy_usage += reheating_energy
                 self.total_heating_weight += job['properties']['ingot']['current_weight']
 
+                # job['properties']['last_process'] = 'holding'
+                # job['properties']['last_heating_furncae'] = self.name
+                # job['properties']['current_equip'] = self.name
+                # job['properties']['next_instruction'] += 1
                 for j in self.current_job_list:
-                    j['properties']['last_process'] = 'holding'
+                    #j['properties']['last_process'] = 'holding'
                     j['properties']['last_process_end_time'] = self.env.now + reheating_time
-                    j['properties']['last_heating_furnace'] = self.name
+                    #j['properties']['last_heating_furnace'] = self.name
 
 
             #else:
@@ -162,15 +162,20 @@ class HeatingFurnace:
                 first_state = None
                 new_job = self.alloc.heating_allocate(self.name, self.num, self.capacity)
                 while not new_job:
-                    # if self.num != 0:
-                    #     state = 'off'
+                    if self.num != 0:
+                        state = 'off'
+                        self.write_log('off')
+                        #print(self.env.now, self.num, 'is off')
+                        self.env.exit()
                     yield self.env.timeout(10)
                     new_job = self.alloc.heating_allocate(self.name, self.num, self.capacity)
                 self.current_job_list = new_job
                 current_job_id_list = self.get_id_list(self.current_job_list)
                 self.write_log('insertion', current_job_id_list, current_job_id_list)
 
-                state = 'heating'
+                if state != 'off':
+                    state = 'heating'
+
                 #self.write_log('heating', self.env.now + heating_time, current_job_id_list)
 
             # 가열 시작
@@ -223,7 +228,7 @@ class HeatingFurnace:
                 self.write_log('idle')
 
             if state == 'off':
-                if first_state:
+                if not first_state:
                     self.write_log('off')
                 self.env.exit()
 

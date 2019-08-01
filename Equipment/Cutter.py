@@ -26,9 +26,6 @@ class Cutter:
         self.log.append([self.env.now, process, target])
 
     def calc_cut_time(self):
-        if Debug_mode:
-            print(self.name, ' :: calculate cut time')
-
         cut_time = int(self.alloc.predictor.cutting_time_prediction(self.current_job) / 60)
         return cut_time
 
@@ -98,5 +95,7 @@ class Cutter:
             else:
                 for i in range(product_num):
                     job = deepcopy(self.current_job)
-                    job['id'] += ('_' + str(i))
+                    job['id'] += ('_' + str(i+1))
+                    job['properties']['ingot']['current_weight'] /= product_num
+                    self.alloc.job.append(job)
                     self.alloc.end_job(job)

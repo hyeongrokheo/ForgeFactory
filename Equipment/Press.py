@@ -28,9 +28,6 @@ class Press:
         self.log.append([self.env.now, process, target])
 
     def calc_press_time(self):
-        if Debug_mode:
-            print(self.name, ' :: calculate press time')
-
         press_time = self.alloc.predictor.forging_time_prediction(self.current_job)
         return press_time
 

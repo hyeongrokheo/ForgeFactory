@@ -20,7 +20,7 @@ class V_Allocator:
         self.complete_job = []
         self.recharging_queue = []
 
-        self.simulate_end_time = 0
+        #self.simulate_end_time = 0
 
         self.hf_count = 0
 
@@ -72,9 +72,9 @@ class V_Allocator:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
         #job['properties']['next_instruction'] += 1
         #원래있었음
-        if len(job['properties']['instruction_list']) == job['properties']['next_instruction']:
+        if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            self.simulate_end_time = self.env.now
+            #self.simulate_end_time = self.env.now
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
         # 세영수정
@@ -268,7 +268,7 @@ class V_Allocator:
     def end_job(self, job):
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            self.simulate_end_time = self.env.now
+            #self.simulate_end_time = self.env.now
             self.complete_job.append(job)
         elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
             self.recharging(job)

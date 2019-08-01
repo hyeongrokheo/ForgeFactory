@@ -26,9 +26,6 @@ class TreatmentFurnace:
         self.log.append([self.env.now, process, target])
 
     def calc_treatment_time(self):
-        if Debug_mode:
-            print(self.name, ' :: calculate treatment time')
-
         treatment_time = self.alloc.predictor.treatment_time_prediction(self.name, self.current_job_list)
         return treatment_time
 
