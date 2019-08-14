@@ -68,9 +68,9 @@ class GAAllocator:
                 continue
             if job['properties']['state'] == 'done':
                 continue
-            if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
-                job['properties']['state'] = 'done'
-                continue
+            # if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
+            #     job['properties']['state'] = 'done'
+            #     continue
             if (job['properties']['last_process_end_time'] < self.env.now) and (job['properties']['instruction_list'][0][job['properties']['next_instruction']] == process):
                 #print('debug2 : ', self.env.now, job)
                 next_job.append(job)
@@ -89,20 +89,21 @@ class GAAllocator:
         #print('debug : nj :', next_job)
         return next_job
 
+    def get_job(self, id):
+        for j in self.job:
+            if j['id'] == id:
+                return j
+        return None
+
     def job_update(self, job, equip_name, process_name, last_heating_furnace_name=None):
-        # 세영수정
         job['properties']['current_equip'] = equip_name
         job['properties']['last_process'] = process_name
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
-        #job['properties']['next_instruction'] += 1
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            #self.simulate_end_time = self.env.now
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
-        # 세영수정
-        # 가열로에 할당된 작업인지 확인
         if j['properties']['current_equip'] != None and j['properties']['current_equip'] == furnace_name:
             return True
         return False
@@ -124,11 +125,11 @@ class GAAllocator:
         return selected_job_list
 
     def heating_allocate(self, name, num, capacity):
-        allocate_job_list = []
-        #print('name :', name)
-        #print('num :', num)
-        #print('capacity :', capacity)
+        # print('GA')
+        # print('hf list :', self.hf_list)
+        #print('GA!!!')
         #exit(1)
+        allocate_job_list = []
         total_weight = 0
 
         for job in self.waiting_job:
@@ -236,6 +237,7 @@ class GAAllocator:
 
     def _recharging(self):
         while True:
+            #재장입 알고리즘 (현재는 무작위)
             if len(self.recharging_queue) != 0:
                 self.recharging_wakeup[self.hf_count].put(self.recharging_queue[0])
             yield self.env.timeout(1)
@@ -248,7 +250,14 @@ class GAAllocator:
         if len(candidate_job_list) == 0:
             return None
         candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
+        # for target_job in candidate_job_list:
+        #     print(self.env.now, 'job info :', target_job['id'], target_job['properties']['last_process_end_time'],
+        #           target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']])
         target_job = candidate_job_list[0]
+        # if target_job['properties']['last_process'] == 'holding' and target_job['properties'][
+        #     'last_process_end_time'] != None and target_job['properties']['last_process_end_time'] < self.env.now and
+        #         target_job['properties']['instruction_list'][0][
+        #             target_job['properties']['next_instruction']] == 'forging':
         if target_job['properties']['last_process'] == 'holding':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
@@ -293,10 +302,16 @@ class GAAllocator:
             for j in job:
                 self.end_job(j)
         else:
+            if job['properties']['state'] == 'done':
+                return
             job['properties']['next_instruction'] += 1
             if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
                 job['properties']['state'] = 'done'
                 self.complete_job.append(job)
+            # elif len(job['properties']['instruction_list'][0]) < job['properties']['next_instruction']:
+            #     print('Error. instruction')
+            #     print(job)
+            #     exit(1)
             elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
                 self.recharging(job)
             else:

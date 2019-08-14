@@ -49,15 +49,14 @@ class TreatmentFurnace:
         state = 'idle'
         first_state = None
         self.current_job_list = []
-
-        last_log = None
         if len(self.log) != 0:
             i = 1
             last_log = self.log[len(self.log) - i]
             state = last_log[1]
             first_state = last_log[1]
+            # print('last log :', last_log)
             if last_log[2] and len(last_log[2]) != 0:
-                current_job_id_list = last_log[3]
+                current_job_id_list = last_log[2]
                 for job_id in current_job_id_list:
                     for j in self.alloc.job:
                         if j['id'] == job_id:
@@ -75,8 +74,8 @@ class TreatmentFurnace:
                     yield self.env.timeout(30)
                     new_job = self.alloc.get_next_treatment_job(self.name, self.capacity)
                 self.current_job_list = new_job
-                current_job_id_list = self.get_id_list(self.current_job_list)
 
+                current_job_id_list = self.get_id_list(self.current_job_list)
                 state = 'treatment start'
 
             if state == 'treatment start':

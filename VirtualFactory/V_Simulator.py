@@ -78,10 +78,7 @@ class V_Simulator:
         for i in range(len(self.treatment_furnace_list)):
             self.treatment_furnace_list[i].set_todo(deepcopy(log['treatment_furnace'][i]))
 
-    def run(self, simulation_time):
-        if Debug_mode:
-            print('- running simulator -')
-        #print(self.equips)
+    def processing(self):
         for hf in self.heating_furnace_list:
             self.env.process(hf.run())
             self.env.process(hf.recharging())
@@ -92,10 +89,14 @@ class V_Simulator:
             self.env.process(c.run())
         for tf in self.treatment_furnace_list:
             self.env.process(tf.run())
-        #self.env.process(self.alloc._recharging())
 
+    def run(self, simulation_time):
+        # print('simulation time day :', simulation_time)
         simul_end_time = 60 * 24  * simulation_time - 120 #22시간 후
+        # print(1)
+        # print('simul end time :', simul_end_time)
         self.env.run(until=simul_end_time)
+        # print(2)
 
         self.envs = {'time': self.env.now, 'jobs': deepcopy(self.job), 'allocator': {}, 'heating_furnace': [], 'press': [], 'cutter': [], 'treatment_furnace': []}
 
@@ -110,27 +111,24 @@ class V_Simulator:
             self.envs['cutter'].append(deepcopy(c.log))
         for tf in self.treatment_furnace_list:
             self.envs['treatment_furnace'].append(deepcopy(tf.log))
-        #self.envs['time'] = self.env.now
-        #self.envs['hf'] = []
-        #for i in range(len(self.heating_furnace_list)):
-        #    self.envs['hf'].append(self.heating_furnace_list[i].get_data())
-
-        simul_end_time = 60 * 24  * simulation_time #24시간 후
+        # print(3)
+        simul_end_time = 60 * 24 * simulation_time #24시간 후
+        # print('simul end time :', simul_end_time)
         self.env.run(until=simul_end_time)
-
-        if Debug_mode:
-            print('- end simulator -')
-        #for j in self.job:
-            #if j['properties']['state'] != 'done':
-                #print('Error : 미완료된 작업 존재')
-                #print(j)
-                #exit(1)
-        energy = random.randint(1000, 2000)
-        #T = random.randint(1000, 2000)
-        #simulation_time = self.alloc.simulate_end_time
+        # print(4)
+        energy = 0
+        for hf in self.heating_furnace_list:
+            energy += hf.total_energy_usage
+        for p in self.press_list:
+            energy += p.total_energy_usage
+        for c in self.cutter_list:
+            energy += c.total_energy_usage
+        for tf in self.treatment_furnace_list:
+            energy += tf.total_energy_usage
         simulation_time = simul_end_time
-        total_weight = random.randint(1000, 2000)
-        total_heating_weight = random.randint(1000, 2000)
-        total_e = random.randint(1000, 2000)
-
+        total_weight = 3000
+        total_heating_weight = 0
+        for hf in self.heating_furnace_list:
+            total_heating_weight += hf.total_heating_weight
+        print('debug info :', energy, simulation_time, total_weight, total_heating_weight)
         return energy, simulation_time, total_weight, total_heating_weight

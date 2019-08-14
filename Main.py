@@ -6,25 +6,6 @@ from Predictor.Predictor import *
 import sys
 from RTS import *
 from VirtualFactory.V_Simulator import *
-#sys.stdout = open('output.txt','w')
-
-"""
-todo :
-
-- log 깔끔하게 쓰도록 불필요한것 지우기
-
-- 장비들이 자기 로그 보고 시작상황 세팅하기
-
-- 예측모델 적용 완전히 끝내기
-
-- 커팅하고 제품 개수대로 나뉘게 버그 수정해야함
-
-- 리포트에서 장비별 에너지 -> 총 에너지로 바꿔서 시뮬레이터 끝에 보내주기
-총 무게도 전달해야됨 -> 방법 생각해놓기
-
-- 스코어 관련 공식들 더러운 코드 정리
-
-"""
 
 def dict_to_time(obj):
     return int((datetime(obj['year'], obj['month'], obj['day'], obj['hour'], obj['minute'],
@@ -41,8 +22,8 @@ def read(file):
         sys.exit(1)
 
 def read_data(file):
-    path='./data/190707_test_data/'
-    #path = './data/140710_10/'
+    #path='./data/190707_test_data/'
+    path = './data/140710_10/'
     data = read(path+file+'.json')
     if file == 'product':
         for d in data:
@@ -95,18 +76,14 @@ def read_data(file):
         None
     return data
 
-
-#warnings.filterwarnings(action='ignore')
-#from absl import logging
-#logging._warn_preinit_stderr = 0
-
-simul_start_time = datetime(2013, 2, 10, 10)
-#simul_start_time = datetime(2014, 5, 10, 10)
+#simul_start_time = datetime(2013, 2, 10, 10)
+simul_start_time = datetime(2014, 5, 10, 10)
 
 product_data = read_data('product')
 ingot_data = read_data('ingot')
 job_data = read_data('job')
-
+population = 10
+generation = 10
 sorted(job_data, key=lambda j: j['properties']['order_date'])
 new_job_list = []
 total_weight = 0
@@ -124,49 +101,31 @@ job_data = new_job_list
 predictor = Predictor('Planning')
 v_predictor = Predictor('Real')
 
-# 휴리스틱 버전으로 24시간 가동
+# 휴리스틱 버전으로 1일 가동
+print('\nday 1 : heuristic algorithm')
 heuristic_simulator = Simulator('Heuristic', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(job_data), 13, 2, 3, 5)
 heuristic_simulator.init_simulator()
 heuristic_simulator.run(1, save_env=True)
 simulator_22envs = deepcopy(heuristic_simulator.envs)
 simulator_24envs = deepcopy(heuristic_simulator.envs2)
-print(heuristic_simulator.job)
-print(heuristic_simulator.get_logs())
-#
-# print('hf 1 log :', simulator_24envs['heating_furnace'][0])
-# print('hf 2 log :', simulator_24envs['heating_furnace'][1])
-# print('hf 3 log :', simulator_24envs['heating_furnace'][2])
-#
-# print('p 1 log :', simulator_24envs['press'][0])
-# print('p 2 log :', simulator_24envs['press'][1])
-# print('end heuristic')
+v_simulator = V_Simulator(v_predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_24envs['jobs']), 13, 2, 3, 5)
 
-#환경 이어받아 GA 버전으로 가동
-ga_simulator = Simulator('GA', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_22envs['jobs']), 13, 2, 3, 5)
-ga = RTS(ga_simulator, deepcopy(simulator_22envs), 1, 1, 1.0, 10.0)
-ga_result = ga.run()
-log = ga.best_log
-print('best log :', log)
+for day in range(6):
+    # 환경 이어받아 GA 버전으로 가동
+    print('\nday', day + 2, ': GA algorithm')
+    ga_simulator = Simulator('GA', predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_22envs['jobs']), 13, 2, 3, 5)
+    ga = RTS(ga_simulator, deepcopy(simulator_22envs), population, generation, 1.0, 10.0)
+    ga_result = ga.run()
+    log = ga.best_log
 
-# v_simulator = V_Simulator(v_predictor, deepcopy(product_data), deepcopy(ingot_data), deepcopy(simulator_24envs['jobs']), 13, 2, 3, 5)
-# v_simulator.set_envs(deepcopy(simulator_24envs))
-#
-# v_simulator.set_todo(log)
-# v_simulator.run(2)
-#
-# print('hf todo :', log['heating_furnace'][0])
-# print('hf log :', v_simulator.heating_furnace_list[0].log)
-#
-# print('press todo :', log['press'][0])
-# print('press log :', v_simulator.press_list[0].log)
-
-#vf_simulator = TestSimulator()
-#print('result :', ga_result)
+    # 휴리스틱 환경과 GA 시나리오 결과 이어받아 실제공장 모델로 2일차 가동
+    print('\nday', day+2, ': Real Factory Simulation')
+    v_simulator.set_envs(deepcopy(simulator_24envs))
+    v_simulator.set_todo(deepcopy(log))
+    if day == 0:
+        v_simulator.processing()
+    v_simulator.run(day + 2)
+    simulator_22envs = deepcopy(v_simulator.envs)
 
 
-
-
-#E, T = simulator.run()
-#print('E :', E)
-#print('T :', T)
-#print()
+print('All Process Completed')

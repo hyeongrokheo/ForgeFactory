@@ -58,20 +58,21 @@ class HeuristicAllocator:
         #print('debug : nj :', next_job)
         return next_job
 
+    def get_job(self, id):
+        for j in self.job:
+            if j['id'] == id:
+                return j
+        return None
+
     def job_update(self, job, equip_name, process_name, last_heating_furnace_name=None):
-        # 세영수정
         job['properties']['current_equip'] = equip_name
         job['properties']['last_process'] = process_name
         if last_heating_furnace_name != None:
             job['properties']['last_heating_furnace'] = last_heating_furnace_name
-        #job['properties']['next_instruction'] += 1
         if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
             job['properties']['state'] = 'done'
-            #self.simulate_end_time = self.env.now
 
     def is_allocated_to_heating_furnace(self, j, furnace_name):
-        # 세영수정
-        # 가열로에 할당된 작업인지 확인
         if j['properties']['current_equip'] != None and j['properties']['current_equip'] == furnace_name:
             return True
         return False
@@ -93,6 +94,7 @@ class HeuristicAllocator:
         return selected_job_list
 
     def heating_allocate(self, name, num, capacity):
+        # print('휴리스틱')
         # -----------------------------------------------------------------------
         # 가열로 작업 할당 휴리스틱
         # 1. 마감기한이 가장 이른 작업 하나 선택
@@ -108,9 +110,6 @@ class HeuristicAllocator:
 
             last_process_end_time = j['properties']['last_process_end_time']
             try:
-                # 예외처리보완필요
-                # treating 중인 작업들의 경우 len(j['properties']['instruction_list']) == j['properties']['next_instruction'] 인 경우 발생
-                # list index out of range 에러 발생
                 next_instruction = j['properties']['instruction_list'][0][j['properties']['next_instruction']]
             except:
                 pass
@@ -125,21 +124,26 @@ class HeuristicAllocator:
         total_weight = 0
 
         candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
+        #print('candidate job list :', self.get_job_id_list(candidate_job_list))
         for urgent_job in candidate_job_list:
             urgent_job_weight = urgent_job['properties']['ingot']['current_weight']
             if self.is_allocated_to_heating_furnace(j, name):
                 continue
             if total_weight + urgent_job_weight > capacity:
                 continue
-
+            if urgent_job in allocate_job_list:
+                continue
             allocate_job_list.append(urgent_job)
             total_weight += urgent_job_weight
             self.job_update(urgent_job, name, 'heating')
 
             selected_job_list = self.select_job_for_heating_furnace(urgent_job, candidate_job_list, name)
+            #print('selected job list :', self.get_job_id_list(selected_job_list))
             for candidate_job in selected_job_list:
                 candidate_job_weight = candidate_job['properties']['ingot']['current_weight']
                 if total_weight + candidate_job_weight > capacity:
+                    continue
+                if candidate_job in allocate_job_list:
                     continue
                 allocate_job_list.append(candidate_job)
                 total_weight += candidate_job_weight
@@ -153,7 +157,15 @@ class HeuristicAllocator:
                 None
             if index != None:
                 self.waiting_job.remove(j)
+        #print('allocate job list :', self.get_job_id_list(allocate_job_list))
         return allocate_job_list
+
+    def get_job_id_list(self, list):
+        job_id_list = []
+        for j in list:
+            job_id_list.append(j['id'])
+
+        return job_id_list
 
     def recharging(self, job):
         self.recharging_queue.append(job)
@@ -212,15 +224,18 @@ class HeuristicAllocator:
         return target_job
 
     def end_job(self, job):
+        # print(self.env.now, 'in end job', job)
         if isinstance(job, list):
             for j in job:
                 self.end_job(j)
         else:
             job['properties']['next_instruction'] += 1
             if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
+                #print(self.env.now, 'done job', job)
                 job['properties']['state'] = 'done'
                 self.complete_job.append(job)
             elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
+                #print(self.env.now, 'to recharging job', job)
                 self.recharging(job)
             else:
                 self.waiting_job.append(job)

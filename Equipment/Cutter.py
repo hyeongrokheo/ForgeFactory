@@ -26,7 +26,8 @@ class Cutter:
         self.log.append([self.env.now, process, target])
 
     def calc_cut_time(self):
-        cut_time = int(self.alloc.predictor.cutting_time_prediction(self.current_job) / 60)
+        cut_time = self.alloc.predictor.cutting_time_prediction(self.current_job)
+        # print('cut time :', cut_time)
         return cut_time
 
     def calc_cut_energy(self, cut_time):
@@ -54,6 +55,8 @@ class Cutter:
         if self.start_time:
             yield self.env.timeout(self.start_time)
 
+        # print('state :', state)
+        # print('job :', self.current_job)
         while True:
             if state == 'idle':
                 first_state = None
@@ -63,6 +66,7 @@ class Cutter:
                     new_job = self.alloc.get_next_cut_job(self.name)
 
                 self.current_job = new_job
+                #print(self.env.now, 'next cut job :', self.current_job)
                 state = 'cutting start'
 
             if state == 'cutting start':
@@ -82,10 +86,12 @@ class Cutter:
                     self.current_job['properties']['last_process'] = 'cutting'
                     self.current_job['properties']['last_process_end_time'] = cut_end_time
                     self.write_log('cutting start', self.current_job['id'])
+                    # print(self.env.now, 'c : start')
                     yield self.env.timeout(cut_time)
-                self.total_energy_usage += cut_energy
-                #self.write_log('cutting end', None)
 
+                self.total_energy_usage += cut_energy
+
+            # print(self.env.now, 'c : idle')
             state = 'idle'
             self.write_log('idle')
 

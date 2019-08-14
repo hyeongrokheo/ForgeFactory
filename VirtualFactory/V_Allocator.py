@@ -24,6 +24,12 @@ class V_Allocator:
 
         self.hf_count = 0
 
+    def get_id_list(self, list):
+        id_list = []
+        for j in list:
+            id_list.append(j['id'])
+        return id_list
+
     def end_simulator(self):
         for j in self.job:
             if j['properties']['state'] != 'done':
@@ -100,10 +106,13 @@ class V_Allocator:
         return selected_job_list
 
     def heating_allocate(self, name, target_id_list):
+        # print('Z4')
         target_job_list = []
         count = 0
         for id in target_id_list:
+            # print('Z5')
             for j in self.job:
+                # print('Z6')
                 if j['id'] == id:
                     target_job_list.append(j)
                     if len(j['properties']['instruction_list'][0]) <= j['properties']['next_instruction']:
@@ -184,15 +193,17 @@ class V_Allocator:
         # return allocate_job_list
 
     def recharging(self, target_id):
+        # print('Z3')
         target_job = None
         for j in self.job:
             if j['id'] == target_id:
                 target_job = j
                 break
-
+        # print('target id :', target_job)
+        # print('target job :', target_job)
         if target_job['properties']['last_process_end_time'] > self.env.now:
             return None
-        if target_job['properties']['instruction_list'][0][j['properties']['next_instruction']] != 'heating':
+        if target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] != 'heating':
             return None
 
         return target_job
@@ -212,18 +223,11 @@ class V_Allocator:
     #             self.hf_count = 0
 
     def get_next_press_job(self, name, target_id):
+        # print('Z1')
         target_job = self.get_job(target_id)
-        #print(name)
-        #if name == 'press_1':
-            #print('tj :', target_job)
-        if target_job == None:
-            print('Error : id not exist.', target_id)
-            exit(1)
         if target_job['properties']['state'] == 'done':
             return -1
-        if target_job['properties']['last_process_end_time'] == None or target_job['properties']['last_process_end_time'] > self.env.now:
-            return None
-        if target_job['properties']['last_process'] == 'holding' and target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] == 'forging':
+        elif target_job['properties']['last_process_end_time'] != None and target_job['properties']['last_process_end_time'] < self.env.now and target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] == 'forging':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
             self.job_update(job=target_job, equip_name=name, process_name='press')
@@ -232,163 +236,65 @@ class V_Allocator:
             return None
 
     def get_next_cut_job(self, name, target_id):
-
-        """
-        candidate_job_list = self.next_job_list('cutting')
-        if len(candidate_job_list) == 0:
-            return None
-        candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
-        target_job = candidate_job_list[0]"""
-
+        # print('Z2')
         target_job = self.get_job(target_id)
+        #print(self.env.now, 'job info :', target_job['id'], target_job['properties']['last_process_end_time'], target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']])
+        #print('job :', self.env.now, target_job)
         if target_job['properties']['state'] == 'done':
+            # print(1)
             return -1
-        if target_job['properties']['last_process'] == 'holding':
+        elif target_job['properties']['last_process_end_time'] != None and target_job['properties']['last_process_end_time'] < self.env.now and target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] == 'cutting':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
-        self.job_update(job=target_job, equip_name=name, process_name='cutting')
-        if Debug_mode:
-            print(self.env.now, 'cutter target job :')
-            nPrint(target_job)
-
-        if target_job['properties']['last_process_end_time'] != None and target_job['properties']['last_process_end_time'] < self.env.now and target_job['properties']['instruction_list'][0][target_job['properties']['next_instruction']] == 'cutting':
+            self.job_update(job=target_job, equip_name=name, process_name='cutting')
+            # print(2)
             return target_job
         else:
+            # print(3)
             return None
-        # index = None
-        # try:
-        #     index = self.waiting_job.index(target_job)
-        # except:
-        #     None
-        # if index != None:
-        #     self.waiting_job.remove(target_job)
-
-        return target_job
 
     def end_job(self, job):
-        if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
-            job['properties']['state'] = 'done'
-            #self.simulate_end_time = self.env.now
-            self.complete_job.append(job)
-        elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
-            self.recharging(job)
+        if isinstance(job, list):
+            for j in job:
+                self.end_job(j)
         else:
-            self.waiting_job.append(job)
+            job['properties']['next_instruction'] += 1
+            # print('debug log :', self.env.now, job)
+            if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
+                job['properties']['state'] = 'done'
+                #self.simulate_end_time = self.env.now
+                self.complete_job.append(job)
+            elif job['properties']['instruction_list'][0][job['properties']['next_instruction']] == 'heating':
+                # print('in end_job, recharging target :', job)
+                self.recharging(job['id'])
+            else:
+                self.waiting_job.append(job)
 
     def get_next_treatment_job(self, name, target_id_list):
+        # print('Z5')
         target_job_list = []
         count = 0
+        # print('time :', self.env.now)
+        # print('target id list :', target_id_list)
+        # print('total job list :')
+        # for j in self.job:
+        #     print(j['id'], j['properties']['last_process_end_time'], j['properties']['instruction_list'][0][j['properties']['next_instruction']])
         for id in target_id_list:
             for j in self.job:
                 if j['id'] == id:
+                    # print('j[id] :', j['id'])
+                    # print('id :', id)
                     target_job_list.append(j)
-                    if len(j['properties']['instruction_list'][0]) <= j['properties']['next_instruction']:
-                        j['properties']['state'] = 'done'
+                    count += 1
                     if j['properties']['state'] == 'done':
-                        count += 1
-                        continue
-                    if j['properties']['last_process_end_time'] != None and j['properties']['last_process_end_time'] > self.env.now:
-                        return None
-                    if j['properties']['instruction_list'][0][j['properties']['next_instruction']] != 'treatment':
+                        return -1
+                    if j['properties']['last_process_end_time'] == None or j['properties']['last_process_end_time'] > self.env.now or j['properties']['instruction_list'][0][j['properties']['next_instruction']] != 'treating':
                         return None
                     break
         if count == len(target_id_list):
-            return -1
-        return target_job_list
-        # for j in self.job:
-        #     if j['properties']['state'] == 'done':
-        #         #완료된 작업
-        #         continue
-        #     if j['properties']['last_process_end_time'] != None and j['properties']['last_process_end_time'] > self.env.now:
-        #         #다른 작업 진행중
-        #         continue
-        #     #print('debug :', j['id'], j['properties']['instruction_list'][0], j['properties']['next_instruction'])
-        #     if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
-        #         candidate_job_list.append(j)
-        #
-        # if len(candidate_job_list) == 0:
-        #     return None
-        #
-        # candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
-        # standard_deadline = candidate_job_list[0]['properties']['deadline']
-        # target_job_list = []
-        # total_weight = 0
-        # if Debug_mode:
-        #     print('cjl')
-        #     nPrint(candidate_job_list)
-        #
-        # for j in candidate_job_list:
-        #     cur_job_weight = j['properties']['ingot']['current_weight']
-        #     total_weight += cur_job_weight
-        #     target_job_list.append(j)
-        #     treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
-        #
-        #     if self.env.now + treatment_time < standard_deadline and total_weight < capacity:
-        #         if self.env.now + treatment_time + 30 >= standard_deadline:
-        #             break
-        #         elif total_weight >= capacity * 0.85:
-        #             break
-        #         else:
-        #             continue
-        #     else:
-        #         total_weight -= cur_job_weight
-        #         target_job_list.remove(j)
-        #         break
-        # for j in target_job_list:
-        #     j['properties']['current_equip'] = name
-        #     j['properties']['last_process'] = 'treatment'
-        #     j['properties']['next_instruction'] += 1
-        # return target_job_list
-        #
-        #
-
-            #추가여부 결정
-        #     if total_weight < capacity:
-        #
-        #         treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
-        #         if Debug_mode:
-        #             print('-')
-        #             nPrint(target_job_list)
-        #             print('current time :', self.env.now)
-        #             print('treatment time :', treatment_time)
-        #             print('deadline :', standard_deadline)
-        #
-        #         if self.env.now + treatment_time + 30 < standard_deadline:
-        #
-        #         else:
-        #             if self.env.now + treatment_time <= standard_deadline:
-        #                 total_weight += cur_job_weight
-        #                 return target_job_list
-        #             else:
-        #                 target_job_list.remove(j)
-        #                 if len(target_job_list) == 0:
-        #                     return None
-        #                 for j in target_job_list:
-        #                     j['properties']['current_equip'] = name
-        #                     j['properties']['last_process'] = 'treatment'
-        #                     j['properties']['next_instruction'] += 1
-        #                 return target_job_list
-        #
-        #         total_weight += cur_job_weight
-        #     else:
-        #         for j in target_job_list:
-        #             j['properties']['current_equip'] = name
-        #             j['properties']['last_process'] = 'treatment'
-        #             j['properties']['next_instruction'] += 1
-        #         return target_job_list
-        # #print('debug : cjl :', candidate_job_list)
-        # if total_weight > capacity * 0.7:
-        #     for j in target_job_list:
-        #         j['properties']['current_equip'] = name
-        #         j['properties']['last_process'] = 'treatment'
-        #         j['properties']['next_instruction'] += 1
-        #     return target_job_list
-        # return None
-
-        #
-        # for j in target_job_list:
-        #     j['properties']['current_equip'] = name
-        #     j['properties']['last_process'] = 'treatment'
-        #     j['properties']['next_instruction'] += 1
-        #
-        # return target_job_list
+            for target_job in target_job_list:
+                for i in range(self.heating_furnace_num):
+                    self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
+            return target_job_list
+        else:
+            return None

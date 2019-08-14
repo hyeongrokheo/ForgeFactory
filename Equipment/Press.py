@@ -10,11 +10,8 @@ class Press:
         self.name = 'press_' + str(num + 1)
 
         self.current_job = None
-        if Debug_mode:
-            print(self.name + ' :: created')
 
         self.log = []
-
         self.start_time = None
         self.total_energy_usage = 0
 
@@ -23,8 +20,6 @@ class Press:
         self.log = log
 
     def write_log(self, process, target=None):
-        # if self.num == 0:
-        #     print(2)
         self.log.append([self.env.now, process, target])
 
     def calc_press_time(self):
@@ -38,7 +33,6 @@ class Press:
     def run(self):
         state = 'idle'
         first_state = None
-        self.current_job = None
 
         last_log = None
         if len(self.log) != 0:
@@ -47,11 +41,8 @@ class Press:
             state = last_log[1]
             first_state = last_log[1]
             job_id = last_log[2]
-            if job_id:
-                for j in self.alloc.job:
-                    if j['id'] == job_id:
-                        self.current_job = j
-                        break
+            if first_state == 'press start':
+                self.current_job = self.alloc.get_job(job_id)
 
         if self.start_time:
             yield self.env.timeout(self.start_time)
@@ -65,6 +56,7 @@ class Press:
                     new_job = self.alloc.get_next_press_job(self.name)
 
                 self.current_job = new_job
+                #print(self.env.now, 'next press job :', self.current_job)
                 state = 'press start'
 
             if state == 'press start':

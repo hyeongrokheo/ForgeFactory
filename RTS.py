@@ -59,8 +59,9 @@ class RTS:
 
     def evaluate(self, individual):
         start_t = time.time()
-        if Debug_mode:
-            print('individual :', individual)
+        self.cnt += 1
+        print('simulation', self.cnt, end='\t')
+        # print('individual :', individual)
 
         #self.simulator.init_entity_manager()
         #furnace_schedule = self.decoder(individual, self.simulator.entity_mgr)
@@ -98,13 +99,12 @@ class RTS:
             self.best_log = self.simulator.get_logs()
             #print('best log :', self.best_log['press'][0])
 
-        self.cnt += 1
-        print('simulation', self.cnt)
-        print('score : ', '{0:.3f}'.format(score), end='\t')
-        print('energy : ', '{0:.3f}'.format(energy), end='\t')
-        print('energy per ton: ', '{0:.3f}'.format(energy_per_ton), end='\t')
-        print('time per ton: ', '{0:.3f}'.format(time_per_ton), end='\t')
-        print('heating ton per hour: ', '{0:.3f}'.format(heating_ton_per_hour))
+
+        print('score :', '{0:.3f}'.format(score))
+        # print('energy :', '{0:.3f}'.format(energy), end='\t')
+        # print('energy per ton:', '{0:.3f}'.format(energy_per_ton), end='\t')
+        # print('time per ton:', '{0:.3f}'.format(time_per_ton), end='\t')
+        # print('heating ton per hour:', '{0:.3f}'.format(heating_ton_per_hour))
         # print('Total heating energy ', self.simulator.heating_energy())
         # print('total ', total_e)
         total_dict = {}

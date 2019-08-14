@@ -15,7 +15,8 @@ class Predictor:
         if self.type == 'Planning':
             self.model_path = '/ForgeFactory/Predictor/Models/'
         elif self.type == 'Real':
-            self.model_path = '/ForgeFactory/Predictor/Models_VF/'
+            self.model_path = '/ForgeFactory/Predictor/Models/'
+            #self.model_path = '/ForgeFactory/Predictor/Models_VF/'
         else:
             print('Error : predictor type error')
             exit(1)
@@ -57,28 +58,45 @@ class Predictor:
     
     # 구현완료
     def heating_time_prediction(self, name, job_list):
-        if self.type == 'Planning':
-            if len(job_list) == 0:
-                print('calc heating time. but job list is empty')
-                exit(1)
+        # if self.type == 'Planning':
+        if len(job_list) == 0:
+            print('calc heating time. but job list is empty')
+            exit(1)
 
-            total_weight = 0
-            max_weight = 0
-            for job in job_list:
-                w = job['properties']['ingot']['current_weight']
-                total_weight += w
-                if max_weight < w:
-                    max_weight = w
-            if total_weight == 0 and max_weight == 0:
-                return 0
+        total_weight = 0
+        max_weight = 0
+        for job in job_list:
+            w = job['properties']['ingot']['current_weight']
+            total_weight += w
+            if max_weight < w:
+                max_weight = w
+        if total_weight == 0 and max_weight == 0:
+            print('Error. weight 0')
+            exit(1)
 
-            tmp = [total_weight, max_weight]
-            data = furnace_num.TxtToCode(name[-1])
-            data.extend(tmp)
-            heating_time = int(self.first_heating_time_model.predict(data)) * 60
-            return heating_time
-        elif self.type == 'Real':
-            return 300
+        tmp = [total_weight, max_weight]
+        data = furnace_num.TxtToCode(name[-1])
+        data.extend(tmp)
+        print(data)
+        heating_time = int(self.first_heating_time_model.predict(data)) * 60
+        return heating_time
+        # elif self.type == 'Real':
+        #     total_weight = 0
+        #     max_weight = 0
+        #     for job in job_list:
+        #         w = job['properties']['ingot']['current_weight']
+        #         total_weight += w
+        #         if max_weight < w:
+        #             max_weight = w
+        #     if total_weight == 0 and max_weight == 0:
+        #         print('Error. weight 0')
+        #         exit(1)
+        #
+        #     data = furnace_num.TxtToCode(name[-1])
+        #     tmp = [total_weight, max_weight]
+        #     data.extend(tmp)
+        #     heating_time = self.first_heating_time_model.predict(data)
+        #     return heating_time
 
     # 구현완료
     def reheating_time_prediction(self, name, job_list):
@@ -141,8 +159,8 @@ class Predictor:
         tmp = press_product_type.TxtToCode(product_size)
         data.extend(tmp)
         data.append(weight)
-        data.append(total_round)
-        data.append(current_round)
+        data.append(total_round) # 총 차수
+        data.append(current_round) # 현재 차수
 
         forging_time = int(self.forging_time_model.predict(data) / 60)
         #print('forging_time :', forging_time)
@@ -150,6 +168,7 @@ class Predictor:
 
     # 구현완료
     def cutting_time_prediction(self, job):
+        # print('job :', job)
         weight = job['properties']['ingot']['current_weight']
         tmp = cutter_ingot_type.TxtToCode(job['properties']['ingot']['type'])
         prod_count = len(job['properties']['product_id_list'])
@@ -199,9 +218,6 @@ class Predictor:
         data = [total_weight, max_weight, total_count, ingot_count] + tmp + [len([*product_count])] + tmp2
         treat_time = int((self.heat_treating_time_model.predict(data) + 7) * 60)
 
-        if Debug_mode:
-            None
-            #print('treat time :', treat_time)
         return treat_time
 
     # def treatment_cooling_time_prediction(self, equipment, parameter=None):
@@ -230,7 +246,9 @@ class Predictor:
     def heating_energy_prediction(self, name, job_list, heating_time):
         total_weight = 0
         max_weight = 0
+        job_id_list = []
         for j in job_list:
+            job_id_list.append(j['id'])
             weight = j['properties']['ingot']['current_weight']
             total_weight += weight
             if max_weight < weight:
@@ -240,7 +258,8 @@ class Predictor:
         data.extend(tmp)
         heating_energy = self.first_heating_energy_model.predict(data)
 
-        #print('heating energy :', energy_usage)
+        # print('job list :', job_id_list)
+        # print('heating energy :', heating_energy)
         return heating_energy
 
     # 구현완료

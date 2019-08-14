@@ -6,8 +6,7 @@ from Planner.GAAllocator import *
 
 class Simulator:
     def __init__(self, type, predictor, product, ingot, job, heating_furnace_num, press_num, cutter_num, treatment_furnace_num):
-        if Debug_mode:
-            print('- create simulator -')
+
         self.type = type
         # 'Heuristic', 'GA'
 
