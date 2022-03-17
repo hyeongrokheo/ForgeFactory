@@ -10,7 +10,6 @@ class HeatingFurnace:
         self.name = 'heating_furnace_' + str(num + 1).zfill(2)
         self.capacity = 200
 
-        #self.recharging_wakeup = simpy.Store(self.env)
         self.cycle_complete_wakeup = simpy.Store(self.env)
 
         self.current_job_list = []
@@ -36,6 +35,7 @@ class HeatingFurnace:
 
     def write_log(self, process, target=None, state=None):
         self.log.append([self.env.now, process, target, state])
+        # print('write log :', self.log)
 
     def calc_heating_time(self):
         heating_time = self.alloc.predictor.heating_time_prediction(self.name, self.current_job_list)
@@ -60,7 +60,10 @@ class HeatingFurnace:
             if self.state == 'keeping':
                 self.current_job_list.append(job)
                 job['properties']['next_instruction'] += 1
-                self.alloc.recharging_queue.remove(job)
+                if job in self.alloc.recharging_queue:
+                    self.alloc.recharging_queue.remove(job)
+                else:
+                    continue
 
                 current_job_id_list = []
                 for j in self.current_job_list:
@@ -79,10 +82,6 @@ class HeatingFurnace:
                 self.total_energy_usage += reheating_energy
                 self.total_heating_weight += job['properties']['ingot']['current_weight']
 
-                # job['properties']['last_process'] = 'holding'
-                # job['properties']['last_heating_furncae'] = self.name
-                # job['properties']['current_equip'] = self.name
-                # job['properties']['next_instruction'] += 1
                 for j in self.current_job_list:
                     #j['properties']['last_process'] = 'holding'
                     j['properties']['last_process_end_time'] = self.env.now + reheating_time
@@ -99,8 +98,6 @@ class HeatingFurnace:
             job = discharging[1]
             yield self.env.timeout(0.01)
             if self.name == name:
-                #print('target job :', job)
-                # print(self.get_id_list(self.current_job_list))
                 try:
                     self.current_job_list.remove(job)
                     current_job_id_list = []
@@ -111,6 +108,7 @@ class HeatingFurnace:
                 except:
                     None
                 if len(self.current_job_list) == 0:
+                    # print('cycle end')
                     self.cycle_complete_wakeup.put(True)
 
     def get_id_list(self, list):
@@ -145,7 +143,7 @@ class HeatingFurnace:
 
 
         while True:
-            #print(self.name, 'loop', self.state, self.get_id_list(self.current_job_list))
+            # print(self.name, 'loop', self.state, self.get_id_list(self.current_job_list))
             # 작업 할당 받기
             if self.state == 'idle':
                 first_state = None
@@ -162,7 +160,7 @@ class HeatingFurnace:
                 self.current_job_list = new_job
                 current_job_id_list = self.get_id_list(self.current_job_list)
                 self.write_log('insertion', current_job_id_list, current_job_id_list)
-                #print(self.env.now, ';', self.name, ';', 'insertion', ';', current_job_id_list)
+                # print(self.env.now, ';', self.name, ';', 'insertion', ';', current_job_id_list)
 
                 if self.state != 'off':
                     self.state = 'heating'
@@ -194,11 +192,12 @@ class HeatingFurnace:
                         #j['properties']['next_instruction'] += 1
                         j['properties']['last_process_end_time'] = heating_end_time
                         j['properties']['last_heating_furnace'] = self.name
-                        self.total_heating_weight += j['properties']['ingot']['current_weight']
                     self.write_log('heating', heating_end_time, current_job_id_list)
                     yield self.env.timeout(heating_time)
 
                 self.total_energy_usage += heating_energy
+                for j in self.current_job_list:
+                    self.total_heating_weight += j['properties']['ingot']['current_weight']
                 self.state = 'keeping'
                 self.write_log('keeping', None, current_job_id_list)
                 self.alloc.end_job(self.current_job_list)
@@ -225,7 +224,7 @@ class HeatingFurnace:
                     #cooling_end_time = self.env.now + cooling_time
                     yield self.env.timeout(cooling_time)
                 self.state = 'idle'
-                self.write_log('idle')
+                self.write_log('idle', self.get_id_list(self.current_job_list))
 
             if self.state == 'off':
                 if not first_state:

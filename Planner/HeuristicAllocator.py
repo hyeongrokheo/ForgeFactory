@@ -20,20 +20,37 @@ class HeuristicAllocator:
         self.complete_job = []
         self.recharging_queue = []
 
-        #self.simulate_end_time = 0
-
         self.hf_count = 0
-    #
-    # def end_simulator(self):
-    #     for j in self.job:
-    #         if j['properties']['state'] != 'done':
-    #             return False
-    #     return True
+
+        self.start_time = None
+
+    def set_env(self, start_time, data):
+        self.start_time = start_time
+
+        waiting_job_id_list = data['waiting_job']
+        for job_id in waiting_job_id_list:
+            for j in self.job:
+                if j['id'] == job_id:
+                    self.waiting_job.append(j)
+                    break
+
+        complete_job_id_list = data['complete_job']
+        for job_id in complete_job_id_list:
+            for j in self.job:
+                if j['id'] == job_id:
+                    self.complete_job.append(j)
+                    break
+
+        recharging_queue_id_list = data['recharging_queue']
+        for job_id in recharging_queue_id_list:
+            for j in self.job:
+                if j['id'] == job_id:
+                    self.recharging_queue.append(j)
+                    break
 
     def next_job_list(self, process):
         next_job = []
         for job in self.job:
-            #print(job)
             if job['properties']['state'] == 'done':
                 continue
             if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
@@ -94,20 +111,11 @@ class HeuristicAllocator:
         return selected_job_list
 
     def heating_allocate(self, name, num, capacity):
-        # print('휴리스틱')
-        # -----------------------------------------------------------------------
-        # 가열로 작업 할당 휴리스틱
-        # 1. 마감기한이 가장 이른 작업 하나 선택
-        # 2. 마감기한 간격 7일 내 해당 작업과 동일 제품 혹은 동일 무게 작업 선택
-        # 3. 가열로 Capacity 85% 이상 채워질 때까지 반복
-        # -----------------------------------------------------------------------
-
-        # 후보 작업 목록
         candidate_job_list = []
+
         for j in self.job:
             if j['properties']['state'] == 'done':
                 continue
-
             last_process_end_time = j['properties']['last_process_end_time']
             try:
                 next_instruction = j['properties']['instruction_list'][0][j['properties']['next_instruction']]
@@ -189,7 +197,7 @@ class HeuristicAllocator:
         if target_job['properties']['last_process'] == 'holding':
             for i in range(self.heating_furnace_num):
                 self.discharging_wakeup[i].put([target_job['properties']['last_heating_furnace'], target_job])
-        #print(self.env.now, 'press target job :', target_job)
+        # print(self.env.now, 'press target job :', target_job)
         self.job_update(job=target_job, equip_name=name, process_name='press')
 
         index = None
@@ -229,6 +237,8 @@ class HeuristicAllocator:
             for j in job:
                 self.end_job(j)
         else:
+            if job['properties']['state'] == 'done':
+                return
             job['properties']['next_instruction'] += 1
             if len(job['properties']['instruction_list'][0]) == job['properties']['next_instruction']:
                 #print(self.env.now, 'done job', job)
@@ -240,14 +250,8 @@ class HeuristicAllocator:
             else:
                 self.waiting_job.append(job)
 
-    def get_next_treatment_job(self, name, capacity):
-        # ----------------------------------------------------------------------------------------------------
-        # 열처리로 작업 할당 휴리스틱
-        # 1. 마감기한이 임박한 순으로 작업 선택
-        # 2. 열처리로 Capacity 85% 이상 채워질 때까지 대기 - 현재는 70%
-        # 3. 열처리 공정 소요 시간을 예측했을 때 마감기한을 어기는 작업이 생길 경우 더이상 기다리지 않고 할당
-        # ----------------------------------------------------------------------------------------------------
-        candidate_job_list = []
+    def get_next_treatment_job(self):
+        target_job = None
         for j in self.job:
             if j['properties']['state'] == 'done':
                 #완료된 작업
@@ -257,88 +261,11 @@ class HeuristicAllocator:
                 continue
             #print('debug :', j['id'], j['properties']['instruction_list'][0], j['properties']['next_instruction'])
             if j['properties']['instruction_list'][0][j['properties']['next_instruction']] == 'treating':
-                candidate_job_list.append(j)
-
-        if len(candidate_job_list) == 0:
-            return None
-
-        candidate_job_list = sorted(candidate_job_list, key=lambda j: j['properties']['deadline'])
-        standard_deadline = candidate_job_list[0]['properties']['deadline']
-        target_job_list = []
-        total_weight = 0
-
-        for j in candidate_job_list:
-            cur_job_weight = j['properties']['ingot']['current_weight']
-            total_weight += cur_job_weight
-            target_job_list.append(j)
-            treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
-
-            if self.env.now + treatment_time < standard_deadline and total_weight < capacity:
-                if self.env.now + treatment_time + 30 >= standard_deadline:
-                    break
-                elif total_weight >= capacity * 0.85:
-                    break
-                else:
-                    continue
-            else:
-                total_weight -= cur_job_weight
-                target_job_list.remove(j)
+                target_job = j
                 break
-        # for j in target_job_list:
-        #     j['properties']['current_equip'] = name
-        #     j['properties']['last_process'] = 'treatment'
-        #     j['properties']['next_instruction'] += 1
-        return target_job_list
 
+        if target_job:
+            target_job['properties']['next_instruction'] += 1
+            target_job['properties']['state'] = 'done'
 
-
-            #추가여부 결정
-        #     if total_weight < capacity:
-        #
-        #         treatment_time = self.predictor.treatment_time_prediction(name, target_job_list)
-        #         if Debug_mode:
-        #             print('-')
-        #             nPrint(target_job_list)
-        #             print('current time :', self.env.now)
-        #             print('treatment time :', treatment_time)
-        #             print('deadline :', standard_deadline)
-        #
-        #         if self.env.now + treatment_time + 30 < standard_deadline:
-        #
-        #         else:
-        #             if self.env.now + treatment_time <= standard_deadline:
-        #                 total_weight += cur_job_weight
-        #                 return target_job_list
-        #             else:
-        #                 target_job_list.remove(j)
-        #                 if len(target_job_list) == 0:
-        #                     return None
-        #                 for j in target_job_list:
-        #                     j['properties']['current_equip'] = name
-        #                     j['properties']['last_process'] = 'treatment'
-        #                     j['properties']['next_instruction'] += 1
-        #                 return target_job_list
-        #
-        #         total_weight += cur_job_weight
-        #     else:
-        #         for j in target_job_list:
-        #             j['properties']['current_equip'] = name
-        #             j['properties']['last_process'] = 'treatment'
-        #             j['properties']['next_instruction'] += 1
-        #         return target_job_list
-        # #print('debug : cjl :', candidate_job_list)
-        # if total_weight > capacity * 0.7:
-        #     for j in target_job_list:
-        #         j['properties']['current_equip'] = name
-        #         j['properties']['last_process'] = 'treatment'
-        #         j['properties']['next_instruction'] += 1
-        #     return target_job_list
-        # return None
-
-        #
-        # for j in target_job_list:
-        #     j['properties']['current_equip'] = name
-        #     j['properties']['last_process'] = 'treatment'
-        #     j['properties']['next_instruction'] += 1
-        #
-        # return target_job_list
+        return target_job

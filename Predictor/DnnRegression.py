@@ -55,7 +55,7 @@ class DnnRegression:
         json_file = open(file_name+'.json', 'r')
         loaded_model_json = json_file.read()
         json_file.close()
-        self.model = model_from_json(loaded_model_json)
+        self.model = tf.keras.models.model_from_json(loaded_model_json)
         # load weights into new model
         self.model.load_weights(file_name + ".h5")
         # print(file_name)

@@ -95,7 +95,8 @@ class Cutter:
             state = 'idle'
             self.write_log('idle')
 
-            product_num = len(self.current_job['properties']['product_id_list'])
+            # product_num = len(self.current_job['properties']['product_id_list'])
+            product_num = 2
             if product_num == 1:
                 self.alloc.end_job(self.current_job)
             else:

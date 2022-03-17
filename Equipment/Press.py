@@ -56,7 +56,7 @@ class Press:
                     new_job = self.alloc.get_next_press_job(self.name)
 
                 self.current_job = new_job
-                #print(self.env.now, 'next press job :', self.current_job)
+                # print(self.env.now, 'next press job :', self.current_job)
                 state = 'press start'
 
             if state == 'press start':
